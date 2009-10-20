@@ -1,6 +1,138 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+class HIP:
+    
+    """ Variable (attributes) names are all in Latin """
+
+    A = ur'[AА]' # \u0041 + \u0410 (latin A + cyrillic A)
+    a = ur'[aа]' # \u0061 + \u0430
+
+    B = ur'[BВ]' # \u0042 + \u0412 (latin B + cyrillic VE)
+    b = ur'[bв]'
+
+    E = ur'[EЕ]'
+    e = ur'[eе]'
+
+    Wide_E = ur'(?: _ %(E)s | < %(E)s > )' % {'E': self.E}
+    wide_e = ur'(?: _ %(e)s | < %(e)s > )' % {'e': self.e}
+    
+    K = ur'[KК]'
+    k = ur'[kк]'
+    
+    M = ur'[MМ]'
+    m = ur'[mм]'
+    
+    H = ur'[HН]'
+    h = ur'[hн]'
+    
+    O = ur'[OО]'
+    o = ur'[oо]'
+
+    Wide_O = ur'(?: _ %(O)s | < %(O)s > )' % {'O': self.O } # ur'(?: _О | <О> )'
+    wide_o = ur'(?: _ %(o)s | < %(o)s > )' % {'o': self.o } # ur'(?: _о | <о> )'
+    
+    P = ur'[PР]'
+    p = ur'[pр]'
+    
+    C = ur'[CС]'
+    c = ur'[cс]'
+    
+    T = ur'[TТ]'
+    t = ur'[tт]'
+
+    V = ur'V'
+    v = ur'v'
+
+    W = ur'W'
+    w = ur'w'
+
+    Y = ur'[YУ]'
+    y = ur'[yу]'
+
+    X = ur'[XХ]'
+    x = ur'[xх]'
+
+    Yat = ur'(?: JЬ | Jь )'
+    yat = ur'jь'
+
+    Ksi = ur'(?: _ %(KC)s | _ %(Kc)s | < %(KC)s > | < %(Kc)s > )' % { 'KC': self.K + self.C, 'Kc': self.K + self.c } # Ksi = ur'(?: _КС | _Кс | <КС> | <Кс> )'
+    ksi = ur'(?: _ %(kc)s | < %(kc)s > )' % { 'kc': self.k + self.c } # ur'(?: _кс | <кс> )'
+
+    Ole = ur'(?: _W | <W> )'
+    ole = ur'(?: _w | <w> )'
+
+    Ot = ur'W\\t' # W\t
+    ot = ur'w\\t' # w\t
+    
+
+class CSlav:
+
+    """ Variable (attributes) names are all in Latin """
+
+    Az = ur'А'
+    az = ur'а'
+ 
+    Vedi = ur'В'
+    vedi = ur'в'
+
+    Est = ur'Е'
+    est = ur'е'
+
+    Wide_E = self.Est # NB: \u0415 is used instead \u0404, 
+                      # because there is no difference 
+                      # between normal and wide capital E
+    wide_e = ur'є'    # \u0454
+    
+    Kako = ur'К'
+    kako = ur'к'
+    
+    Myslete = ur'М'
+    myslete = ur'м'
+    
+    Nash = ur'Н'
+    nash = ur'н'
+    
+    On = ur'О'
+    on = ur'о'
+    
+    Rcy = ur'Р'
+    rcy = ur'р'
+    
+    Slovo = ur'С',
+    slovo = ur'с',
+    
+    Tverdo = ur'Т'
+    tverdo = ur'т'
+
+    Uk = ur'У' # \u0423 [NB: it is possible to use \uA64A (monograph Uk) instead]
+    uk = ur'у' # \u0443 [NB: it is possible to use \uA64B (monograph uk) instead]
+
+    Kher = ur'Х'
+    kher = ur'х'
+
+    Yat = ur'\u0462'
+    yat = ur'\u0463'
+
+    Izhica = ur'\u0474'
+    izhica = ur'\u0475'
+
+    Ksi = ur'\u046E'
+    ksi = ur'\u046F'
+
+    Wide_O = ur'\u047A'
+    wide_o = ur'\u047B'
+
+    Omega = ur'\u0460'
+    omega = ur'\u0461'
+
+    Ole = ur'\u047C'
+    ole = ur'\u047D'
+
+    Ot = ur'\u047E'
+    ot = ur'\u047F'
+    
+
 cslav_regexps = {
     
     """ Regular expressions for character replacement
@@ -8,16 +140,66 @@ cslav_regexps = {
     (script tag <::слав> or without any script tag
     if no script tag is in the document) """
 
-    # А -- \u0410 -- CYRILLIC CAPITAL LETTER A
-    ur'[AА]'    # \u0041 LATIN CAPITAL LETTER A
-    :           # \u0410 CYRILLIC CAPITAL LETTER A
-    ur'А',
-
-    # а -- \u0430 -- CYRILLIC SMALL LETTER A
-    ur'[aа]'    # \u0061 LATIN SMALL LETTER A
-                # \u0430 CYRILLIC SMALL LETTER A
-    :
-    ur'а',
+    HIP.A : CSlav.Az ,
+    HIP.a : CSlav.az ,
  
+    HIP.B : CSlav.Vedi ,
+    HIP.b : CSlav.vedi ,
+
+    HIP.E : CSlav.Est ,
+    HIP.e : CSlav.est ,
+
+    HIP.K : CSlav.Kako ,
+    HIP.k : CSlav.kako ,
+
+    HIP.M : CSlav.Myslete ,
+    HIP.m : CSlav.myslete ,
+
+    HIP.N : CSlav.Nash ,
+    HIP.n : CSlav.nash ,
+    
+    HIP.O : CSlav.On ,
+    HIP.o : CSlav.on ,
+
+    HIP.P : CSlav.Rcy ,
+    HIP.p : CSlav.rcy ,
+
+    HIP.C : CSlav.Slovo ,
+    HIP.c : CSlav.slovo ,
+
+    HIP.T : CSlav.Tverdo ,
+    HIP.t : CSlav.tverdo ,
+
+    HIP.Y : CSlav.Uk ,
+    HIP.y : CSlav.uk ,
+
+    HIP.X : CSlav.Kher ,
+    HIP.x : CSlav.kher ,
+
+    HIP.Wide_E : CSlav.Wide_E ,
+    HIP.wide_e : CSlav.wide_e ,
+
+    HIP.Yat : CSlav.Yat ,
+    HIP.yat : CSlav.yat ,
+
+    HIP.V : CSlav.Izhica ,
+    HIP.v : CSlav.izhica ,
+
+    HIP.Ksi : CSlav.Ksi ,
+    HIP.ksi : CSlav.ksi ,
+
+    HIP.Wide_O : CSlav.Wide_O ,
+    HIP.wide_o : CSlav.wide_o ,
+
+    HIP.Omega : CSlav.Omega ,
+    HIP.omega : CSlav.omega ,
+
+    HIP.Ole : CSlav.Ole ,
+    HIP.ole : CSlav.ole ,
+
+    HIP.Ot : CSlav.Ot ,
+    HIP.ot : CSlav.ot ,
+
+
 }
 
