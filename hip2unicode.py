@@ -14,6 +14,9 @@ class HIP:
     E = ur'[EЕ]'
     e = ur'[eе]'
 
+    F = 'F'
+    f = 'f'
+
     Wide_E = ur'(?: _ %(E)s | < %(E)s > )' % {'E': self.E}
     wide_e = ur'(?: _ %(e)s | < %(e)s > )' % {'e': self.e}
     
@@ -64,7 +67,18 @@ class HIP:
 
     Ot = ur'W\\t' # W\t
     ot = ur'w\\t' # w\t
-    
+
+    Psi = ur'(?: _ П %(C)s | _ П %(c)s | < П %(C)s > | < П %(c)s > )' % { 'C': self.C, 'c': self.c } # Ksi = ur'(?: _ПС | _Пс | <ПС> | <Пс> )'
+    psi = ur'(?: _ п %(c)s | < п %(c)s > )' % { 'kc': self.c } # ur'(?: _пс | <пс> )'
+
+    Oy = ur'(?: %(O)s _ %(Y)s | %(O)s _ %(y)s | < %(O)s _ %(Y)s > | < %(O)s _ %(y)s > )' % { 'O': self.O, 'Y': self.Y, 'y': self.y }
+    oy = ur'(?: %(o)s _ %(y)s | < %(o)s _ %(y)s > )' % { 'o': self.o, 'y': self.y }
+
+    J_a = ur'(?: J %(A)s | J %(a)s )' % { 'A': self.A, 'a': self.a }
+    j_a = ur'(?: j %(a)s )' % { 'a': self.a }
+
+    Ja = u'Я'
+    ja = u'я'
 
 class CSlav:
 
@@ -131,7 +145,21 @@ class CSlav:
 
     Ot = ur'\u047E'
     ot = ur'\u047F'
+
+    Psi = ur'\u0470'
+    psi = ur'\u0471'
     
+    Oy = ur'\u0478'
+    oy = ur'\u0479'
+
+    Fita = ur'\u0472'
+    fita = ur'\u0473'
+
+    Ja = ur'\uA656'
+    ja = ur'\uA657'
+
+    Small_Yus = ur'\u0466'
+    small_yus = ur'\u0467'
 
 cslav_regexps = {
     
@@ -200,6 +228,19 @@ cslav_regexps = {
     HIP.Ot : CSlav.Ot ,
     HIP.ot : CSlav.ot ,
 
+    HIP.Psi : CSlav.Psi ,
+    HIP.psi : CSlav.psi ,
 
+    HIP.Oy : CSlav.Oy ,
+    HIP.oy : CSlav.oy ,
+
+    HIP.F : CSlav.Fita ,
+    HIP.f : CSlav.fita ,
+
+    HIP.J_a : CSlav.Ja ,
+    HIP.j_a : CSlav.ja ,
+
+    HIP.Ja : CSlav.Small_Yus ,
+    HIP.ja : CSlav.small_yus ,
 }
 
