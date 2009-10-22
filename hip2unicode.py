@@ -47,6 +47,9 @@ class HIP:
     V = ur'V'
     v = ur'v'
 
+    V_double_gravis = ur'V"'
+    v_double_gravis = ur'v"'
+
     W = ur'W'
     w = ur'w'
 
@@ -65,8 +68,8 @@ class HIP:
     Ole = ur'(?: _W | <W> )'
     ole = ur'(?: _w | <w> )'
 
-    Ot = ur'W\\t' # W\t
-    ot = ur'w\\t' # w\t
+    Ot = ur'W\\т'
+    ot = ur'w\\т'
 
     Psi = ur'(?: _ П %(C)s | _ П %(c)s | < П %(C)s > | < П %(c)s > )' % { 'C': self.C, 'c': self.c } # Ksi = ur'(?: _ПС | _Пс | <ПС> | <Пс> )'
     psi = ur'(?: _ п %(c)s | < п %(c)s > )' % { 'kc': self.c } # ur'(?: _пс | <пс> )'
@@ -80,86 +83,110 @@ class HIP:
     Ja = u'Я'
     ja = u'я'
 
+    single_quote = "'"
+    back_single_quote = '`'
+    equal_sign = '='
+    caret = '^'
+    tilde = '~'
+
+    paerok = ur'\ъ'
+    vedi_titlo = 
+
+
 class CSlav:
 
     """ Variable (attributes) names are all in Latin """
 
-    Az = ur'А'
-    az = ur'а'
+    Az = u'А'
+    az = u'а'
  
-    Vedi = ur'В'
-    vedi = ur'в'
+    Vedi = u'В'
+    vedi = u'в'
 
-    Est = ur'Е'
-    est = ur'е'
+    Est = u'Е'
+    est = u'е'
 
     Wide_E = self.Est # NB: \u0415 is used instead \u0404, 
                       # because there is no difference 
                       # between normal and wide capital E
-    wide_e = ur'є'    # \u0454
+    wide_e = u'є'    # \u0454
     
-    Kako = ur'К'
-    kako = ur'к'
+    Kako = u'К'
+    kako = u'к'
     
-    Myslete = ur'М'
-    myslete = ur'м'
+    Myslete = u'М'
+    myslete = u'м'
     
-    Nash = ur'Н'
-    nash = ur'н'
+    Nash = u'Н'
+    nash = u'н'
     
-    On = ur'О'
-    on = ur'о'
+    On = u'О'
+    on = u'о'
     
-    Rcy = ur'Р'
-    rcy = ur'р'
+    Rcy = u'Р'
+    rcy = u'р'
     
-    Slovo = ur'С',
-    slovo = ur'с',
+    Slovo = u'С',
+    slovo = u'с',
     
-    Tverdo = ur'Т'
-    tverdo = ur'т'
+    Tverdo = u'Т'
+    tverdo = u'т'
 
-    Uk = ur'У' # \u0423 [NB: it is possible to use \uA64A (monograph Uk) instead]
-    uk = ur'у' # \u0443 [NB: it is possible to use \uA64B (monograph uk) instead]
+    Uk = u'У' # \u0423 [NB: it is possible to use \uA64A (monograph Uk) instead]
+    uk = u'у' # \u0443 [NB: it is possible to use \uA64B (monograph uk) instead]
 
-    Kher = ur'Х'
-    kher = ur'х'
+    Kher = u'Х'
+    kher = u'х'
 
-    Yat = ur'\u0462'
-    yat = ur'\u0463'
+    Yat = u'\u0462'
+    yat = u'\u0463'
 
-    Izhica = ur'\u0474'
-    izhica = ur'\u0475'
+    Izhica = u'\u0474'
+    izhica = u'\u0475'
 
-    Ksi = ur'\u046E'
-    ksi = ur'\u046F'
+    Izhica_double_gravis = u'\u0476'
+    izhica_double_gravis = u'\u0477'
 
-    Wide_O = ur'\u047A'
-    wide_o = ur'\u047B'
+    Ksi = u'\u046E'
+    ksi = u'\u046F'
 
-    Omega = ur'\u0460'
-    omega = ur'\u0461'
+    Wide_O = u'\u047A'
+    wide_o = u'\u047B'
 
-    Ole = ur'\u047C'
-    ole = ur'\u047D'
+    Omega = u'\u0460'
+    omega = u'\u0461'
 
-    Ot = ur'\u047E'
-    ot = ur'\u047F'
+    Ole = u'\u047C'
+    ole = u'\u047D'
 
-    Psi = ur'\u0470'
-    psi = ur'\u0471'
+    Ot = u'\u047E'
+    ot = u'\u047F'
+
+    Psi = u'\u0470'
+    psi = u'\u0471'
     
-    Oy = ur'\u0478'
-    oy = ur'\u0479'
+    Oy = u'\u0478'
+    oy = u'\u0479'
 
-    Fita = ur'\u0472'
-    fita = ur'\u0473'
+    Fita = u'\u0472'
+    fita = u'\u0473'
 
-    Ja = ur'\uA656'
-    ja = ur'\uA657'
+    Ja = u'\uA656'
+    ja = u'\uA657'
 
-    Small_Yus = ur'\u0466'
-    small_yus = ur'\u0467'
+    Small_Yus = u'\u0466'
+    small_yus = u'\u0467'
+   
+    # Diacritics
+    aspiration = u'\u0486'
+    acute = u'\u0301'   # U+0301 combining acute accent
+    gravis = u'\u0300'
+    circumflex = u'\u0311'  # U+0311 COMBINING INVERTED BREVE
+                            # NB: There is also U+0302 COMBINING CIRCUMFLEX ACCENT
+    titlo = u'\u0483' 
+    paerok = u'\uA67F'  # U+A67F CYRILLIC PAYEROK
+                        # NB: there is also U+A67D COMBINING CYRILLIC PAYEROK
+
 
 cslav_regexps = {
     
@@ -242,5 +269,17 @@ cslav_regexps = {
 
     HIP.Ja : CSlav.Small_Yus ,
     HIP.ja : CSlav.small_yus ,
+
+    HIP.V_double_gravis : CSlav.Izhica_double_gravis ,
+    HIP.v_double_gravis : CSlav.izhica_double_gravis ,
+
+    HIP.equal_sign : CSlav.aspiration ,
+    HIP.single_quote : CSlav.acute ,
+    HIP.back_single_quote : CSlav.gravis ,
+    HIP.caret : CSlav.circumflex ,
+    HIP.tilde : CSlav.titlo ,
+
+    HIP.paerok : CSlav.paerok ,
+    
 }
 
