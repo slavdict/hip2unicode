@@ -89,8 +89,15 @@ class HIP:
     caret = '^'
     tilde = '~'
 
-    paerok = ur'\ъ'
-    vedi_titlo = 
+    paerok = ur'\\ъ'
+    vedi_titlo = ur'\\в'
+    glagol_titlo = ur'\\г'
+    dobro_titlo = ur'\\д'
+    on_titlo = ur'\\о'
+    rcy_titlo = ur'\\р'
+    slovo_titlo = ur'\\с'
+    kher_titlo = ur'\\х'
+    cherv_titlo = ur'\\ч'
 
 
 class CSlav:
@@ -187,6 +194,15 @@ class CSlav:
     paerok = u'\uA67F'  # U+A67F CYRILLIC PAYEROK
                         # NB: there is also U+A67D COMBINING CYRILLIC PAYEROK
 
+    vedi_titlo      = u'\u2DE1'
+    glagol_titlo    = u'\u2DE2'
+    dobro_titlo     = u'\u2DE3'
+    on_titlo        = u'\u2DEA'
+    rcy_titlo       = u'\u2DEC'
+    slovo_titlo     = u'\u2DED'
+    kher_titlo      = u'\u2DEF'
+    cherv_titlo     = u'\u2DF1'
+
 
 cslav_regexps = {
     
@@ -280,6 +296,42 @@ cslav_regexps = {
     HIP.tilde : CSlav.titlo ,
 
     HIP.paerok : CSlav.paerok ,
+    HIP.vedi_titlo : CSlav.vedi_titlo ,
+    HIP.glagol_titlo : CSlav.glagol_titlo ,
+    HIP.dobro_titlo : CSlav.dobro_titlo ,
+    HIP.on_titlo : CSlav.on_titlo ,
+    HIP.rcy_titlo : CSlav.rcy_titlo ,
+    HIP.slovo_titlo : CSlav.slovo_titlo ,
+    HIP.kher_titlo : CSlav.kher_titlo ,
+    HIP.cherv_titlo : CSlav.cherv_titlo ,
     
 }
 
+def hip2unicode(str):
+    
+    """ Преобразует символы, 
+    закодированные HIP, в Unicode """
+
+    # глобальные тэги переключения систем письма
+    script_tags = (
+        u'<::слав>',
+        u'<::греч>',
+        u'<::рус>',
+        u'<::лат>',
+        u'<::глаг>',
+    )
+    
+    # разбиваем текст на части по глобальным 
+    # тэгам указания письменности
+    marked_text_fragments = [(u'<::слав>', str),] # по умолчанию предполагаем, что передаваемая строка представляет собой текст на церковно-славянском/старославянском языке
+    for tag in script_tags:
+        for fragment_tag, fragment in enumerate(marked_text_fragments):
+            new_fragments = fragment.split(tag)
+            new_marked_fragments = [(tag, new_fragments[0]),]
+            new_marked_fragments.extend(
+                [ (fragment_tag, f) for f in new_fragments[1:] ]
+            )
+            
+
+
+    return unicode_str
