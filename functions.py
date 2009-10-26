@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
 from hip2unicode import conversions
@@ -33,16 +32,21 @@ def fragments(str):
     for tag in script_tags:
         
         _marked_text_fragments = marked_text_fragments[:]
+        delta = 0 # накопительное смещение фрагмента
         
         for fragment_number, (fragment_tag, fragment) in enumerate(_marked_text_fragments):
             
-            global marked_text_fragments
             new_fragments = fragment.split(tag)
             new_marked_fragments = [(fragment_tag, new_fragments[0]),]
             new_marked_fragments.extend(
                 [ (tag, f) for f in new_fragments[1:] ]
             )
-            marked_text_fragments[fragment_number : fragment_number + 1] = new_marked_fragments
+            marked_text_fragments[
+                fragment_number + delta: 
+                fragment_number + delta + 1
+            ] = new_marked_fragments
+
+            delta += len(new_marked_fragments) - 1
 
     return marked_text_fragments
 
