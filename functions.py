@@ -22,10 +22,11 @@ def hip2unicode(str):
     for tag in script_tags:
         _marked_text_fragments = marked_text_fragments[:]
         for fragment_number, (fragment_tag, fragment) in enumerate(_marked_text_fragments):
+            global marked_text_fragments
             new_fragments = fragment.split(tag)
-            new_marked_fragments = [(tag, new_fragments[0]),]
+            new_marked_fragments = [(fragment_tag, new_fragments[0]),]
             new_marked_fragments.extend(
-                [ (fragment_tag, f) for f in new_fragments[1:] ]
+                [ (tag, f) for f in new_fragments[1:] ]
             )
             marked_text_fragments[fragment_number : fragment_number + 1] = new_marked_fragments 
 
