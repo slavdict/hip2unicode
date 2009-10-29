@@ -12,11 +12,11 @@ b = ur'[bв]'
 E = ur'[EЕ]'
 e = ur'[eе]'
 
-F = 'F'
-f = 'f'
+F = u'F'
+f = u'f'
 
-Wide_E = ur'(?: _ %(E)s | < %(E)s > )' % {'E': self.E}
-wide_e = ur'(?: _ %(e)s | < %(e)s > )' % {'e': self.e}
+Wide_E = ur'(?: _ %(E)s | < %(E)s > )' % {'E': E}
+wide_e = ur'(?: _ %(e)s | < %(e)s > )' % {'e': e}
 
 K = ur'[KК]'
 k = ur'[kк]'
@@ -30,8 +30,8 @@ h = ur'[hн]'
 O = ur'[OО]'
 o = ur'[oо]'
 
-Wide_O = ur'(?: _ %(O)s | < %(O)s > )' % {'O': self.O } # ur'(?: _О | <О> )'
-wide_o = ur'(?: _ %(o)s | < %(o)s > )' % {'o': self.o } # ur'(?: _о | <о> )'
+Wide_O = ur'(?: _ %(O)s | < %(O)s > )' % {'O': O } # ur'(?: _О | <О> )'
+wide_o = ur'(?: _ %(o)s | < %(o)s > )' % {'o': o } # ur'(?: _о | <о> )'
 
 P = ur'[PР]'
 p = ur'[pр]'
@@ -60,8 +60,8 @@ x = ur'[xх]'
 Yat = ur'(?: JЬ | Jь )'
 yat = ur'jь'
 
-Ksi = ur'(?: _ %(KC)s | _ %(Kc)s | < %(KC)s > | < %(Kc)s > )' % { 'KC': self.K + self.C, 'Kc': self.K + self.c } # Ksi = ur'(?: _КС | _Кс | <КС> | <Кс> )'
-ksi = ur'(?: _ %(kc)s | < %(kc)s > )' % { 'kc': self.k + self.c } # ur'(?: _кс | <кс> )'
+Ksi = ur'(?: _ %(KC)s | _ %(Kc)s | < %(KC)s > | < %(Kc)s > )' % { 'KC': K + C, 'Kc': K + c } # Ksi = ur'(?: _КС | _Кс | <КС> | <Кс> )'
+ksi = ur'(?: _ %(kc)s | < %(kc)s > )' % { 'kc': k + c } # ur'(?: _кс | <кс> )'
 
 Ole = ur'(?: _W | <W> )'
 ole = ur'(?: _w | <w> )'
@@ -69,23 +69,23 @@ ole = ur'(?: _w | <w> )'
 Ot = ur'W\\т'
 ot = ur'w\\т'
 
-Psi = ur'(?: _ П %(C)s | _ П %(c)s | < П %(C)s > | < П %(c)s > )' % { 'C': self.C, 'c': self.c } # Ksi = ur'(?: _ПС | _Пс | <ПС> | <Пс> )'
-psi = ur'(?: _ п %(c)s | < п %(c)s > )' % { 'kc': self.c } # ur'(?: _пс | <пс> )'
+Psi = ur'(?: _ П %(C)s | _ П %(c)s | < П %(C)s > | < П %(c)s > )' % { 'C': C, 'c': c } # Ksi = ur'(?: _ПС | _Пс | <ПС> | <Пс> )'
+psi = ur'(?: _ п %(c)s | < п %(c)s > )' % { 'c': c } # ur'(?: _пс | <пс> )'
 
-Oy = ur'(?: %(O)s _ %(Y)s | %(O)s _ %(y)s | < %(O)s _ %(Y)s > | < %(O)s _ %(y)s > )' % { 'O': self.O, 'Y': self.Y, 'y': self.y }
-oy = ur'(?: %(o)s _ %(y)s | < %(o)s _ %(y)s > )' % { 'o': self.o, 'y': self.y }
+Oy = ur'(?: %(O)s _ %(Y)s | %(O)s _ %(y)s | < %(O)s _ %(Y)s > | < %(O)s _ %(y)s > )' % { 'O': O, 'Y': Y, 'y': y }
+oy = ur'(?: %(o)s _ %(y)s | < %(o)s _ %(y)s > )' % { 'o': o, 'y': y }
 
-J_a = ur'(?: J %(A)s | J %(a)s )' % { 'A': self.A, 'a': self.a }
-j_a = ur'(?: j %(a)s )' % { 'a': self.a }
+J_a = ur'(?: J %(A)s | J %(a)s )' % { 'A': A, 'a': a }
+j_a = ur'(?: j %(a)s )' % { 'a': a }
 
 Ja = u'Я'
 ja = u'я'
 
-single_quote = "'"
-back_single_quote = '`'
-equal_sign = '='
-caret = '^'
-tilde = '~'
+single_quote = u"'"
+back_single_quote = u'`'
+equal_sign = u'='
+caret = u'^'
+tilde = u'~'
 
 paerok = ur'\\ъ'
 vedi_titlo = ur'\\в'

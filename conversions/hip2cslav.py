@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
-from hip2unicode.representations import hip, cslav
-from hip2unicode.functions import make_conversion
+from hip2unicode.representations import hip
+from hip2unicode.representations import cslav
 
 hip2cslav = (
 # hip-нормализация
@@ -39,11 +39,10 @@ hip2cslav = (
 
 {
     
-    """ Regular expressions for character replacement
-    in text marked as being typed in Church Slavonic script
-    (script tag <::слав> or without any script tag
-    if no script tag is in the document) """
-
+    # Regular expressions for character replacement
+    # in text marked as being typed in Church Slavonic script
+    # (script tag <::слав> or without any script tag
+    # if no script tag is in the document)
     hip.A : cslav.Az ,
     hip.a : cslav.az ,
  
@@ -59,8 +58,8 @@ hip2cslav = (
     hip.M : cslav.Myslete ,
     hip.m : cslav.myslete ,
 
-    hip.N : cslav.Nash ,
-    hip.n : cslav.nash ,
+    hip.H : cslav.Nash ,
+    hip.h : cslav.nash ,
     
     hip.O : cslav.On ,
     hip.o : cslav.on ,
@@ -80,6 +79,10 @@ hip2cslav = (
     hip.X : cslav.Kher ,
     hip.x : cslav.kher ,
 
+    hip.V_double_gravis : cslav.Izhica_double_gravis ,
+    hip.v_double_gravis : cslav.izhica_double_gravis ,
+},
+{
     hip.Wide_E : cslav.Wide_E ,
     hip.wide_e : cslav.wide_e ,
 
@@ -95,8 +98,8 @@ hip2cslav = (
     hip.Wide_O : cslav.Wide_O ,
     hip.wide_o : cslav.wide_o ,
 
-    hip.Omega : cslav.Omega ,
-    hip.omega : cslav.omega ,
+    hip.W : cslav.Omega ,
+    hip.w : cslav.omega ,
 
     hip.Ole : cslav.Ole ,
     hip.ole : cslav.ole ,
@@ -119,9 +122,6 @@ hip2cslav = (
     hip.Ja : cslav.Small_Yus ,
     hip.ja : cslav.small_yus ,
 
-    hip.V_double_gravis : cslav.Izhica_double_gravis ,
-    hip.v_double_gravis : cslav.izhica_double_gravis ,
-
     hip.equal_sign : cslav.aspiration ,
     hip.single_quote : cslav.acute ,
     hip.back_single_quote : cslav.gravis ,
@@ -140,4 +140,3 @@ hip2cslav = (
     
 },
 )
-conversion = make_conversion(hip2cslav)

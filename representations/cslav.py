@@ -12,7 +12,7 @@ vedi = u'в'
 Est = u'Е'
 est = u'е'
 
-Wide_E = self.Est # NB: \u0415 is used instead \u0404, 
+Wide_E = Est # NB: \u0415 is used instead \u0404, 
                   # because there is no difference 
                   # between normal and wide capital E
 wide_e = u'є'    # \u0454
