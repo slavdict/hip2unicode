@@ -38,8 +38,10 @@ slovo = u'с',
 Tverdo = u'Т'
 tverdo = u'т'
 
-Uk = u'У' # \u0423 [NB: it is possible to use \uA64A (monograph Uk) instead]
-uk = u'у' # \u0443 [NB: it is possible to use \uA64B (monograph uk) instead]
+Uk = u'\uA64A'  # monograph Uk
+                # Можно было использовать обычную кириллическую заглавную "У" (\u0423)
+uk = u'\uA64B'  # monograph uk
+                # Можно было использовать обычную кирилиическую строчную "у" (\u0443)
 
 Kher = u'Х'
 kher = u'х'

@@ -1,6 +1,21 @@
 # -*- coding: UTF-8 -*-
 
-from hip2unicode import conversions
+from hip2unicode.conversions import hip2cslav 
+import re
+
+def make_conversion(regexp_dictionaries_list):
+    substitute_list = []
+    for d in regexp_dictionaries_list:
+        for k, v in d.items():
+            substitute_list.append(
+                (re.compile(k, re.X + re.M), re.compile(v, re.X + re.M))
+            )
+    return substitute_list
+
+
+def paragraphs(str):
+    return str
+
 
 def fragments(str):
 
@@ -66,8 +81,11 @@ def convert(str, conversion):
     """ Преобразует строку str на основе
     соответствий указанных в словаре conversion """
     
-    converted_str = str # НЕОБХОДИМО ИСПРАВИТЬ ЭТУ ЗАГЛУШКУ
-    return converted_str
+    if conversion:
+        for src, dst in conversion.items():
+            str = src.sub(dst, str)
+
+    return str
 
 
 def hip2unicode(str):
@@ -78,7 +96,7 @@ def hip2unicode(str):
     # объявляем соответствие систем письма
     # и связанных с ними перекодировок
     conversion_refs = {
-        u'<::слав>':    conversions.hip2cslav,
+        u'<::слав>':    hip2cslav.conversion,
         u'<::греч>':    None,
         u'<::рус>':     None,
         u'<::лат>':     None,

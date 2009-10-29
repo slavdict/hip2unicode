@@ -1,7 +1,43 @@
-import hip2unicode.representations.hip as hip
-import hip2unicode.representations.csalv as cslav
+# -*- coding: UTF-8 -*-
 
-hip2cslav = {
+from hip2unicode.representations import hip, cslav
+from hip2unicode.functions import make_conversion
+
+hip2cslav = (
+# hip-нормализация
+# ...
+# удаление ненужной разметки
+{
+    # киноварь
+    ur'%<':   u'',
+    ur'%>':   u'',
+
+    ur'%\(':  u'',
+    ur'%\)':  u'',
+    
+    # сноски след. видов:
+    #       *{ ... * ... } 
+    #      **{ ... ** ... } 
+    ur'''
+        \*{     
+        .*?
+        \*
+        .*?}
+    '''
+    : 
+    u'',
+
+    ur'''
+        \*\*{
+        .*?
+        \*\*
+        .*?}
+    '''
+    : 
+    u''
+},
+
+{
     
     """ Regular expressions for character replacement
     in text marked as being typed in Church Slavonic script
@@ -102,5 +138,6 @@ hip2cslav = {
     hip.kher_titlo : cslav.kher_titlo ,
     hip.cherv_titlo : cslav.cherv_titlo ,
     
-}
-
+},
+)
+conversion = make_conversion(hip2cslav)
