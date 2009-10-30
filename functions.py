@@ -8,8 +8,8 @@ def make_conversion(regexp_dictionaries_list):
     for d in regexp_dictionaries_list:
         for k, v in d.items():
             key      = re.compile(k, re.X + re.M + re.U)
-            value    = re.compile(v) #, re.X + re.U)
-            substitute_list.append( (key, value) )
+            # value    = re.compile(v, re.X + re.U)
+            substitute_list.append( (key, v) )
     return substitute_list
 
 
