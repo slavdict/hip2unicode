@@ -13,7 +13,54 @@ def make_conversion(regexp_dictionaries_list):
     return substitute_list
 
 
+def eol_normalization(eol='unix', str):
+    
+    """ Приводит все символы конца строки
+    в единообразное состояние """
+    
+    UNIX = re.compile(r'\n')
+    DOS  = re.compile(r'\r\n')
+    MAC  = re.compile(r'\r')
+
+    if eol == 'dos':
+
+        tDOS  = re.compile(r'<<<<\r\n>>>>')
+        tUNIX = re.compile(r'\n(?!>>>>)')
+        tMAC  = re.compile(r'(?<!<<<<)\r')
+
+        str = DOS.sub(tDOS, str)
+        str = tUNIX.sub(DOS, str)
+        str = tMAC.sub(DOS, str)
+        str = tDOS.sub(DOS, str)
+
+    elif eol == 'mac': 
+
+        str = DOS.sub(MAC, str)
+        str = UNIX.sub(MAC, str)
+
+    else: 
+
+        str = DOS.sub(UNIX, str)
+        str = MAC.sub(UNIX, str)
+    
+    return str
+
+
 def paragraphs(str):
+    
+    """ Объединяет все строки, 
+    не отделённые друг от друга 
+    пустыми строками, в абзацы (=строки). """
+
+    # меняем последовательности \r\n на \n 
+    rn = re.compile(r'\r\n', re.U + re.M)
+    str = re.sub(r'\n', str)
+
+    # меняем последовательности \r на \n 
+    rn = re.compile(r'\r\n', re.U + re.M)
+    str = re.sub(r'\n', str)
+
+
     return str
 
 
@@ -37,7 +84,7 @@ def fragments(str):
 
     # гарантируем, что переданая строка 
     # будет представлена в Unicode
-    str = unicode(str)
+    #               str = unicode(str, 'UTF-8')
 
     # В соответствии со стандартом HIP, по умолчанию предполагаем, 
     # что передаваемая строка представляет собой 

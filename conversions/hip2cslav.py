@@ -73,9 +73,6 @@ hip2cslav = (
     hip.T : cslav.Tverdo ,
     hip.t : cslav.tverdo ,
 
-    hip.Y : cslav.Uk ,
-    hip.y : cslav.uk ,
-
     hip.X : cslav.Kher ,
     hip.x : cslav.kher ,
 
@@ -110,9 +107,6 @@ hip2cslav = (
     hip.Psi : cslav.Psi ,
     hip.psi : cslav.psi ,
 
-    hip.Oy : cslav.Oy ,
-    hip.oy : cslav.oy ,
-
     hip.F : cslav.Fita ,
     hip.f : cslav.fita ,
 
@@ -138,5 +132,13 @@ hip2cslav = (
     hip.kher_titlo : cslav.kher_titlo ,
     hip.cherv_titlo : cslav.cherv_titlo ,
     
+},
+{
+    hip.Oy : cslav.Oy ,
+    hip.oy : cslav.oy ,
+},
+{   
+    hip.Y : cslav.Uk ,
+    hip.y : cslav.uk ,
 },
 )
