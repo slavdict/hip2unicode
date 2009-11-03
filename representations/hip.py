@@ -84,7 +84,7 @@ ja = u'я'
 single_quote = u"'"
 back_single_quote = u'`'
 equal_sign = u'='
-caret = u'^'
+caret = ur'\^' # ^
 tilde = u'~'
 
 paerok = ur'\\ъ'

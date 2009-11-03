@@ -96,10 +96,10 @@ paerok = u'\uA67F'  # U+A67F CYRILLIC PAYEROK
                     # NB: there is also U+A67D COMBINING CYRILLIC PAYEROK
 
 vedi_titlo      = u'\u2DE1'
-glagol_titlo    = u'\u2DE2'
+glagol_titlo    = u'\u2DE2\u0487'
 dobro_titlo     = u'\u2DE3'
-on_titlo        = u'\u2DEA'
-rcy_titlo       = u'\u2DEC'
-slovo_titlo     = u'\u2DED'
+on_titlo        = u'\u2DEA\u0487'
+rcy_titlo       = u'\u2DEC\u0487'
+slovo_titlo     = u'\u2DED\u0487'
 kher_titlo      = u'\u2DEF'
 cherv_titlo     = u'\u2DF1'
