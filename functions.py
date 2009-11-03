@@ -13,20 +13,20 @@ def make_conversion(regexp_dictionaries_list):
     return substitute_list
 
 
-def eol_normalization(eol='unix', str):
+def eol_normalization(str, eol='unix'):
     
     """ Приводит все символы конца строки
     в единообразное состояние """
     
-    UNIX = re.compile(r'\n')
-    DOS  = re.compile(r'\r\n')
-    MAC  = re.compile(r'\r')
+    UNIX = re.compile(r'\n',   re.M + re.U)
+    DOS  = re.compile(r'\r\n', re.M + re.U)
+    MAC  = re.compile(r'\r',   re.M + re.U)
 
     if eol == 'dos':
 
-        tDOS  = re.compile(r'<<<<\r\n>>>>')
-        tUNIX = re.compile(r'\n(?!>>>>)')
-        tMAC  = re.compile(r'(?<!<<<<)\r')
+        tDOS  = re.compile(r'<<<<\r\n>>>>', re.M + re.U)
+        tUNIX = re.compile(r'\n(?!>>>>)',   re.M + re.U)
+        tMAC  = re.compile(r'(?<!<<<<)\r',  re.M + re.U)
 
         str = DOS.sub(tDOS, str)
         str = tUNIX.sub(DOS, str)
@@ -52,15 +52,7 @@ def paragraphs(str):
     не отделённые друг от друга 
     пустыми строками, в абзацы (=строки). """
 
-    # меняем последовательности \r\n на \n 
-    rn = re.compile(r'\r\n', re.U + re.M)
-    str = re.sub(r'\n', str)
-
-    # меняем последовательности \r на \n 
-    rn = re.compile(r'\r\n', re.U + re.M)
-    str = re.sub(r'\n', str)
-
-
+    
     return str
 
 
@@ -72,6 +64,8 @@ def fragments(str):
     Возвращает список картежей вида 
     (tag, fragment). Полученные части могут
     быть  в том числе пустыми. """
+
+    str = eol_normalization(str)
 
     # глобальные тэги переключения систем письма
     script_tags = (
