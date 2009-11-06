@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
+File is downloaded from:
+http://users.physik.fu-berlin.de/~goerz/programs/convert_encoding.py
+
 Convert text files between arbitrary encodings and line endings.
 
 Usage:
