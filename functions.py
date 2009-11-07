@@ -3,6 +3,29 @@
 from hip2unicode.conversions import hip2cslav
 import re
 
+eols = {
+
+    'unix'  :   u'\n',
+    'linux' :   u'\n',
+
+    'dos'   :   u'\r\n',
+    'win'   :   u'\r\n',
+
+    'mac'   :   u'\r',
+}
+
+eols_re = {
+
+    'unix'  :   ur'\n',
+    'linux' :   ur'\n',
+
+    'dos'   :   ur'\r\n',
+    'win'   :   ur'\r\n',
+
+    'mac'   :   ur'\r',
+
+}
+
 def make_conversion(regexp_dictionaries_list):
     substitute_list = []
     for d in regexp_dictionaries_list:
@@ -13,37 +36,21 @@ def make_conversion(regexp_dictionaries_list):
     return substitute_list
 
 
-def eol_normalization(str, eol='unix'):
+def eol_normalization(text, eol='unix'):
     
     """ Приводит все символы конца строки
     в единообразное состояние """
+
+    # преобразуем все EOL к юниксовскому виду
+    text = text.replace( eols['win'], eols['unix'] ) 
+    text = text.replace( eols['mac'], eols['unix'] )
     
-    UNIX = re.compile(r'\n',   re.M + re.U)
-    DOS  = re.compile(r'\r\n', re.M + re.U)
-    MAC  = re.compile(r'\r',   re.M + re.U)
+    # выполняем конечное преобразование EOL,
+    # если ОС имеет конец строк отличный от UNIX или Linux
+    if eol not in ('unix', 'linux'):
+        text = text.replace( eols['unix'], eols[eol] )
 
-    if eol == 'dos':
-
-        tDOS  = re.compile(r'<<<<\r\n>>>>', re.M + re.U)
-        tUNIX = re.compile(r'\n(?!>>>>)',   re.M + re.U)
-        tMAC  = re.compile(r'(?<!<<<<)\r',  re.M + re.U)
-
-        str = DOS.sub(tDOS, str)
-        str = tUNIX.sub(DOS, str)
-        str = tMAC.sub(DOS, str)
-        str = tDOS.sub(DOS, str)
-
-    elif eol == 'mac': 
-
-        str = DOS.sub(MAC, str)
-        str = UNIX.sub(MAC, str)
-
-    else: 
-
-        str = DOS.sub(UNIX, str)
-        str = MAC.sub(UNIX, str)
-    
-    return str
+    return text
 
 
 def paragraphs(str):
