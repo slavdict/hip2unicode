@@ -53,14 +53,27 @@ def eol_normalization(text, eol='unix'):
     return text
 
 
-def paragraphs(str):
+def paragraphs(text, eol='unix'):
     
     """ Объединяет все строки, 
     не отделённые друг от друга 
-    пустыми строками, в абзацы (=строки). """
+    пустыми строками, в абзацы (=строки).
+    При удалении символов конца строки
+    заменяет их на одинарный пробел. """
 
-    
-    return str
+    space = re.compile(ur'[ \t]%s' % eols_re[eol])
+    text = space.sub(eols[eol], text)
+
+    nEoP = re.compile(ur'''
+        (?<! %(EOL)s )  # перед концом строки не д.б. другого конца строки
+             %(EOL)s    # необходимо найти конец строки
+        (?!  %(EOL)s )  # после конца строки не д.б. другого конца строки
+        ''' % {'EOL': eols_re[eol]},
+        re.VERBOSE
+    )
+    text = nEoP.sub(u' ', text)
+
+    return text
 
 
 def fragments(str):
