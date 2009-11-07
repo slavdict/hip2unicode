@@ -173,4 +173,4 @@ def hip2unicode(text):
             convert(fragment, conversion_refs[tag])
         )
 
-    return " ".join(converted_fragments)
+    return ''.join(converted_fragments)
