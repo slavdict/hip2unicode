@@ -76,7 +76,7 @@ def paragraphs(text, eol='unix'):
     return text
 
 
-def fragments(str):
+def fragments(text):
 
     """ Разбивает текст на части 
     по глобальным тэгам указания письменности
@@ -85,7 +85,8 @@ def fragments(str):
     (tag, fragment). Полученные части могут
     быть  в том числе пустыми. """
 
-    str = eol_normalization(str)
+    text = eol_normalization(text)
+    text = paragraphs(text)
 
     # глобальные тэги переключения систем письма
     script_tags = (
@@ -96,14 +97,10 @@ def fragments(str):
         u'<::глаг>',
     )
 
-    # гарантируем, что переданая строка 
-    # будет представлена в Unicode
-    #               str = unicode(str, 'UTF-8')
-
     # В соответствии со стандартом HIP, по умолчанию предполагаем, 
     # что передаваемая строка представляет собой 
     # текст на церковно-славянском/старославянском языке
-    marked_text_fragments = [(u'<::слав>', str),]
+    marked_text_fragments = [(u'<::слав>', text),]
 
     for tag in script_tags:
         
@@ -127,29 +124,29 @@ def fragments(str):
     return marked_text_fragments
 
 
-def non_empty_fragments(str):
+def non_empty_fragments(text):
     
     """ Аналогична функции fragments,
     за тем исключением, что удаляет из выходного списка
     все картежи с пустыми fragment. """
     
-    marked_text_fragments = fragments(str)
+    marked_text_fragments = fragments(text)
     return [ (tag, fragment) for tag, fragment in marked_text_fragments if fragment.strip() ]
 
 
-def convert(str, conversion):
+def convert(text, conversion):
     
-    """ Преобразует строку str на основе
+    """ Преобразует строку text на основе
     соответствий указанных в словаре conversion """
     
     if conversion:
         for src, dst in conversion:
-            str = src.sub(dst, str)
+            text = src.sub(dst, text)
 
-    return str
+    return text
 
 
-def hip2unicode(str):
+def hip2unicode(text):
     
     """ Преобразует символы, 
     закодированные HIP, в Unicode """
@@ -166,7 +163,7 @@ def hip2unicode(str):
 
     # Разбиваем текст на фрагменты
     # по глобальным тэгам систем письма
-    marked_text_fragments = non_empty_fragments(str)
+    marked_text_fragments = non_empty_fragments(text)
     
     # перекодируем каждый фрагмент
     # в соответствии используемой в нем системой письма
