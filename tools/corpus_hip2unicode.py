@@ -51,22 +51,22 @@ else:
     os.mkdir(corpus_unicode_path)
 
 enc_list = ['utf-8', 'cp1251', 'koi8-r']
+print 'Converting files ',
 for file_path in file_list:
 
     # binary_converter(file_path)
     
     f = open(file_path)
-    e = False
     for enc in enc_list:
-        global e
         try:
             text = f.read().decode(enc)
         except UnicodeDecodeError:
-            continue
             e = True
+            continue
         else:
-            break
+            print enc,
             e = False
+            break
     if e:
         print 'File "%s" is encoded with unknown encoding.' % file_path
         print 'Known encodings are', enc_list 
@@ -83,5 +83,3 @@ for file_path in file_list:
     fu = open(new_path, 'w')
     fu.write(converted_text)
     fu.close()
-
-    print 'File "%s" is converted.' % file_path.replace(corpus_path, '')
