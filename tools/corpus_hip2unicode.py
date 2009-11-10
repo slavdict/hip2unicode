@@ -50,23 +50,23 @@ if corpus_unicode_folder_exists:
 else:
     os.mkdir(corpus_unicode_path)
 
-enc_list = ['utf-8', 'cp1251', 'koi8-r']
+enc_list = ['cp1251', 'koi8-r', 'utf-8',]
 print 'Converting files ',
 for file_path in file_list:
 
     # binary_converter(file_path)
     
-    f = open(file_path)
     for enc in enc_list:
-        try:
-            text = f.read().decode(enc)
-        except UnicodeDecodeError:
-            e = True
-            continue
-        else:
-            print enc,
-            e = False
-            break
+        with open(file_path) as f:
+            try:
+                text = f.read().decode(enc)
+            except UnicodeDecodeError:
+                e = True
+                continue
+            else:
+                print enc,
+                e = False
+                break
     if e:
         print 'File "%s" is encoded with unknown encoding.' % file_path
         print 'Known encodings are', enc_list 
