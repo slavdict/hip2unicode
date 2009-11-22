@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from hip2unicode.functions import hip2unicode as h2u
+from hip2unicode.functions import all_hip_conversions as ahc
+from hip2unicode.functions import make_conversion as mc
+from hip2unicode.conversions import hip2hipcslav
 from hip2unicode.tools.binary_converter import binary_converter
 import os
 import codecs
@@ -75,7 +78,9 @@ for file_path in file_list:
 
     f.close()
 
-    converted_text = h2u(text).encode('utf-8')
+    conversions = ahc(slav=mc(hip2hipcslav.hip2hipcslav))
+    #conversions = None
+    converted_text = h2u(text, conversions).encode('utf-8')
 
     new_path = file_path.replace(corpus_path, corpus_unicode_path)
 
