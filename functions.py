@@ -145,21 +145,29 @@ def convert(text, conversion):
 
     return text
 
+def all_hip_conversions(slav=None, grec=None, rus=None, lat=None, glag=None):
 
-def hip2unicode(text):
+    conversion_refs = {
+        u'<::слав>':    slav,
+        u'<::греч>':    grec,
+        u'<::рус>':     rus,
+        u'<::лат>':     lat,
+        u'<::глаг>':    glag,
+    }
+    return conversion_refs
+
+
+def hip2unicode(text, conversions=None):
     
     """ Преобразует символы, 
     закодированные HIP, в Unicode """
 
     # объявляем соответствие систем письма
     # и связанных с ними перекодировок
-    conversion_refs = {
-        u'<::слав>':    make_conversion(hip2cslav.hip2cslav),
-        u'<::греч>':    None,
-        u'<::рус>':     None,
-        u'<::лат>':     None,
-        u'<::глаг>':    None,
-    }
+    if not conversions:
+        conversion_refs = all_hip_conversions(slav=make_conversion(hip2cslav.hip2cslav))
+    else:
+        conversion_refs = conversions
 
     # Разбиваем текст на фрагменты
     # по глобальным тэгам систем письма
