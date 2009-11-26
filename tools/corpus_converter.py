@@ -70,7 +70,7 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
                     e = True
                     continue
                 else:
-                    print enc,
+                    print '%s\t\t%s' % (file_path.replace(corpus_path, '.'), enc)
                     e = False
                     break
         if e:
@@ -81,12 +81,16 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
 
         f.close()
 
-        conversions = None # unicode
-        conversions = ahc(slav=mc(hip2hipcslav.hip2hipcslav)) # unicode, но вся диакритка заменена символами положительной ширины
-
         converted_text = h2u(text, conversions).encode('utf-8')
 
         new_path = file_path.replace(corpus_path, converted_corpus_path)
+        
+        # меняем все расширения на TXT
+        new_path = '%(file_path)s%(ext_sep)s%(ext)s' % {
+            'file_path': os.path.splitext(new_path)[0],
+            'ext_sep': os.extsep,
+            'ext': 'txt'
+            }
 
         make_all_folders(new_path)
         fu = open(new_path, 'w')
