@@ -27,6 +27,9 @@ hip2hipcslav = (
     ur''' \*\*{ .*?  \*\* .*?} ''' : u''
 },
 
+{   # звездочки для поющих на клиросе
+    ur'\*': u'',
+},
 {
     
     # Regular expressions for character replacement
@@ -106,7 +109,7 @@ hip2hipcslav = (
     hip.Ja : cslav.Small_Yus ,
     hip.ja : cslav.small_yus ,
 
-    hip.equal_sign : ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
+    hip.equal_sign : ur'', # ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
 #    hip.single_quote : cslav.acute ,
 #    hip.back_single_quote : cslav.gravis ,
 #    hip.caret : cslav.circumflex ,
@@ -130,5 +133,7 @@ hip2hipcslav = (
 {   
     hip.Y : cslav.Uk ,
     hip.y : cslav.uk ,
+
+    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
 )
