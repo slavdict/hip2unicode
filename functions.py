@@ -139,7 +139,9 @@ def convert(text, conversion):
     """ Преобразует строку text на основе
     соответствий указанных в словаре conversion """
     
-    if conversion:
+    if conversion=='delete':
+        text = u''
+    elif conversion:
         for src, dst in conversion:
             text = src.sub(dst, text)
 
