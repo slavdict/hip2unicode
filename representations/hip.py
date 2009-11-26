@@ -18,6 +18,8 @@ f = u'f'
 Wide_E = ur'(?: _ %(E)s | < %(E)s > )' % {'E': E}
 wide_e = ur'(?: _ %(e)s | < %(e)s > )' % {'e': e}
 
+i_without_dot = ur'_i'
+
 K = ur'[KК]'
 k = ur'[kк]'
 
