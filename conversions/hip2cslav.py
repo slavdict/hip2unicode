@@ -26,7 +26,9 @@ hip2cslav = (
     # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> } 
     ur''' \*\*{ .*?  \*\* .*?} ''' : u''
 },
-
+{   # звездочки для поющих на клиросе
+    ur'\*': u'',
+},
 {
     
     # Regular expressions for character replacement
@@ -130,5 +132,7 @@ hip2cslav = (
 {   
     hip.Y : cslav.Uk ,
     hip.y : cslav.uk ,
+
+    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
 )
