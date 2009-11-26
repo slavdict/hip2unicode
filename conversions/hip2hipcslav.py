@@ -106,7 +106,7 @@ hip2hipcslav = (
     hip.Ja : cslav.Small_Yus ,
     hip.ja : cslav.small_yus ,
 
-    hip.equal_sign : ur'?' , # cslav.aspiration ,
+    hip.equal_sign : ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
 #    hip.single_quote : cslav.acute ,
 #    hip.back_single_quote : cslav.gravis ,
 #    hip.caret : cslav.circumflex ,
