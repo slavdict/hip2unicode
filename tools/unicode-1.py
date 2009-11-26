@@ -6,7 +6,11 @@ from hip2unicode.conversions import hip2hipcslav
 
 # def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder='converted_corpus', conversions=None):
 
-corpus_converter(
+corpus_converter.corpus_converter(
     converted_corpus_folder = 'corpus-unicode-1',
-    conversions             =  ahc(slav=mc(hip2hipcslav.hip2hipcslav)),
+    conversions             =  ahc(
+                                    slav=mc(hip2hipcslav.hip2hipcslav),
+                                    rus='delete',
+                                    lat='delete',
+                                  ),
     )
