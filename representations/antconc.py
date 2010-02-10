@@ -12,8 +12,8 @@ buki = u'\u00ee'
 Vedi = u'\u00cf'
 vedi = u'\u00ef'
 
-Vedi_Izhica = u'\u00d0'
-vedi_izhica = u'\u00f0'
+# Vedi_Izhica = u'\u00d0'
+# vedi_izhica = u'\u00f0'
 
 Glagolj = u'\u00d1'
 glagolj = u'\u00f1'
@@ -44,9 +44,10 @@ I8 = Izhe
 i8 = izhe
 I10 = I
 i10 = i
-Izhica = u'\u00dd'
-izhica = u'\u00fd'
-
+# Izhica = u'\u00dd'
+# izhica = u'\u00fd'
+Izhica = u'\u00d0'
+izhica = u'\u00f0'
 
 
 paerok = ur'\\ъ'
