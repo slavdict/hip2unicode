@@ -5,12 +5,15 @@
 
 Az = u'\u00ce'
 az = u'\u00ee'
-
+ 
 Buki = u'\u00cf'
 buki = u'\u00ef'
-
+ 
 Vedi = u'\u00d0'
 vedi = u'\u00f0'
+
+# Vedi_Izhica = u'\u00d0'
+# vedi_izhica = u'\u00f0'
 
 Glagolj = u'\u00d1'
 glagolj = u'\u00f1'
@@ -142,4 +145,4 @@ on_titlo = u'\u00c9'
 rcy_titlo = u'\u00ca'
 slovo_titlo = u'\u00cb'
 kher_titlo = u'\u00cc'
-chervj_titlo = ur'\u00cd'
+chervj_titlo = u'\u00cd'
