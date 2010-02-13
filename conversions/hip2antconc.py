@@ -30,6 +30,37 @@ hip2antconc = (
     ur'\*': u'',
 },
 {
+    hip.paerok : antconc.paerok ,
+    hip.vedi_titlo : antconc.vedi_titlo ,
+    hip.glagol_titlo : antconc.glagolj_titlo ,
+    hip.dobro_titlo : antconc.dobro_titlo ,
+    hip.on_titlo : antconc.on_titlo ,
+    hip.rcy_titlo : antconc.rcy_titlo ,
+    hip.slovo_titlo : antconc.slovo_titlo ,
+    hip.kher_titlo : antconc.kher_titlo ,
+    hip.cherv_titlo : antconc.chervj_titlo ,
+    
+    hip.Oy : antconc.Uk_digraph ,
+    hip.oy : antconc.uk_digraph ,
+
+
+    hip.Ksi : antconc.Ksi ,
+    hip.ksi : antconc.ksi ,
+
+    hip.Wide_O : antconc.On_shirokoe ,
+    hip.wide_o : antconc.on_shirokoe ,
+
+    hip.Ot : antconc.Ot ,
+    hip.ot : antconc.ot ,
+
+    hip.Psi : antconc.Psi ,
+    hip.psi : antconc.psi ,
+
+    hip.J_a : antconc.A_jotirovannoe ,
+    hip.j_a : antconc.a_jotirovannoe ,
+
+},
+{
     
     # Regular expressions for character replacement
     # in text marked as being typed in Church Slavonic script
@@ -108,29 +139,14 @@ hip2antconc = (
     hip.V : antconc.Izhica ,
     hip.v : antconc.izhica ,
 
-    hip.Ksi : antconc.Ksi ,
-    hip.ksi : antconc.ksi ,
-
-    hip.Wide_O : antconc.On_shirokoe ,
-    hip.wide_o : antconc.on_shirokoe ,
-
     hip.W : antconc.Omega ,
     hip.w : antconc.omega ,
 
     hip.Ole : antconc.Ole ,
     hip.ole : antconc.ole ,
 
-    hip.Ot : antconc.Ot ,
-    hip.ot : antconc.ot ,
-
-    hip.Psi : antconc.Psi ,
-    hip.psi : antconc.psi ,
-
     hip.F : antconc.Fita ,
     hip.f : antconc.fita ,
-
-    hip.J_a : antconc.A_jotirovannoe ,
-    hip.j_a : antconc.a_jotirovannoe ,
 
     hip.Ja : antconc.Jus_malyj ,
     hip.ja : antconc.jus_malyj ,
@@ -140,22 +156,8 @@ hip2antconc = (
     hip.back_single_quote : antconc.udarenie_tupoe ,
     hip.caret : antconc.udarenie_oblechennoe ,
     hip.tilde : antconc.titlo ,
-
-    hip.paerok : antconc.paerok ,
-    hip.vedi_titlo : antconc.vedi_titlo ,
-    hip.glagol_titlo : antconc.glagolj_titlo ,
-    hip.dobro_titlo : antconc.dobro_titlo ,
-    hip.on_titlo : antconc.on_titlo ,
-    hip.rcy_titlo : antconc.rcy_titlo ,
-    hip.slovo_titlo : antconc.slovo_titlo ,
-    hip.kher_titlo : antconc.kher_titlo ,
-    hip.cherv_titlo : antconc.chervj_titlo ,
-    
 },
 {
-    hip.Oy : antconc.Oy ,
-    hip.oy : antconc.oy ,
-
     hip.E : antconc.Estj ,
     hip.e : antconc.estj ,
 },
