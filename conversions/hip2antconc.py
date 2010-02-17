@@ -74,8 +74,8 @@ hip2antconc = (
     hip.X : antconc.Kher ,
     hip.x : antconc.kher ,
 
-    hip.V_double_gravis : antconc.Izhica_double_gravis ,
-    hip.v_double_gravis : antconc.izhica_double_gravis ,
+    hip.V_double_gravis : antconc.Izhica,
+    hip.v_double_gravis : antconc.izhica,
 },
 {
     hip.Wide_E : antconc.Wide_E ,
@@ -120,15 +120,15 @@ hip2antconc = (
 #    hip.caret : antconc.circumflex ,
 #    hip.tilde : antconc.titlo ,
 
-    hip.paerok : antconc.paerok ,
-    hip.vedi_titlo : ur'В' ,
-    hip.glagol_titlo : ur'Г' ,
-    hip.dobro_titlo : ur'Д' ,
-    hip.on_titlo : ur'О' ,
-    hip.rcy_titlo : ur'Р' ,
-    hip.slovo_titlo : ur'С' ,
-    hip.kher_titlo : ur'Х' ,
-    hip.cherv_titlo : ur'Ч' ,
+    hip.paerok : u'Ъ',
+    hip.vedi_titlo : u'В' ,
+    hip.glagol_titlo : u'Г' ,
+    hip.dobro_titlo : u'Д' ,
+    hip.on_titlo : u'О' ,
+    hip.rcy_titlo : u'Р' ,
+    hip.slovo_titlo : u'С' ,
+    hip.kher_titlo : u'Х' ,
+    hip.cherv_titlo : u'Ч' ,
     
 },
 {
