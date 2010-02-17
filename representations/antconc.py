@@ -3,143 +3,103 @@
 
 """ Variable (attributes) names are all in Latin """
 
-Az = u'\u00ce'
-az = u'\u00ee'
+Az = u'А'
+az = u'а'
 
-Buki = u'\u00cf'
-buki = u'\u00ef'
+Vedi = u'В'
+vedi = u'в'
 
-Vedi = u'\u00d0'
-vedi = u'\u00f0'
+Est = u'Е'
+est = u'е'
 
-Glagolj = u'\u00d1'
-glagolj = u'\u00f1'
+Wide_E = Est # NB: \u0415 is used instead \u0404, 
+                  # because there is no difference 
+                  # between normal and wide capital E
+wide_e = u'є'    # \u0454
 
-Dobro = u'\u00d2'
-dobro = u'\u00f2'
+Kako = u'К'
+kako = u'к'
 
-Estj = u'\u00d3' # == Estj_shirokoe
-estj = u'\u00f3'
-Jatj = u'\u00d4'
-jatj = u'\u00f4'
-Estj_shirokoe = Estj
-estj_shirokoe = u'\u00f5'
+Myslete = u'М'
+myslete = u'м'
 
-Zhivete = u'\u00d6'
-zhivete = u'\u00f6'
+Nash = u'Н'
+nash = u'н'
 
-Zemlja = u'\u00d9'
-zemlja = u'\u00f9'
-Zelo = u'\u00da'
-zelo = u'\u00fa'
+On = u'О'
+on = u'о'
 
-Izhe = u'\u00db'
-izhe = u'\u00fb'
-I = u'\u00dc'
-i = u'\u00fc'
-I8 = Izhe
-i8 = izhe
-I10 = I
-i10 = i
-Izhica = u'\u00dd'
-izhica = u'\u00fd'
+Rcy = u'Р'
+rcy = u'р'
 
-I_kratkoe = u'\u0100'
-i_kratkoe = u'\u0101'
+Slovo = u'С',
+slovo = u'с',
 
-Kako = u'\u0102'
-kako = u'\u0103'
-Ksi = u'\u0104'
-ksi = u'\u0105'
+Tverdo = u'Т'
+tverdo = u'т'
 
-Ljudi = u'\u0106'
-ljudi = u'\u0107'
+Uk = u'\uA64A'  # monograph Uk
+                # Можно было использовать обычную кириллическую заглавную "У" (\u0423)
+uk = u'\uA64B'  # monograph uk
+                # Можно было использовать обычную кирилиическую строчную "у" (\u0443)
 
-Myslete = u'\u0108'
-myslete = u'\u0109'
+Kher = u'Х'
+kher = u'х'
 
-Nash = u'\u010a'
-nash = u'\u010b'
+Yat = u'\u0462'
+yat = u'\u0463'
 
-On = u'\u010c'
-on = u'\u010d'
-Omega = u'\u0110'
-omega = u'\u0111'
-On_shirokoe = u'\u0112'
-on_shirokoe = u'\u0113'
-Ole = u'\u0114'
-ole = u'\u0115'
-Ot = u'\u0116'
-ot = u'\u0117'
+Izhica = u'\u0474'
+izhica = u'\u0475'
 
-Pokoj = u'\u0118'
-pokoj = u'\u0119'
-Psi = u'\u011a'
-psi = u'\u011b'
+Izhica_double_gravis = u'\u0476'
+izhica_double_gravis = u'\u0477'
 
-Rcy = u'\u011c'
-rcy = u'\u011d'
+Ksi = u'\u046E'
+ksi = u'\u046F'
 
-Slovo = u'\u011e'
-slovo = u'\u011f'
+Wide_O = u'\u047A'
+wide_o = u'\u047B'
 
-Tverdo = u'\u0120'
-tverdo = u'\u0121'
+Omega = u'\u0460'
+omega = u'\u0461'
 
-Uk = u'\u0122'
-uk = u'\u0123'
-Uk_digraph = u'\u0124'
-uk_digraph = u'\u0125'
+Ole = u'\u047C'
+ole = u'\u047D'
 
-Fert = u'\u0126'
-fert = u'\u0127'
-Fita = u'\u0128'
-fita = u'\u0129'
+Ot = u'\u047E'
+ot = u'\u047F'
 
-Kher = u'\u014c'
-kher = u'\u014d'
+Psi = u'\u0470'
+psi = u'\u0471'
 
-Cy = u'\u014e'
-cy = u'\u014f'
+Oy = u'\u0478'
+oy = u'\u0479'
 
-Chervj = u'\u0150'
-chervj = u'\u0151'
+Fita = u'\u0472'
+fita = u'\u0473'
 
-Sha = u'\u015a'
-sha = u'\u015b'
+Ja = u'\uA656'
+ja = u'\uA657'
 
-Shcha = u'\u015c'
-shcha = u'\u015d'
+Small_Yus = u'\u0466'
+small_yus = u'\u0467'
 
-Er = u'\u0160'
-er = u'\u0161'
+# Diacritics
+aspiration = u'\u0486'
+acute = u'\u0301'   # U+0301 combining acute accent
+gravis = u'\u0300'
+circumflex = u'\u0311'  # U+0311 COMBINING INVERTED BREVE
+                        # NB: There is also U+0302 COMBINING CIRCUMFLEX ACCENT
+titlo = u'\u0483' 
+paerok = u'\uA67F'  # U+A67F CYRILLIC PAYEROK
+                    # NB: there is also U+A67D COMBINING CYRILLIC PAYEROK
 
-Ery = u'\u0168'
-ery = u'\u0169'
-
-Erj = u'\u016a'
-erj = u'\u016b'
-
-Ju = u'\u016c'
-ju = u'\u016d'
-
-Jus_malyj = u'\u016e'
-jus_malyj = u'\u016f'
-
-A_jotirovannoe = u'\u0170'
-a_jotirovannoe = u'\u0171'
-
-udarenie_ostroe = u'\u00c0'
-udarenie_tupoe = u'\u00c1'
-udarenie_oblechennoe = u'\u00c2'
-# double_gravis = u'\u00c3'
-titlo = u'\u00c4'
-paerok = u'\u00c5'
-vedi_titlo = u'\u00c6'
-glagolj_titlo = u'\u00c7'
-dobro_titlo = u'\u00c8'
-on_titlo = u'\u00c9'
-rcy_titlo = u'\u00ca'
-slovo_titlo = u'\u00cb'
-kher_titlo = u'\u00cc'
-chervj_titlo = u'\u00cd'
+vedi_titlo      = u'\u2DE1'
+glagol_titlo    = u'\u2DE2\u0487'
+dobro_titlo     = u'\u2DE3'
+on_titlo        = u'\u2DEA\u0487'
+rcy_titlo       = u'\u2DEC\u0487'
+slovo_titlo     = u'\u2DED\u0487'
+kher_titlo      = u'\u2DEF'
+cherv_titlo     = u'\u2DF1'
