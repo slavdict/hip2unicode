@@ -46,9 +46,8 @@ hip2antconc = (
     hip.e : antconc.est ,
 
     u's'  : u'\u0455',
-    u'i'  : u'\u0456',
     u'S'  : u'\u0405',
-    u'I'  : u'\u0406',
+    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 
     hip.K : antconc.Kako ,
     hip.k : antconc.kako ,
@@ -76,6 +75,9 @@ hip2antconc = (
 
     hip.V_double_gravis : antconc.Izhica,
     hip.v_double_gravis : antconc.izhica,
+
+    hip.Y : u'У' ,
+    hip.y : u'у' ,
 },
 {
     hip.Wide_E : antconc.Wide_E ,
@@ -121,9 +123,12 @@ hip2antconc = (
 #    hip.tilde : antconc.titlo ,
 
     hip.paerok : u'Ъ',
+    ur'\\б' : u'Б',
     hip.vedi_titlo : u'В' ,
     hip.glagol_titlo : u'Г' ,
     hip.dobro_titlo : u'Д' ,
+    ur'\\к' : u'К',
+    ur'\\л' : u'Л',
     hip.on_titlo : u'О' ,
     hip.rcy_titlo : u'Р' ,
     hip.slovo_titlo : u'С' ,
@@ -134,11 +139,14 @@ hip2antconc = (
 {
     hip.Oy : antconc.Oy ,
     hip.oy : antconc.oy ,
+
+    u'_у' : u'у',
 },
 {   
     hip.Y : antconc.Uk ,
     hip.y : antconc.uk ,
 
-    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
+    u'i'  : u'\u0456',
+    u'I'  : u'\u0406',
 },
 )
