@@ -52,9 +52,6 @@ yat = u'\u0463'
 Izhica = u'\u0474'
 izhica = u'\u0475'
 
-Izhica_double_gravis = u'\u0476'
-izhica_double_gravis = u'\u0477'
-
 Ksi = u'\u046E'
 ksi = u'\u046F'
 
