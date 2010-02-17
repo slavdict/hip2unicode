@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
 
 from hip2unicode.representations import hip
-from hip2unicode.representations import antconc, cslav
+from hip2unicode.representations import cslav
 
-hip2antconc = (
+hip2hipcslav = (
 # hip-нормализация
 # ...
 # удаление ненужной разметки
@@ -26,39 +26,9 @@ hip2antconc = (
     # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> } 
     ur''' \*\*{ .*?  \*\* .*?} ''' : u''
 },
+
 {   # звездочки для поющих на клиросе
     ur'\*': u'',
-},
-{
-    hip.paerok : antconc.paerok ,
-    hip.vedi_titlo : antconc.vedi_titlo ,
-    hip.glagol_titlo : antconc.glagolj_titlo ,
-    hip.dobro_titlo : antconc.dobro_titlo ,
-    hip.on_titlo : antconc.on_titlo ,
-    hip.rcy_titlo : antconc.rcy_titlo ,
-    hip.slovo_titlo : antconc.slovo_titlo ,
-    hip.kher_titlo : antconc.kher_titlo ,
-    hip.cherv_titlo : antconc.chervj_titlo ,
-    
-    hip.Oy : antconc.Uk_digraph ,
-    hip.oy : antconc.uk_digraph ,
-
-
-    hip.Ksi : antconc.Ksi ,
-    hip.ksi : antconc.ksi ,
-
-    hip.Wide_O : antconc.On_shirokoe ,
-    hip.wide_o : antconc.on_shirokoe ,
-
-    hip.Ot : antconc.Ot ,
-    hip.ot : antconc.ot ,
-
-    hip.Psi : antconc.Psi ,
-    hip.psi : antconc.psi ,
-
-    hip.J_a : antconc.A_jotirovannoe ,
-    hip.j_a : antconc.a_jotirovannoe ,
-
 },
 {
     
@@ -66,104 +36,104 @@ hip2antconc = (
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
-    hip.A : antconc.Az ,
-    hip.a : antconc.az ,
-
-    u'Б'  : antconc.Buki,
-    u'б'  : antconc.buki,
+    hip.A : cslav.Az ,
+    hip.a : cslav.az ,
  
-    hip.B : antconc.Vedi ,
-    hip.b : antconc.vedi ,
+    hip.B : cslav.Vedi ,
+    hip.b : cslav.vedi ,
 
-    u'Г'  : antconc.Glagolj,
-    u'г'  : antconc.glagolj,
+    hip.E : cslav.Est ,
+    hip.e : cslav.est ,
 
-    u'Д'  : antconc.Dobro,
-    u'д'  : antconc.dobro,
+    hip.K : cslav.Kako ,
+    hip.k : cslav.kako ,
 
-    u'Ж'  : antconc.Zhivete,
-    u'ж'  : antconc.zhivete,
+    hip.M : cslav.Myslete ,
+    hip.m : cslav.myslete ,
+
+    hip.H : cslav.Nash ,
+    hip.h : cslav.nash ,
     
-    u'З'  : antconc.Zemlja,
-    u'з'  : antconc.zemlja,
-    u'S'  : antconc.Zelo,
-    u's'  : antconc.zelo,
+    hip.O : cslav.On ,
+    hip.o : cslav.on ,
 
-    u'И'  : antconc.Izhe,
-    u'и'  : antconc.izhe,
-    hip.i_without_dot : antconc.i,
+    hip.P : cslav.Rcy ,
+    hip.p : cslav.rcy ,
 
-    u'Й'  : antconc.I_kratkoe,
-    u'й'  : antconc.i_kratkoe,
+    hip.C : cslav.Slovo ,
+    hip.c : cslav.slovo ,
 
-    hip.K : antconc.Kako ,
-    hip.k : antconc.kako ,
+    hip.T : cslav.Tverdo ,
+    hip.t : cslav.tverdo ,
 
-    u'Л'  : antconc.Ljudi,
-    u'л'  : antconc.ljudi,
+    hip.X : cslav.Kher ,
+    hip.x : cslav.kher ,
 
-    hip.M : antconc.Myslete ,
-    hip.m : antconc.myslete ,
-
-    hip.H : antconc.Nash ,
-    hip.h : antconc.nash ,
-    
-    hip.O : antconc.On ,
-    hip.o : antconc.on ,
-
-    hip.P : antconc.Rcy ,
-    hip.p : antconc.rcy ,
-
-    hip.C : antconc.Slovo ,
-    hip.c : antconc.slovo ,
-
-    hip.T : antconc.Tverdo ,
-    hip.t : antconc.tverdo ,
-
-    hip.X : antconc.Kher ,
-    hip.x : antconc.kher ,
-
-    hip.V_double_gravis : antconc.Izhica ,
-    hip.v_double_gravis : antconc.izhica ,
+    hip.V_double_gravis : cslav.Izhica_double_gravis ,
+    hip.v_double_gravis : cslav.izhica_double_gravis ,
 },
 {
-    hip.Wide_E : antconc.Estj_shirokoe ,
-    hip.wide_e : antconc.estj_shirokoe ,
+    hip.Wide_E : cslav.Wide_E ,
+    hip.wide_e : cslav.wide_e ,
 
-    u'I'  : antconc.I,
-    u'i'  : antconc.i,
+    hip.Yat : cslav.Yat ,
+    hip.yat : cslav.yat ,
 
-    hip.Yat : antconc.Jatj ,
-    hip.yat : antconc.jatj ,
+    hip.V : cslav.Izhica ,
+    hip.v : cslav.izhica ,
 
-    hip.V : antconc.Izhica ,
-    hip.v : antconc.izhica ,
+    hip.Ksi : cslav.Ksi ,
+    hip.ksi : cslav.ksi ,
 
-    hip.W : antconc.Omega ,
-    hip.w : antconc.omega ,
+    hip.Wide_O : cslav.Wide_O ,
+    hip.wide_o : cslav.wide_o ,
 
-    hip.Ole : antconc.Ole ,
-    hip.ole : antconc.ole ,
+    hip.W : cslav.Omega ,
+    hip.w : cslav.omega ,
 
-    hip.F : antconc.Fita ,
-    hip.f : antconc.fita ,
+    hip.Ole : cslav.Ole ,
+    hip.ole : cslav.ole ,
 
-    hip.Ja : antconc.Jus_malyj ,
-    hip.ja : antconc.jus_malyj ,
+    hip.Ot : cslav.Ot ,
+    hip.ot : cslav.ot ,
 
-    hip.equal_sign : u'' ,
-    hip.single_quote : antconc.udarenie_ostroe ,
-    hip.back_single_quote : antconc.udarenie_tupoe ,
-    hip.caret : antconc.udarenie_oblechennoe ,
-    hip.tilde : antconc.titlo ,
+    hip.Psi : cslav.Psi ,
+    hip.psi : cslav.psi ,
+
+    hip.F : cslav.Fita ,
+    hip.f : cslav.fita ,
+
+    hip.J_a : cslav.Ja ,
+    hip.j_a : cslav.ja ,
+
+    hip.Ja : cslav.Small_Yus ,
+    hip.ja : cslav.small_yus ,
+
+    hip.equal_sign : ur'', # ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
+#    hip.single_quote : cslav.acute ,
+#    hip.back_single_quote : cslav.gravis ,
+#    hip.caret : cslav.circumflex ,
+#    hip.tilde : cslav.titlo ,
+
+    hip.paerok : cslav.paerok ,
+    hip.vedi_titlo : ur'В' ,
+    hip.glagol_titlo : ur'Г' ,
+    hip.dobro_titlo : ur'Д' ,
+    hip.on_titlo : ur'О' ,
+    hip.rcy_titlo : ur'Р' ,
+    hip.slovo_titlo : ur'С' ,
+    hip.kher_titlo : ur'Х' ,
+    hip.cherv_titlo : ur'Ч' ,
+    
 },
 {
-    hip.E : antconc.Estj ,
-    hip.e : antconc.estj ,
+    hip.Oy : cslav.Oy ,
+    hip.oy : cslav.oy ,
 },
 {   
-    hip.Y : antconc.Uk ,
-    hip.y : antconc.uk ,
+    hip.Y : cslav.Uk ,
+    hip.y : cslav.uk ,
 
+    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
 )
