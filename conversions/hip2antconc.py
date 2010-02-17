@@ -1,9 +1,9 @@
 # -*- coding: UTF-8 -*-
 
 from hip2unicode.representations import hip
-from hip2unicode.representations import cslav
+from hip2unicode.representations import antconc
 
-hip2hipcslav = (
+hip2antconc = (
 # hip-нормализация
 # ...
 # удаление ненужной разметки
@@ -36,86 +36,91 @@ hip2hipcslav = (
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
-    hip.A : cslav.Az ,
-    hip.a : cslav.az ,
+    hip.A : antconc.Az ,
+    hip.a : antconc.az ,
  
-    hip.B : cslav.Vedi ,
-    hip.b : cslav.vedi ,
+    hip.B : antconc.Vedi ,
+    hip.b : antconc.vedi ,
 
-    hip.E : cslav.Est ,
-    hip.e : cslav.est ,
+    hip.E : antconc.Est ,
+    hip.e : antconc.est ,
 
-    hip.K : cslav.Kako ,
-    hip.k : cslav.kako ,
+    u's'  : u'\u0455',
+    u'i'  : u'\u0456',
+    u'S'  : u'\u0405',
+    u'I'  : u'\u0406',
 
-    hip.M : cslav.Myslete ,
-    hip.m : cslav.myslete ,
+    hip.K : antconc.Kako ,
+    hip.k : antconc.kako ,
 
-    hip.H : cslav.Nash ,
-    hip.h : cslav.nash ,
+    hip.M : antconc.Myslete ,
+    hip.m : antconc.myslete ,
+
+    hip.H : antconc.Nash ,
+    hip.h : antconc.nash ,
     
-    hip.O : cslav.On ,
-    hip.o : cslav.on ,
+    hip.O : antconc.On ,
+    hip.o : antconc.on ,
 
-    hip.P : cslav.Rcy ,
-    hip.p : cslav.rcy ,
+    hip.P : antconc.Rcy ,
+    hip.p : antconc.rcy ,
 
-    hip.C : cslav.Slovo ,
-    hip.c : cslav.slovo ,
+    hip.C : antconc.Slovo ,
+    hip.c : antconc.slovo ,
 
-    hip.T : cslav.Tverdo ,
-    hip.t : cslav.tverdo ,
+    hip.T : antconc.Tverdo ,
+    hip.t : antconc.tverdo ,
 
-    hip.X : cslav.Kher ,
-    hip.x : cslav.kher ,
+    hip.X : antconc.Kher ,
+    hip.x : antconc.kher ,
 
-    hip.V_double_gravis : cslav.Izhica_double_gravis ,
-    hip.v_double_gravis : cslav.izhica_double_gravis ,
+    hip.V_double_gravis : antconc.Izhica_double_gravis ,
+    hip.v_double_gravis : antconc.izhica_double_gravis ,
 },
 {
-    hip.Wide_E : cslav.Wide_E ,
-    hip.wide_e : cslav.wide_e ,
+    hip.Wide_E : antconc.Wide_E ,
+    hip.wide_e : antconc.wide_e ,
 
-    hip.Yat : cslav.Yat ,
-    hip.yat : cslav.yat ,
+    hip.Yat : antconc.Yat ,
+    hip.yat : antconc.yat ,
 
-    hip.V : cslav.Izhica ,
-    hip.v : cslav.izhica ,
+    hip.V : antconc.Izhica ,
+    hip.v : antconc.izhica ,
 
-    hip.Ksi : cslav.Ksi ,
-    hip.ksi : cslav.ksi ,
+    hip.Ksi : antconc.Ksi ,
+    hip.ksi : antconc.ksi ,
 
-    hip.Wide_O : cslav.Wide_O ,
-    hip.wide_o : cslav.wide_o ,
+    hip.Wide_O : antconc.Wide_O ,
+    hip.wide_o : antconc.wide_o ,
 
-    hip.W : cslav.Omega ,
-    hip.w : cslav.omega ,
+    hip.W : antconc.Omega ,
+    hip.w : antconc.omega ,
 
-    hip.Ole : cslav.Ole ,
-    hip.ole : cslav.ole ,
+    hip.Ole : antconc.Ole ,
+    hip.ole : antconc.ole ,
 
-    hip.Ot : cslav.Ot ,
-    hip.ot : cslav.ot ,
+    hip.Ot : antconc.Ot ,
+    hip.ot : antconc.ot ,
 
-    hip.Psi : cslav.Psi ,
-    hip.psi : cslav.psi ,
+    hip.Psi : antconc.Psi ,
+    hip.psi : antconc.psi ,
 
-    hip.F : cslav.Fita ,
-    hip.f : cslav.fita ,
+    hip.F : antconc.Fita ,
+    hip.f : antconc.fita ,
 
-    hip.J_a : cslav.Ja ,
-    hip.j_a : cslav.ja ,
+    hip.J_a : antconc.Ja ,
+    hip.j_a : antconc.ja ,
 
-    hip.Ja : cslav.Small_Yus ,
-    hip.ja : cslav.small_yus ,
+    hip.Ja : antconc.Small_Yus ,
+    hip.ja : antconc.small_yus ,
 
     hip.equal_sign : ur'', # ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
-#    hip.single_quote : cslav.acute ,
-#    hip.back_single_quote : cslav.gravis ,
-#    hip.caret : cslav.circumflex ,
-#    hip.tilde : cslav.titlo ,
+#    hip.single_quote : antconc.acute ,
+#    hip.back_single_quote : antconc.gravis ,
+#    hip.caret : antconc.circumflex ,
+#    hip.tilde : antconc.titlo ,
 
-    hip.paerok : cslav.paerok ,
+    hip.paerok : antconc.paerok ,
     hip.vedi_titlo : ur'В' ,
     hip.glagol_titlo : ur'Г' ,
     hip.dobro_titlo : ur'Д' ,
@@ -127,12 +132,12 @@ hip2hipcslav = (
     
 },
 {
-    hip.Oy : cslav.Oy ,
-    hip.oy : cslav.oy ,
+    hip.Oy : antconc.Oy ,
+    hip.oy : antconc.oy ,
 },
 {   
-    hip.Y : cslav.Uk ,
-    hip.y : cslav.uk ,
+    hip.Y : antconc.Uk ,
+    hip.y : antconc.uk ,
 
     hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
