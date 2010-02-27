@@ -139,14 +139,15 @@ hip2antconc = (
 {
     hip.Oy : antconc.Oy ,
     hip.oy : antconc.oy ,
-
-    u'_у' : u'у',
 },
 {   
-    hip.Y : antconc.Uk ,
-    hip.y : antconc.uk ,
+    ur'(?<!_)' + hip.Y : antconc.Uk ,
+    ur'(?<!_)' + hip.y : antconc.uk ,
 
     u'i'  : u'\u0456',
     u'I'  : u'\u0406',
+},
+{
+    u'_у' : u'у',
 },
 )
