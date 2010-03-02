@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from hip2unicode.functions import hip2unicode as h2u
 #from hip2unicode.tools.binary_converter import binary_converter
 import os
 import codecs
