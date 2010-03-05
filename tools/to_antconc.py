@@ -12,5 +12,6 @@ corpus_converter.corpus_converter(
                                     slav=mc(hip2antconc.hip2antconc),
                                     rus='delete',
                                     lat='delete',
+                                    grec='delete',
                                   ),
     )
