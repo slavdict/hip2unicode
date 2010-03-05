@@ -53,7 +53,7 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
     else:
         os.mkdir(converted_corpus_path)
 
-    enc_list = ['cp1251', 'koi8-r', 'utf-8',]
+    enc_list = ['utf-8', 'cp1251', 'koi8-r', ]
     print 'Converting files ',
     for file_path in file_list:
 
