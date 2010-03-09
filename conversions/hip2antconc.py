@@ -76,9 +76,6 @@ hip2antconc = (
     hip.V_double_gravis : antconc.Izhica,
     hip.v_double_gravis : antconc.izhica,
 
-    hip.Y : u'У' ,
-    hip.y : u'у' ,
-
     hip.Ole : antconc.Ole ,
     hip.ole : antconc.ole ,
 },
@@ -151,5 +148,11 @@ hip2antconc = (
     u'_у' : u'у',
     u'<\(\(>' : u'«', # замена кавычек <((>
     u'<\)\)>' : u'»', # <))>
+    u'<->': u'\u2014', # тире EM DASH
+    u'<p>': u'',
+    u'<a.*?>': u'',
+    u'</a>': u'',
+    u'<br>': u'',
+
 },
 )
