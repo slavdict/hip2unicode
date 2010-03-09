@@ -13,6 +13,11 @@ hip2antconc = (
     u'<a.*?>': u'',
     u'</a>': u'',
     u'<br>': u'',
+    u'<hip>': u'',
+    u'</hip>': u'',
+    u'<title>': u'',
+    u'</title>': u'',
+    u'<pre>': u'',
 },
 # hip-нормализация
 # ...
