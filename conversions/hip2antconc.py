@@ -4,6 +4,16 @@ from hip2unicode.representations import hip
 from hip2unicode.representations import antconc
 
 hip2antconc = (
+{
+    u'<\(\(>' : u'«', # замена кавычек <((>
+    u'<\)\)>' : u'»', # <))>
+    u'<->': u'\u2014', # тире EM DASH
+# удаление ненужных html-тегов 
+    u'<p>': u'',
+    u'<a.*?>': u'',
+    u'</a>': u'',
+    u'<br>': u'',
+},
 # hip-нормализация
 # ...
 # удаление ненужной разметки
@@ -146,13 +156,6 @@ hip2antconc = (
 },
 {
     u'_у' : u'у',
-    u'<\(\(>' : u'«', # замена кавычек <((>
-    u'<\)\)>' : u'»', # <))>
-    u'<->': u'\u2014', # тире EM DASH
-    u'<p>': u'',
-    u'<a.*?>': u'',
-    u'</a>': u'',
-    u'<br>': u'',
 
 },
 )
