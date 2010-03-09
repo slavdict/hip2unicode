@@ -78,6 +78,9 @@ hip2antconc = (
 
     hip.Y : u'У' ,
     hip.y : u'у' ,
+
+    hip.Ole : antconc.Ole ,
+    hip.ole : antconc.ole ,
 },
 {
     hip.Wide_E : antconc.Wide_E ,
@@ -94,12 +97,6 @@ hip2antconc = (
 
     hip.Wide_O : antconc.Wide_O ,
     hip.wide_o : antconc.wide_o ,
-
-    hip.W : antconc.Omega ,
-    hip.w : antconc.omega ,
-
-    hip.Ole : antconc.Ole ,
-    hip.ole : antconc.ole ,
 
     hip.Ot : antconc.Ot ,
     hip.ot : antconc.ot ,
@@ -139,6 +136,9 @@ hip2antconc = (
 {
     hip.Oy : antconc.Oy ,
     hip.oy : antconc.oy ,
+
+    hip.W : antconc.Omega ,
+    hip.w : antconc.omega ,
 },
 {   
     ur'(?<!_)' + hip.Y : antconc.Uk ,
