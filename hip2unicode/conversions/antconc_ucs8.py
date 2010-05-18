@@ -10,6 +10,19 @@ while working with Old Church Slavonic
 texts corpus.
 
 """
+ANTCONC_BIG_LETTERS = 
+    u'АБВГДЕЖЗ' + 
+    u'ЅІ' +         # CYRILLIC \u0405 and \u0406
+    u'ИЙКЛМНОПРСТ' +
+    u'\uA64A' +     # monograph Uk
+    u'ФХЦЧШЩЪЫЬ' +
+    u'ЮЯ' +
+    u'ѢѴѠѦѮѰѲѸѺѼѾ' # Yat, Izhica, Omega, Yus malyj, Ksi, Psi, Fita, digraph Uk, wide O, Ole, Ot
+
+ANTCONC_SMALL_LETTERS = 
+    u'абвгде' +
+    u'є' +
+    u'жзийклмнопрстуфхцчшщъыьюя' + 
 
 conversion = (
     (
