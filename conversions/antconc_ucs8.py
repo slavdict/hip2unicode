@@ -12,7 +12,28 @@ texts corpus.
 """
 from hip2unicode.hip2unicode.representations import antconc
 
+LEFT_LETTER     = u'(?<=%s)'
+INITIAL_LETTER  = u'(?<=((^%s)|(%s%s))' % (
+                u'%(initial_letter)s',
+                antconc.ANTCONC_NON_LETTERS,
+                u'%(initial_letter)s',
+                )
+
+SMALL_LETTER            = LEFT_LETTER % antconc.ANTCONC_SMALL_LETTERS
+CAPITAL_LETTER          = LEFT_LETTER % antconc.ANTCONC_CAPITAL_LETTERS 
+INITIAL_SMALL_VOWEL     = INITIAL_LETTER % {
+                        'initial_letter': antconc.ANTCONC_SMALL_VOWELS,
+                        }
+INITIAL_CAPITAL_VOWEL   = INITIAL_LETTER % {
+                        'initial_letter': antconc.ANTCONC_CAPITAL_VOWELS,
+                        }
+
 conversion = (
+    (u'%s%s' % (SMALL_LETTER, antconc.AKUT),      u'1'),
+    (u'%s%s' % (SMALL_LETTER, antconc.GRAVIS),    u'2'),
+    (u'%s%s' % (INITIAL_SMALL_VOWEL, u'%s%s' % antconc. #TODO),
+
+
 
     (antconc.CAPITAL_FITA,          u'F'),
     (antconc.CAPITAL_I,             u'I'),
