@@ -167,76 +167,81 @@ XER_TITLO       = u'Х'
 CHERVJ_TITLO    = u'Ч'
 
 
-# Groups of symbols
+# Strings containing groups of symbols
 EMPTY_STRING = u''
 
-_ANTCONC_CAPITAL_LETTERS = EMPTY_STRING.join(
+CAPITAL_LETTERS = EMPTY_STRING.join(
         [ i for i in dir() if i.startswith('CAPITAL_') ]
     )
 
-_ANTCONC_SMALL_LETTERS = EMPTY_STRING.join(
+SMALL_LETTERS = EMPTY_STRING.join(
         [ i for i in dir() if i.startswith('SMALL_') ]
     )
 
-_ANTCONC_DIACRITICS = EMPTY_STRING.join(
+DIACRITICS = EMPTY_STRING.join(
         [ AKUT, GRAVIS, CIRKUMFLEKS, TITLO, PAEROK, ] +
         [ i for  i in dir() if i.endswith('_TITLO') ]
     )
 
-ANTCONC_CAPITAL_LETTERS = ur'[%s]' % _ANTCONC_CAPITAL_LETTERS
-ANTCONC_SMALL_LETTERS   = ur'[%s]' % _ANTCONC_SMALL_LETTERS
-ANTCONC_DIACRITICS      = ur'[%s]' % _ANTCONC_DIACRITICS
-
-ANTCONC_CAPITAL_VOWELS  = ur'[%s]' % (
-    CAPITAL_AZ,
-    CAPITAL_ESTJ,
-#   CAPITAL_WIDE_ESTJ,
-    CAPITAL_IZHE,
-    CAPITAL_I,
-    CAPITAL_ON,
-    CAPITAL_MONOGRAPH_UK,
-    CAPITAL_DIGRAPH_UK,
-#   SMALL_UK,
-    CAPITAL_OMEGA,
-    CAPITAL_ERY,
-    CAPITAL_JATJ,
-    CAPITAL_JU,
-    CAPITAL_I_AZ,
-    CAPITAL_JUS_MALYJ,
-    CAPITAL_IZHICA,
-    CAPITAL_WIDE_ON,
-#   CAPITAL_OLE,
+CAPITAL_VOWELS  = EMPTY_STRING.join(
+    (
+        CAPITAL_AZ,
+        CAPITAL_ESTJ,
+    #   CAPITAL_WIDE_ESTJ,
+        CAPITAL_IZHE,
+        CAPITAL_I,
+        CAPITAL_ON,
+        CAPITAL_MONOGRAPH_UK,
+        CAPITAL_DIGRAPH_UK,
+    #   SMALL_UK,
+        CAPITAL_OMEGA,
+        CAPITAL_ERY,
+        CAPITAL_JATJ,
+        CAPITAL_JU,
+        CAPITAL_I_AZ,
+        CAPITAL_JUS_MALYJ,
+        CAPITAL_IZHICA,
+        CAPITAL_WIDE_ON,
+    #   CAPITAL_OLE,
+    )
 )
 
-ANTCONC_SMALL_VOWELS  = ur'[%s]' % (
-    SMALL_AZ,
-    SMALL_ESTJ,
-    SMALL_WIDE_ESTJ,
-    SMALL_IZHE,
-    SMALL_I,
-    SMALL_ON,
-    SMALL_MONOGRAPH_UK,
-    SMALL_DIGRAPH_UK,
-    SMALL_UK,
-    SMALL_OMEGA,
-    SMALL_ERY,
-    SMALL_JATJ,
-    SMALL_JU,
-    SMALL_I_AZ,
-    SMALL_JUS_MALYJ,
-    SMALL_IZHICA,
-    SMALL_WIDE_ON,
-#   SMALL_OLE,
+SMALL_VOWELS  = EMPTY_STRING.join(
+    (
+        SMALL_AZ,
+        SMALL_ESTJ,
+        SMALL_WIDE_ESTJ,
+        SMALL_IZHE,
+        SMALL_I,
+        SMALL_ON,
+        SMALL_MONOGRAPH_UK,
+        SMALL_DIGRAPH_UK,
+        SMALL_UK,
+        SMALL_OMEGA,
+        SMALL_ERY,
+        SMALL_JATJ,
+        SMALL_JU,
+        SMALL_I_AZ,
+        SMALL_JUS_MALYJ,
+        SMALL_IZHICA,
+        SMALL_WIDE_ON,
+    #   SMALL_OLE,
+    )
 )
 
-ANTCONC_LETTERS = ur'[%s%s%s]' % (
-    ANTCONC_CAPITAL_LETTERS,
-    ANTCONC_SMALL_LETTERS,
-    ANTCONC_DIACRITICS,
+LETTERS = EMPTY_STRING.join(
+    (
+        CAPITAL_LETTERS,
+        SMALL_LETTERS,
+        DIACRITICS,
+    )
 )
 
-ANTCONC_NON_LETTERS = ur'[^%s%s%s]' % (
-    ANTCONC_CAPITAL_LETTERS,
-    ANTCONC_SMALL_LETTERS,
-    ANTCONC_DIACRITICS,
+ACCENTS = EMPTY_STRING.join(
+    (
+        AKUT,
+        GRAVIS,
+        CIRKUMFLEKS,
+    )
 )
+
