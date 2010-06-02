@@ -17,6 +17,7 @@ REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
 
 lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
+lc_LETTERS          = left_context( token( LETTERS ) )
 ic_SMALL_VOWELS     = initial_context( token( SMALL_VOWELS ) )
 ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
 nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
