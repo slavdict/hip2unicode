@@ -48,6 +48,9 @@ conversion = (
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
     (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
     (lc_CAPITAL_LETTERS + GRAVIS,       u'@'),
+    # след. преобразование обязательно должно идти
+    # после всех преобразований, где выступает
+    # TITLO, т.к. создаётся символ "~"
     (lc_CAPITAL_LETTERS + AKUT,         u'~'),
     (lc_CAPITAL_LETTERS + CIRKUMFLEKS,  u'^'),
     (lc_CAPITAL_LETTERS + PAEROK,       u'_'),
