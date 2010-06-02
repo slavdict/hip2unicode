@@ -10,7 +10,8 @@ while working with Old Church Slavonic
 texts corpus.
 
 """
-from hip2unicode.hip2unicode.representations.antconc import *
+from hip2unicode.representations.RE import *
+from hip2unicode.representations.antconc import *
 
 conversion = (
 
