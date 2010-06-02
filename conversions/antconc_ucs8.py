@@ -13,12 +13,46 @@ texts corpus.
 from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
+REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
+
+lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
+lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
+ic_SMALL_VOWELS     = initial_context( token( SMALL_VOWELS ) )
+ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
+nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
+
 conversion = (
 
-    (u'%s%s' % (SMALL_LETTER, AKUT),      u'1'),
-    (u'%s%s' % (SMALL_LETTER, GRAVIS),    u'2'),
-    (u'%s%s' % (INITIAL_SMALL_VOWEL, u'%s%s' %  #TODO),
+    (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
+    (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
+    (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
+    (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
+    (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
+    (lc_SMALL_LETTERS + CIRKUMFLEKS,    u'6'), # циркумфлекс 
+    (lc_SMALL_LETTERS + TITLO,          u'7'), # титло
+    (lc_SMALL_LETTERS + PAEROK,         u'8'),
 
+    (lc_SMALL_LETTERS + XER_TITLO,      u'<'),
+    (lc_SMALL_LETTERS + NASH_TITLO,     u'='),
+    (lc_SMALL_LETTERS + RCY_TITLO,      u'>'),
+    (lc_SMALL_LETTERS + CHERVJ_TITLO,   u'?'),
+    (lc_SMALL_LETTERS + VEDI_TITLO,     u'+'),
+    (lc_SMALL_LETTERS + ON_TITLO,       u'b'),
+    (lc_SMALL_LETTERS + SLOVO_TITLO,    u'c'),
+    (lc_SMALL_LETTERS + DOBRO_TITLO,    u'd'),
+    (lc_SMALL_LETTERS + GLAGOLJ_TITLO,  u'g'),
+    (lc_SMALL_LETTERS + ZEMLJA_TITLO,   u'\u0088'),
+    (lc_SMALL_LETTERS + ZHIVETE_TITLO,  u'\u0095'),
+
+    (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
+    (ic_CAPITAL_VOWELS + AKUT,          u'$'),
+    (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
+    (lc_CAPITAL_LETTERS + GRAVIS,       u'@'),
+    (lc_CAPITAL_LETTERS + AKUT,         u'~'),
+    (lc_CAPITAL_LETTERS + CIRKUMFLEKS,  u'^'),
+    (lc_CAPITAL_LETTERS + PAEROK,       u'_'),
+
+    (lc_CAPITAL_LETTERS + SLOVO_TITLO,  u'C'),
 
 
     (CAPITAL_FITA,          u'F'),
