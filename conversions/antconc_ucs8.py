@@ -23,6 +23,20 @@ ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
 nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
 
 conversion = (
+    
+    (lc_LETTERS + SMALL_ON + AKUT,          u'0'),
+    (SMALL_ZHIVETE + TITLO,                 u'9'),
+    (lc_LETTERS + SMALL_AZ + GRAVIS,        u'A'),
+    (lc_LETTERS + SMALL_JATJ + CIRKUMFLEKS, u'B'),
+    (SMALL_DOBRO + SLOVO_TITLO,             u'D'),
+    (lc_LETTERS + SMALL_ESTJ + GRAVIS,      u'E'),
+    (SMALL_GLAGOLJ + TITLO,                 u'G'),
+    (lc_LETTERS + SMALL_OMEGA + AKUT,       u'H'),
+    (lc_LETTERS + SMALL_I + GRAVIS,         u'J'),
+    (initial(CAPITAL_I_AZ) + nrc_ACCENTS,   u'K'),
+    (SMALL_LJUDI + DOBRO_TITLO,             u'L'),
+
+
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
     (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
