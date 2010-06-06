@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 
-from hip2unicode.conversions import hip2cslav
+from hip2unicode.conversions import hip2antconc
 import re
 
 eols = {
@@ -167,7 +167,7 @@ def hip2unicode(text, conversions=None):
     # объявляем соответствие систем письма
     # и связанных с ними перекодировок
     if not conversions:
-        conversion_refs = all_hip_conversions(slav=make_conversion(hip2cslav.hip2cslav))
+        conversion_refs = all_hip_conversions(slav=make_conversion(hip2antconc.hip2antconc))
     else:
         conversion_refs = conversions
 
