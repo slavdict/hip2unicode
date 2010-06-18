@@ -22,6 +22,10 @@ ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
 nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
 
 conversion = (
+    # титло над строчными от, ферт и пси 
+    # преобразуется в обратный слеш
+    # (экранированная запись для RegExp)
+    (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'), 
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
     (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
