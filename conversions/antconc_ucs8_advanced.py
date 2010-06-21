@@ -25,16 +25,16 @@ nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
 
 conversion = (
 
-    (lc_LETTERS + SMALL_ON + AKUT,          u'0'),
-    (SMALL_ZHIVETE + TITLO,                 u'9'),
-    (lc_LETTERS + SMALL_AZ + GRAVIS,        u'A'),
-    (lc_LETTERS + SMALL_JATJ + CIRKUMFLEKS, u'B'),
+    (SMALL_ON + SMALL_AKUT,                 u'0'),
+    (SMALL_ZHIVETE + SMALL_TITLO,           u'9'),
+    (SMALL_AZ + SMALL_GRAVIS,               u'A'),
+    (SMALL_JATJ + SMALL_CIRKUMFLEKS,        u'B'),
     (SMALL_DOBRO + SLOVO_TITLO,             u'D'),
-    (lc_LETTERS + SMALL_ESTJ + GRAVIS,      u'E'),
-    (SMALL_GLAGOLJ + TITLO,                 u'G'),
-    (lc_LETTERS + SMALL_OMEGA + AKUT,       u'H'),
-    (lc_LETTERS + SMALL_I + GRAVIS,         u'J'),
-    (initial(CAPITAL_I_AZ) + nrc_ACCENTS,   u'K'),
+    (SMALL_ESTJ + SMALL_GRAVIS,             u'E'),
+    (SMALL_GLAGOLJ + SMALL_TITLO,           u'G'),
+    (SMALL_OMEGA + SMALL_AKUT,              u'H'),
+    (SMALL_I + SMALL_GRAVIS,                u'J'),
+    (CAPITAL_I_AZ + SMALL_ASPIRATION,       u'K'),
     (SMALL_LJUDI + DOBRO_TITLO,             u'L'),
 
 )
