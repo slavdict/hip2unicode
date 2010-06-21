@@ -75,7 +75,7 @@ conversion = (
     (CAPITAL_JUS_MALYJ,     u'Z'),
 
     (SMALL_FITA,            u'f'),
-    (SMALL_I,               u'i'),
+    (SMALL_I,               u'i'), # LATIN
     (SMALL_WIDE_ON,         u'o'),
     (SMALL_PSI,             u'p'),
     (SMALL_OLE,             u'q'),
