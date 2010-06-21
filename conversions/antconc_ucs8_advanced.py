@@ -82,6 +82,16 @@ conversion = (
     (CAPITAL_DIGRAPH_UK + CAPITAL_ASPIRATION,   u'\u040E'),
     (CAPITAL_DIGRAPH_UK + SMALL_ASPIRATION, u'\u040E'),
     (SMALL_DIGRAPH_UK + SMALL_ASPIRATION,   u'\u045E'),
-
-
+    (CAPITAL_AZ + CAPITAL_ASPIRATION,       u'\u0490'),
+    (SMALL_XER + SMALL_TITLO,               u'\u00A6'),
+    (SMALL_CHERVJ + SMALL_TITLO,            u'\u00A7'),
+    (SMALL_JATJ + SMALL_GRAVIS,             u'Ё'),
+    (SMALL_SLOVO + SMALL_TITLO,             u'\u00a9'),
+    (SMALL_RCY + DOBRO_TITLO,               u'\u00ae'),
+    (CAPITAL_I + CAPITAL_ASPIRATION,        u'\u0407'),
+    (SMALL_AZ + SMALL_ASPIRATION,           u'\u0491'),
+    (SMALL_JATJ + SMALL_AKUT,               u'ё'),
+    (SMALL_AZ + SMALL_TITLO,                u'№'),
+    (SMALL_I + SMALL_ASPIRATION,            u'\u0457'),
+   
 )
