@@ -168,6 +168,9 @@ XER_TITLO       = u'Х'
 CHERVJ_TITLO    = u'Ч'
 
 
+THOUSAND_SIGN   = u'\u0482'
+
+
 # Strings containing groups of symbols
 EMPTY_STRING = u''
 
