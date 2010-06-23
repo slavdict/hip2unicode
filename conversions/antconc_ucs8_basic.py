@@ -10,6 +10,8 @@ while working with Old Church Slavonic
 texts corpus.
 
 """
+# TODO необходимо добавить правило 
+# для создания UCS8-кавыки (u'\u00B0')
 from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
