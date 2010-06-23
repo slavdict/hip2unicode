@@ -45,6 +45,19 @@ def make_conversion(regexp_dictionaries_list):
     return substitute_list
 
 
+def compile_conversion(conversion):
+    """ Получает на вход список или картеж пар вида <НЕоткомпилированное
+    регулярное выражение, результирующая текстовая подстановка>. В этом списке
+    все сырые строки неоткомпилированных RegExp заменяются на сами
+    откомпилированные объекты регулярных выражений. """
+    
+    substitute_list = []
+    for to_find, to_substitute in conversion:
+        compiled_re = re.compile(to_find, re.X + re.M + re.U)
+        substitute_list.append( (compiled_re, to_substitute) )
+    return substitute_list
+
+
 def eol_normalization(text, eol='unix'):
     
     """ Приводит все символы конца строки
