@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-from hip2unicode.conversions import hip2antconc
 import re
 
 eols = {
@@ -167,7 +166,11 @@ def hip2unicode(text, conversions=None):
     # объявляем соответствие систем письма
     # и связанных с ними перекодировок
     if not conversions:
-        conversion_refs = all_hip_conversions(slav=make_conversion(hip2antconc.hip2antconc))
+        # Если соответствия не переданы,
+        # для всех систем письма 
+        # назначается тождественное преобразование,
+        # т.е. никакой конвертации происходить не будет.
+        conversion_refs = all_hip_conversions()
     else:
         conversion_refs = conversions
 
