@@ -30,11 +30,11 @@ conversion = (
     (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'), 
     (THOUSAND_SIGN,                     u'\u00A4'), # знак тысячи
 
-    (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
-    (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
     (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
     (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
     (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
+    (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
+    (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
     (lc_SMALL_LETTERS + CIRKUMFLEKS,    u'6'), # циркумфлекс 
     (lc_SMALL_LETTERS + TITLO,          u'7'), # титло
     (lc_SMALL_LETTERS + PAEROK,         u'8'),
