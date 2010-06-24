@@ -175,16 +175,16 @@ THOUSAND_SIGN   = u'\u0482'
 EMPTY_STRING = u''
 
 CAPITAL_LETTERS = EMPTY_STRING.join(
-        [ i for i in dir() if i.startswith('CAPITAL_') ]
+        [ eval(i) for i in dir() if i.startswith('CAPITAL_') ]
     )
 
 SMALL_LETTERS = EMPTY_STRING.join(
-        [ i for i in dir() if i.startswith('SMALL_') ]
+        [ eval(i) for i in dir() if i.startswith('SMALL_') ]
     )
 
 DIACRITICS = EMPTY_STRING.join(
         [ AKUT, GRAVIS, CIRKUMFLEKS, TITLO, PAEROK, ] +
-        [ i for  i in dir() if i.endswith('_TITLO') ]
+        [ eval(i) for i in dir() if i.endswith('_TITLO') ]
     )
 
 CAPITAL_VOWELS  = EMPTY_STRING.join(
