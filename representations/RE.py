@@ -43,4 +43,4 @@ def initial(*list_of_strings):
 
 def initial_context(*list_of_strings):
     x = cat(*list_of_strings)
-    return u'(?<=^%s)|(?<=%s%s)' % (x, REPR_ENVIRON.NON_LETTERS, x)
+    return u'((?<=^%s)|(?<=%s%s))' % (x, REPR_ENVIRON.NON_LETTERS, x)
