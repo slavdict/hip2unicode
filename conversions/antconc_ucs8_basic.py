@@ -14,8 +14,9 @@ texts corpus.
 # для создания UCS8-кавыки (u'\u00B0')
 from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
+from hip2unicode.representations.ucs8 import LETTERS as ucs8_LETTERS
 
-REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
+REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS, ucs8_LETTERS )
 
 lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )

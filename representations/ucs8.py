@@ -178,6 +178,12 @@ CHERVJ_TITLO    = ur'\?' # RegExp escaped question mark
 
 CAPITAL_SLOVO_TITLO = u'C' # LATIN C
 
+LETTERS = EMPTY_STRING.join(
+    [ eval(i) for i in dir() \
+        if i.startswith('CAPITAL_') \
+        or i.startswith('SMALL_') \
+        or i.endswith('_TITLO') ]
+)
 
 AE = EMPTY_STRING.join(
     (
