@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-from hip2unicode.conversions import hip2antconc
 import re
 
 eols = {
@@ -27,12 +26,35 @@ eols_re = {
 }
 
 def make_conversion(regexp_dictionaries_list):
+    """ Получает на вход список словарей с правилами конвертации, оформленными
+    в виде словарных пар "ключ-значение". Последовательно перебирает все
+    словари и формирует список пар <откомпилированное регулярное выражение,
+    необходимая для неё текстовая замена>.
+
+    Данная функция оставлена для совместимости и признается устаревшей.
+    Поскольку все правила конвертации решено оформлять в виде списка
+    упорядоченных пар <НЕоткомпилированное регулярное выражение, результирующая
+    текстовая подстановка> """
+    
     substitute_list = []
     for d in regexp_dictionaries_list:
         for k, v in d.items():
             key      = re.compile(k, re.X + re.M + re.U)
             # value    = re.compile(v, re.X + re.U)
             substitute_list.append( (key, v) )
+    return substitute_list
+
+
+def compile_conversion(conversion):
+    """ Получает на вход список или картеж пар вида <НЕоткомпилированное
+    регулярное выражение, результирующая текстовая подстановка>. В этом списке
+    все сырые строки неоткомпилированных RegExp заменяются на сами
+    откомпилированные объекты регулярных выражений. """
+    
+    substitute_list = []
+    for to_find, to_substitute in conversion:
+        compiled_re = re.compile(to_find, re.X + re.M + re.U)
+        substitute_list.append( (compiled_re, to_substitute) )
     return substitute_list
 
 
@@ -167,7 +189,11 @@ def hip2unicode(text, conversions=None):
     # объявляем соответствие систем письма
     # и связанных с ними перекодировок
     if not conversions:
-        conversion_refs = all_hip_conversions(slav=make_conversion(hip2antconc.hip2antconc))
+        # Если соответствия не переданы,
+        # для всех систем письма 
+        # назначается тождественное преобразование,
+        # т.е. никакой конвертации происходить не будет.
+        conversion_refs = all_hip_conversions()
     else:
         conversion_refs = conversions
 
