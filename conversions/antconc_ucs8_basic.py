@@ -37,6 +37,12 @@ conversion = (
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
     (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
     (lc_SMALL_LETTERS + CIRKUMFLEKS,    u'6'), # циркумфлекс 
+    # Правило для устранения придыхания 
+    # над теми гласными, которые стоят 
+    # первыми в слове, но над которыми
+    # должны стоять обычные титла
+    # (= случай с цифрами):
+    (u'3~',                             u'~'),
     (lc_SMALL_LETTERS + TITLO,          u'7'), # титло
     (lc_SMALL_LETTERS + PAEROK,         u'8'),
 
