@@ -39,7 +39,7 @@ def make_conversion(regexp_dictionaries_list):
     substitute_list = []
     for d in regexp_dictionaries_list:
         for k, v in d.items():
-            key      = re.compile(k, re.X + re.M + re.U)
+            key      = re.compile(k, re.M + re.U)
             substitute_list.append( (key, v) )
     return substitute_list
 
@@ -52,7 +52,7 @@ def compile_conversion(conversion):
     
     substitute_list = []
     for to_find, to_substitute in conversion:
-        compiled_re = re.compile(to_find, re.X + re.M + re.U)
+        compiled_re = re.compile(to_find, re.M + re.U)
         substitute_list.append( (compiled_re, to_substitute) )
     return substitute_list
 
