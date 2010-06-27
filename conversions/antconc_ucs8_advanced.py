@@ -15,7 +15,7 @@ from hip2unicode.representations.ucs8 import *
 
 conversion = (
     
-    (SMALL_JUS_MALYJ + SMALL_ASPIRATION_CIRKUMFLEX, u'\|'), # RegExp escaped pipe sign
+    (SMALL_JUS_MALYJ + SMALL_ASPIRATION_CIRKUMFLEX, u'|'),
     (CAPITAL_AZ + CAPITAL_ASPIRATION_AKUT,          u'\u0403'),
     (SMALL_AZ + SMALL_ASPIRATION_AKUT,              u'\u0453'),
     (CAPITAL_DIGRAPH_UK + CAPITAL_ASPIRATION_AKUT,  u'\u040C'),
