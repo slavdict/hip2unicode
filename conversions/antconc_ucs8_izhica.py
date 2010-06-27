@@ -13,6 +13,8 @@
 """
 from hip2unicode.representations.RE import *
 from hip2unicode.representations.ucs8 import *
+from hip2unicode.representations.antconc import SMALL_DOTLESS_I \
+    as antconc_SMALL_DOTLESS_I
 
 # REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
 
@@ -51,5 +53,9 @@ conversion = (
     # Десятиричное И с двойным грависом
     (CAPITAL_I + nrc_DIACRITICS,            u'\u0406'), 
     (SMALL_I + nrc_DIACRITICS,              u'\u0456'),
+    # Десятичное И без диакритики, 
+    # а также без ударений но с титлом:
+    (antconc_SMALL_DOTLESS_I + SMALL_TITLO, u'\u2039'),
+    (antconc_SMALL_DOTLESS_I,               SMALL_I),
 
 )
