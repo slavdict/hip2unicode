@@ -41,8 +41,8 @@ SMALL_ZEMLJA    = u'з'
 CAPITAL_IZHE    = u'И'
 SMALL_IZHE      = u'и'
 
-CAPITAL_I   = u'\u0406' # CYRILLIC "І"
-SMALL_I     = u'\u0456' # CYRILLIC "і"
+CAPITAL_I       = u'\u0406' # CYRILLIC "І"
+SMALL_I         = u'\u0456' # CYRILLIC "і"
 SMALL_DOTLESS_I = u'\u0131'
 
 CAPITAL_KAKO    = u'К'
