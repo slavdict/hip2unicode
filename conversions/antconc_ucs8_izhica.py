@@ -16,7 +16,7 @@ from hip2unicode.representations.ucs8 import *
 
 # REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
 
-nrc_DIACRITICS  = neg_right_context( token( DIACRITICS ) )
+nrc_DIACRITICS          = neg_right_context( token( DIACRITICS ) )
 rc_VOWEL_DIACRITICS     = right_context( token( VOWEL_DIACRITICS ) )
 lc_AE                   = left_context( token( AE ) )
 lc_AE_DIA               = left_context( token( AE ), token( VOWEL_DIACRITICS ) )
@@ -49,7 +49,7 @@ conversion = (
 
 
     # Десятиричное И с двойным грависом
-    (CAPITAL_I + nrc_DIACRITICS,                    u'\u0406'), 
-    (SMALL_I + nrc_DIACRITICS,                      u'\u0456'),
+    (CAPITAL_I + nrc_DIACRITICS,            u'\u0406'), 
+    (SMALL_I + nrc_DIACRITICS,              u'\u0456'),
 
 )
