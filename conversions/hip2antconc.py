@@ -3,45 +3,55 @@
 from hip2unicode.representations import hip
 from hip2unicode.representations import antconc
 
-hip2antconc = (
-{
-    u'<\(\(>' : u'«', # замена кавычек <((>
-    u'<\)\)>' : u'»', # <))>
-    u'<->': u'\u2014', # тире EM DASH
-# удаление ненужных html-тегов 
-    u'<p>': u'',
-    u'<a.*?>': u'',
-    u'</a>': u'',
-    u'<br>': u'',
-    u'<hip>': u'',
-    u'</hip>': u'',
-    u'<title>': u'',
-    u'</title>': u'',
-    u'<pre>': u'',
-},
-# hip-нормализация
-# ...
-# удаление ненужной разметки
-{   # киноварь
-    ur'%<':   u'',
-    ur'%>':   u'',
+conversion = (
+    (u'<\(\(>', u'«'),      # замена кавычек <((>
+    (u'<\)\)>', u'»'),      # <))>
+    (u'<->',    u'\u2014'), # тире EM DASH
 
-    ur'%\(':  u'',
-    ur'%\)':  u'',
+    # удаление ненужных html-тегов 
+    (u'<p>',    u''),
+    (u'<a.*?>', u''),
+    (u'</a>',   u''),
+    (u'<br>',   u''),
+    (u'<hip>',  u''),
+    (u'</hip>',     u''),
+    (u'<title>',    u''),
+    (u'</title>',   u''),
+    (u'<pre>',      u''),
+    # hip-нормализация
+    # ...
+    # удаление ненужной разметки
+    # киноварь
+    (ur'%<',    u''),
+    (ur'%>',    u''),
 
-    ur'%\[':  u'',
-    ur'%\]':  u'',
-},
-{
-    ur'\([cсCС]\.\ *\d+\)':  u'', 
-},
-{   # сноски
+    (ur'%\(',   u''),
+    (ur'%\)',   u''),
+
+    (ur'%\[',   u''),
+    (ur'%\]',   u''),
+
+    (ur'\([cсCС]\.\ *\d+\)',    u''),
+
+    (ur'%{![^{}]+?{[^{}]*?}[^{}]*?}',   u''),
+    (ur'%{![^{}]+?}',                   u''),
+    (ur'%{Глава`}',                     u'Глава` '),
+    (ur'%t',                            u''),
+
+    # сноски
     # <сноска 1> ::= *{  <текст сноски> *  <текст сноски> }
-    ur' \*{ .*? \* .*? } ': u'', 
-    # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> } 
-    ur''' \*\*{ .*?  \*\* .*?} ''' : u'',
-},
-{
+    (ur'\*{.*?\*.*?}',          u''),
+    # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> }
+    (ur'\*\*{.*?\*\*.*?}',      u''),
+
+    # Знаки типикона для обозначения разных типов служб (шестеричная,
+    # полиелейная и т.п.)
+    (ur'<\(\+\)>',  u''), #     <(+)>   Бдение под великие праздники
+    (ur'<\\\+/>',   u''), #     <\+/>   Бдение
+    (ur'<\+>',      u''), #      <+>    Полиелей
+    (ur'<\(:\.>',   u''), #     <(:.>   Славословие или шестеричная служба
+    (ur'<М\\р>',    u''), #     <М\р>
+
     # настоящие сноски
     # Имеют вид:
     #
@@ -54,162 +64,144 @@ hip2antconc = (
     #
     # NB: Отбиваем пробелами символы фигурных скобок и собаки, чтобы нормально
     # искался текст в антконке по старым запросам.
-    ur'\{': u' { ',
-    ur'\}': u' } ',
-    ur'(\@{1,2})': ur' \1 ',
+    (ur'\{',        u' { '),
+    (ur'\}',        u' } '),
+    (ur'(\@{1,2})', ur' \1 '),
 
-    ur'\[': u' [ ',
-    ur'\(': u' ( ',
-    ur'\]': u' ] ',
-    ur'\)': u' ) ',
-},
-{
-    ur'\ {2,}': u' ', # два и более пробелов заменяем на один
-},
-{
-    ur'\{ \@': u'{@',
-    ur'\@ \}': u'@}',
-},
-{   # звездочки для поющих на клиросе
-    ur'\*': u'',
+    (ur'\[',        u' [ '),
+    (ur'\(',        u' ( '),
+    (ur'\]',        u' ] '),
+    (ur'\)',        u' ) '),
+
+    (ur'\{\s+\@',   u'{@'),
+    (ur'\@\s+\}',   u'@}'),
+
+    # звездочки для поющих на клиросе
+    (ur'\*',    u''),
     # разделения на строки
-    ur'//': u'',
+    (ur'//',    u''),
     # широкая омега
-    ur'<_w>' : antconc.SMALL_OMEGA,
+    (ur'<_w>',  antconc.SMALL_OMEGA),
     # (сверх)узкое о
-    ur'<о_>' : u'о', # кирил.
-    ur'<o_>' : u'о', # лат.
-},
-{
-    
+    (ur'<о_>',  u'о'), # кирил.
+    (ur'<o_>',  u'о'), # лат.
+    # разные зело и земли
+    (u'<з>',    u'з'),
+    (u'<_з>',   u'з'),
+
     # Regular expressions for character replacement
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
-    hip.A : antconc.CAPITAL_AZ ,
-    hip.a : antconc.SMALL_AZ ,
- 
-    hip.B : antconc.CAPITAL_VEDI ,
-    hip.b : antconc.SMALL_VEDI ,
+    (hip.A, antconc.CAPITAL_AZ),
+    (hip.a, antconc.SMALL_AZ),
 
-    hip.E : antconc.CAPITAL_ESTJ ,
-    hip.e : antconc.SMALL_ESTJ ,
+    (hip.B, antconc.CAPITAL_VEDI),
+    (hip.b, antconc.SMALL_VEDI),
 
-    u's'  : u'\u0455',
-    u'S'  : u'\u0405',
-    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
+    (hip.E, antconc.CAPITAL_ESTJ),
+    (hip.e, antconc.SMALL_ESTJ),
 
-    hip.K : antconc.CAPITAL_KAKO ,
-    hip.k : antconc.SMALL_KAKO ,
+    (u's', u'\u0455'),
+    (u'S', u'\u0405'),
+    (hip.i_without_dot, ur'\u0131'), # U+0131 LATIN SMALL LETTER DOTLESS I
 
-    hip.M : antconc.CAPITAL_MYSLETE ,
-    hip.m : antconc.SMALL_MYSLETE ,
+    (hip.K, antconc.CAPITAL_KAKO),
+    (hip.k, antconc.SMALL_KAKO),
 
-    hip.H : antconc.CAPITAL_NASH ,
-    hip.h : antconc.SMALL_NASH ,
-    
-    hip.O : antconc.CAPITAL_ON ,
-    hip.o : antconc.SMALL_ON ,
+    (hip.M, antconc.CAPITAL_MYSLETE),
+    (hip.m, antconc.SMALL_MYSLETE),
 
-    hip.P : antconc.CAPITAL_RCY ,
-    hip.p : antconc.SMALL_RCY ,
+    (hip.H, antconc.CAPITAL_NASH),
+    (hip.h, antconc.SMALL_NASH),
 
-    hip.C : antconc.CAPITAL_SLOVO ,
-    hip.c : antconc.SMALL_SLOVO ,
+    (hip.O, antconc.CAPITAL_ON),
+    (hip.o, antconc.SMALL_ON),
 
-    hip.T : antconc.CAPITAL_TVERDO ,
-    hip.t : antconc.SMALL_TVERDO ,
+    (hip.P, antconc.CAPITAL_RCY),
+    (hip.p, antconc.SMALL_RCY),
 
-    hip.X : antconc.CAPITAL_XER ,
-    hip.x : antconc.SMALL_XER ,
+    (hip.C, antconc.CAPITAL_SLOVO),
+    (hip.c, antconc.SMALL_SLOVO),
 
-    hip.V_double_gravis : antconc.CAPITAL_IZHICA ,
-    hip.v_double_gravis : antconc.SMALL_IZHICA ,
+    (hip.T, antconc.CAPITAL_TVERDO),
+    (hip.t, antconc.SMALL_TVERDO),
 
-    hip.Ole : antconc.CAPITAL_OLE ,
-    hip.ole : antconc.SMALL_OLE ,
-},
-{
-    hip.Wide_E : antconc.CAPITAL_WIDE_ESTJ ,
-    hip.wide_e : antconc.SMALL_WIDE_ESTJ ,
+    (hip.X, antconc.CAPITAL_XER),
+    (hip.x, antconc.SMALL_XER),
 
-    hip.Yat : antconc.CAPITAL_JATJ ,
-    hip.yat : antconc.SMALL_JATJ ,
+    (hip.V_double_gravis, antconc.CAPITAL_IZHICA),
+    (hip.v_double_gravis, antconc.SMALL_IZHICA),
 
-    hip.V : antconc.CAPITAL_IZHICA ,
-    hip.v : antconc.SMALL_IZHICA ,
+    (hip.Ole, antconc.CAPITAL_OLE),
+    (hip.ole, antconc.SMALL_OLE),
 
-    hip.Ksi : antconc.CAPITAL_KSI ,
-    hip.ksi : antconc.SMALL_KSI ,
+    (hip.Wide_E, antconc.CAPITAL_WIDE_ESTJ),
+    (hip.wide_e, antconc.SMALL_WIDE_ESTJ),
 
-    hip.Wide_O : antconc.CAPITAL_WIDE_ON ,
-    hip.wide_o : antconc.SMALL_WIDE_ON ,
+    (hip.Yat, antconc.CAPITAL_JATJ),
+    (hip.yat, antconc.SMALL_JATJ),
 
-    hip.Ot : antconc.CAPITAL_OT ,
-    hip.ot : antconc.SMALL_OT ,
+    (hip.V, antconc.CAPITAL_IZHICA),
+    (hip.v, antconc.SMALL_IZHICA),
 
-    hip.Psi : antconc.CAPITAL_PSI ,
-    hip.psi : antconc.SMALL_PSI ,
+    (hip.Ksi, antconc.CAPITAL_KSI),
+    (hip.ksi, antconc.SMALL_KSI),
 
-    hip.F : antconc.CAPITAL_FITA ,
-    hip.f : antconc.SMALL_FITA ,
+    (hip.Wide_O, antconc.CAPITAL_WIDE_ON),
+    (hip.wide_o, antconc.SMALL_WIDE_ON),
 
-    hip.J_a : antconc.CAPITAL_I_AZ ,
-    hip.j_a : antconc.SMALL_I_AZ ,
+    (hip.Ot, antconc.CAPITAL_OT),
+    (hip.ot, antconc.SMALL_OT),
 
-    hip.Ja : antconc.CAPITAL_JUS_MALYJ ,
-    hip.ja : antconc.SMALL_JUS_MALYJ ,
+    (hip.Psi, antconc.CAPITAL_PSI),
+    (hip.psi, antconc.SMALL_PSI),
 
-    hip.equal_sign : ur'', # ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
-#    hip.single_quote : antconc.acute ,
-#    hip.back_single_quote : antconc.gravis ,
-#    hip.caret : antconc.circumflex ,
-#    hip.tilde : antconc.titlo ,
+    (hip.F, antconc.CAPITAL_FITA),
+    (hip.f, antconc.SMALL_FITA),
 
-    hip.paerok : u'Ъ',
-    ur'\\Ъ'    : u'Ъ', 
-    ur'\\б' : u'Б',
-    ur'\\Б' : u'Б',
-    hip.vedi_titlo : u'В' ,
-    ur'\\В'        : u'В' ,
-    hip.glagol_titlo : u'Г' ,
-    ur'\\Г'          : u'Г' ,
-    hip.dobro_titlo : u'Д' ,
-    ur'\\Д'         : u'Д',
-    ur'\\к' : u'К',
-    ur'\\К' : u'К',
-    ur'\\л' : u'Л',
-    ur'\\Л' : u'Л',
-    ur'\\н' : u'Н',
-    ur'\\Н' : u'Н',
-    hip.on_titlo : u'О' ,
-    ur'\\О'      : u'О',
-    hip.rcy_titlo : u'Р' ,
-    ur'\\Р'       : u'Р',
-    hip.slovo_titlo : u'С' ,
-    ur'\\С'         : u'С',
-    hip.kher_titlo : u'Х' ,
-    ur'\\Х'        : u'Х',
-    hip.cherv_titlo : u'Ч' ,
-    ur'\\Ч'         : u'Ч',
-    
-},
-{
-    hip.Oy : antconc.CAPITAL_DIGRAPH_UK ,
-    hip.oy : antconc.SMALL_DIGRAPH_UK ,
+    (hip.J_a, antconc.CAPITAL_I_AZ),
+    (hip.j_a, antconc.SMALL_I_AZ),
 
-    hip.W : antconc.CAPITAL_OMEGA ,
-    hip.w : antconc.SMALL_OMEGA ,
-},
-{   
-    ur'(?<!_)' + hip.Y : antconc.CAPITAL_MONOGRAPH_UK ,
-    ur'(?<!_)' + hip.y : antconc.SMALL_MONOGRAPH_UK ,
+    (hip.Ja, antconc.CAPITAL_JUS_MALYJ),
+    (hip.ja, antconc.SMALL_JUS_MALYJ),
 
-    u'i'  : u'\u0456',
-    u'I'  : u'\u0406',
-},
-{
-    u'_у' : u'у',
-    u'#' : u'\u0482', # знак тысячи
-},
+    (hip.equal_sign, ur''), # ur'’', # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
+#    (hip.single_quote, antconc.acute),
+#    (hip.back_single_quote, antconc.gravis),
+#    (hip.caret, antconc.circumflex),
+#    (hip.tilde, antconc.titlo),
+
+    (ur'\\[ъЪ]', u'Ъ'),
+    (ur'\\[бБ]', u'Б'),
+    (ur'\\[вВ]', u'В'),
+    (ur'\\[гГ]', u'Г'),
+    (ur'\\[дД]', u'Д'),
+    (ur'\\[зЗ]', u'З'),
+    (ur'\\[кК]', u'К'),
+    (ur'\\[лЛ]', u'Л'),
+    (ur'\\[мМ]', u'М'),
+    (ur'\\[нН]', u'Н'),
+    (ur'\\[оО]', u'О'),
+    (ur'\\[рР]', u'Р'),
+    (ur'\\[сС]', u'С'),
+    (ur'\\[хХ]', u'Х'),
+    (ur'\\[чЧ]', u'Ч'),
+
+    (hip.Oy, antconc.CAPITAL_DIGRAPH_UK),
+    (hip.oy, antconc.SMALL_DIGRAPH_UK),
+
+    (hip.W, antconc.CAPITAL_OMEGA),
+    (hip.w, antconc.SMALL_OMEGA),
+
+    (ur'(?<!_)' + hip.Y, antconc.CAPITAL_MONOGRAPH_UK),
+    (ur'(?<!_)' + hip.y, antconc.SMALL_MONOGRAPH_UK),
+
+    (u'i', u'\u0456'),
+    (u'I', u'\u0406'),
+
+    (u'_у', u'у'),
+    (u'#', u'\u0482'), # знак тысячи
+
+    (ur'\ {2,}',    u' '), # два и более пробелов заменяем на один
 )
