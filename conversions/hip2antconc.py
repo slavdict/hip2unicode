@@ -41,13 +41,41 @@ hip2antconc = (
     # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> } 
     ur''' \*\*{ .*?  \*\* .*?} ''' : u'',
 },
+{
+    # настоящие сноски
+    # Имеют вид:
+    #
+    #    <text> ::= <текст, к которому относится сноска>
+    #    <note> ::= <текст сноски>
+    #
+    #    1) <text>@{<note>}
+    #    2) @<text>@{@<note>@}
+    #    3) @@<text>@@{@@<note>@@}
+    #
+    # NB: Отбиваем пробелами символы фигурных скобок и собаки, чтобы нормально
+    # искался текст в антконке по старым запросам.
+    ur'\{': u' { ',
+    ur'\}': u' } ',
+    ur'(\@{1,2})': ur' \1 ',
 
+    ur'\[': u' [ ',
+    ur'\(': u' ( ',
+    ur'\]': u' ] ',
+    ur'\)': u' ) ',
+},
+{
+    ur'\ {2,}': u' ', # два и более пробелов заменяем на один
+},
+{
+    ur'\{ \@': u'{@',
+    ur'\@ \}': u'@}',
+},
 {   # звездочки для поющих на клиросе
     ur'\*': u'',
     # разделения на строки
     ur'//': u'',
     # широкая омега
-    ur'<_w>' : antconc.omega,
+    ur'<_w>' : antconc.SMALL_OMEGA,
     # (сверх)узкое о
     ur'<о_>' : u'о', # кирил.
     ur'<o_>' : u'о', # лат.
@@ -58,79 +86,79 @@ hip2antconc = (
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
-    hip.A : antconc.Az ,
-    hip.a : antconc.az ,
+    hip.A : antconc.CAPITAL_AZ ,
+    hip.a : antconc.SMALL_AZ ,
  
-    hip.B : antconc.Vedi ,
-    hip.b : antconc.vedi ,
+    hip.B : antconc.CAPITAL_VEDI ,
+    hip.b : antconc.SMALL_VEDI ,
 
-    hip.E : antconc.Est ,
-    hip.e : antconc.est ,
+    hip.E : antconc.CAPITAL_ESTJ ,
+    hip.e : antconc.SMALL_ESTJ ,
 
     u's'  : u'\u0455',
     u'S'  : u'\u0405',
     hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 
-    hip.K : antconc.Kako ,
-    hip.k : antconc.kako ,
+    hip.K : antconc.CAPITAL_KAKO ,
+    hip.k : antconc.SMALL_KAKO ,
 
-    hip.M : antconc.Myslete ,
-    hip.m : antconc.myslete ,
+    hip.M : antconc.CAPITAL_MYSLETE ,
+    hip.m : antconc.SMALL_MYSLETE ,
 
-    hip.H : antconc.Nash ,
-    hip.h : antconc.nash ,
+    hip.H : antconc.CAPITAL_NASH ,
+    hip.h : antconc.SMALL_NASH ,
     
-    hip.O : antconc.On ,
-    hip.o : antconc.on ,
+    hip.O : antconc.CAPITAL_ON ,
+    hip.o : antconc.SMALL_ON ,
 
-    hip.P : antconc.Rcy ,
-    hip.p : antconc.rcy ,
+    hip.P : antconc.CAPITAL_RCY ,
+    hip.p : antconc.SMALL_RCY ,
 
-    hip.C : antconc.Slovo ,
-    hip.c : antconc.slovo ,
+    hip.C : antconc.CAPITAL_SLOVO ,
+    hip.c : antconc.SMALL_SLOVO ,
 
-    hip.T : antconc.Tverdo ,
-    hip.t : antconc.tverdo ,
+    hip.T : antconc.CAPITAL_TVERDO ,
+    hip.t : antconc.SMALL_TVERDO ,
 
-    hip.X : antconc.Kher ,
-    hip.x : antconc.kher ,
+    hip.X : antconc.CAPITAL_XER ,
+    hip.x : antconc.SMALL_XER ,
 
-    hip.V_double_gravis : antconc.Izhica,
-    hip.v_double_gravis : antconc.izhica,
+    hip.V_double_gravis : antconc.CAPITAL_IZHICA ,
+    hip.v_double_gravis : antconc.SMALL_IZHICA ,
 
-    hip.Ole : antconc.Ole ,
-    hip.ole : antconc.ole ,
+    hip.Ole : antconc.CAPITAL_OLE ,
+    hip.ole : antconc.SMALL_OLE ,
 },
 {
-    hip.Wide_E : antconc.Wide_E ,
-    hip.wide_e : antconc.wide_e ,
+    hip.Wide_E : antconc.CAPITAL_WIDE_ESTJ ,
+    hip.wide_e : antconc.SMALL_WIDE_ESTJ ,
 
-    hip.Yat : antconc.Yat ,
-    hip.yat : antconc.yat ,
+    hip.Yat : antconc.CAPITAL_JATJ ,
+    hip.yat : antconc.SMALL_JATJ ,
 
-    hip.V : antconc.Izhica ,
-    hip.v : antconc.izhica ,
+    hip.V : antconc.CAPITAL_IZHICA ,
+    hip.v : antconc.SMALL_IZHICA ,
 
-    hip.Ksi : antconc.Ksi ,
-    hip.ksi : antconc.ksi ,
+    hip.Ksi : antconc.CAPITAL_KSI ,
+    hip.ksi : antconc.SMALL_KSI ,
 
-    hip.Wide_O : antconc.Wide_O ,
-    hip.wide_o : antconc.wide_o ,
+    hip.Wide_O : antconc.CAPITAL_WIDE_ON ,
+    hip.wide_o : antconc.SMALL_WIDE_ON ,
 
-    hip.Ot : antconc.Ot ,
-    hip.ot : antconc.ot ,
+    hip.Ot : antconc.CAPITAL_OT ,
+    hip.ot : antconc.SMALL_OT ,
 
-    hip.Psi : antconc.Psi ,
-    hip.psi : antconc.psi ,
+    hip.Psi : antconc.CAPITAL_PSI ,
+    hip.psi : antconc.SMALL_PSI ,
 
-    hip.F : antconc.Fita ,
-    hip.f : antconc.fita ,
+    hip.F : antconc.CAPITAL_FITA ,
+    hip.f : antconc.SMALL_FITA ,
 
-    hip.J_a : antconc.Ja ,
-    hip.j_a : antconc.ja ,
+    hip.J_a : antconc.CAPITAL_I_AZ ,
+    hip.j_a : antconc.SMALL_I_AZ ,
 
-    hip.Ja : antconc.Small_Yus ,
-    hip.ja : antconc.small_yus ,
+    hip.Ja : antconc.CAPITAL_JUS_MALYJ ,
+    hip.ja : antconc.SMALL_JUS_MALYJ ,
 
     hip.equal_sign : ur'', # ur'’' , # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
 #    hip.single_quote : antconc.acute ,
@@ -167,15 +195,15 @@ hip2antconc = (
     
 },
 {
-    hip.Oy : antconc.Oy ,
-    hip.oy : antconc.oy ,
+    hip.Oy : antconc.CAPITAL_DIGRAPH_UK ,
+    hip.oy : antconc.SMALL_DIGRAPH_UK ,
 
-    hip.W : antconc.Omega ,
-    hip.w : antconc.omega ,
+    hip.W : antconc.CAPITAL_OMEGA ,
+    hip.w : antconc.SMALL_OMEGA ,
 },
 {   
-    ur'(?<!_)' + hip.Y : antconc.Uk ,
-    ur'(?<!_)' + hip.y : antconc.uk ,
+    ur'(?<!_)' + hip.Y : antconc.CAPITAL_MONOGRAPH_UK ,
+    ur'(?<!_)' + hip.y : antconc.SMALL_MONOGRAPH_UK ,
 
     u'i'  : u'\u0456',
     u'I'  : u'\u0406',
