@@ -176,7 +176,6 @@ conversion = (
 #    (hip.caret, antconc.circumflex),
 #    (hip.tilde, antconc.titlo),
 
-    (ur'\\[ъЪ]', u'Ъ'),
     (ur'\\[бБ]', u'Б'),
     (ur'\\[вВ]', u'В'),
     (ur'\\[гГ]', u'Г'),
@@ -188,6 +187,7 @@ conversion = (
     (ur'\\[мМ]', u'М'),
     (ur'\\[нН]', u'Н'),
     (ur'\\[оО]', u'О'),
+    (ur'\\[пП]', u'П'),
     (ur'\\[рР]', u'Р'),
     (ur'\\[сС]', u'С'),
     (ur'\\[тТ]', u'Т'),
@@ -197,6 +197,7 @@ conversion = (
     (ur'\\[цЦ]', u'Ц'),
     (ur'\\[чЧ]', u'Ч'),
     (ur'\\[шШ]', u'Ш'),
+    (ur'\\[ъЪ]', u'Ъ'),
 
     (hip.Oy, antconc.CAPITAL_DIGRAPH_UK),
     (hip.oy, antconc.SMALL_DIGRAPH_UK),
