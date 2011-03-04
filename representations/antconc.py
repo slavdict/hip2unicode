@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 """
-Файл описывает константы для удобства использования 
+Файл описывает константы для удобства использования
 при построении регулярных выражений (NB).
 
 """
@@ -24,9 +24,9 @@ CAPITAL_ESTJ    = u'Е'
 SMALL_ESTJ      = u'е'
 
 # NB: \u0415 is used instead \u0404,
-# because there is no difference 
+# because there is no difference
 # between normal and wide capital E
-CAPITAL_WIDE_ESTJ   = CAPITAL_ESTJ    
+CAPITAL_WIDE_ESTJ   = CAPITAL_ESTJ
 SMALL_WIDE_ESTJ     = u'\u0454'   # CYRILLIC "є"
 
 CAPITAL_ZHIVETE = u'Ж'
@@ -152,7 +152,7 @@ SMALL_OT = u'\u047F'
 AKUT        = u"'"
 GRAVIS      = u'`'
 CIRKUMFLEKS = ur'\^' # RegExp escaped CARET symbol
-TITLO       = u'~' 
+TITLO       = u'~'
 
 PAEROK      = u'Ъ'
 
