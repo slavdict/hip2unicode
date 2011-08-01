@@ -18,6 +18,9 @@ from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
 conversion = (
+    (u'бг~о',           u'бого'),
+    (u'бл~го',          u'благо'),
+
     (SMALL_WIDE_ESTJ,   u'е'),
     (SMALL_ZELO,        u'з'),
     (SMALL_I,           u'и'),
