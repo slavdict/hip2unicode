@@ -20,6 +20,8 @@ from hip2unicode.representations.antconc import *
 conversion = (
     (u'бг~о',           u'бого'),
     (u'бл~го',          u'благо'),
+    (u'бжСтв',          u'божеств'),
+    (u'бж~',            u'бож'),
 
     (SMALL_WIDE_ESTJ,   u'е'),
     (SMALL_ZELO,        u'з'),
