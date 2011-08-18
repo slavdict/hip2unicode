@@ -18,6 +18,10 @@ from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
 conversion = (
+    (AKUT,          u''),
+    (GRAVIS,        u''),
+    (CIRKUMFLEKS,   u''),
+
     (u'апСл',   u'апостол'),
     (u'бг~',    u'бог'),
     (u'бж~',    u'бож'),
@@ -143,9 +147,7 @@ conversion = (
     (SMALL_WIDE_ON,     u'о'),
     (SMALL_OLE,         u'о'),
     (SMALL_OT,          u'от'),
-    (AKUT,          u''),
-    (GRAVIS,        u''),
-    (CIRKUMFLEKS,   u''),
+
     (TITLO,         u'*'),
     (PAEROK,        u'ъ'),
     (VEDI_TITLO,    u'*'),
