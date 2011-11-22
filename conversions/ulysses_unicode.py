@@ -488,134 +488,104 @@ NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-
 #								; though probably not often used in legacy Greek text)
 #UniDefault			replacement_character
 
-' '		<>	space
-'!'		<>	exclamation_mark
-'"'		<>	combining_diaeresis
-'#'		<>	no_break_space
-'$'		<>	left_pointing_double_angle_quotation_mark
-'%'		<>	right_pointing_double_angle_quotation_mark
-'&'		<>	ampersand
-"'"		<>	combining_acute_accent
-'('		<>	left_parenthesis
-')'		<>	right_parenthesis
-'*'		<>	asterisk
-'+'		<>	plus_sign
-','		<>	comma
-'-'		<>	hyphen_minus
-'.'		<>	full_stop
-'/'		<>	solidus
+    (u'"',      u'\u0308'), # combining_diaeresis
+    (u'#',      u'\u00a0'), # no_break_space
+    (u'$',      u'\u00ab'), # left_pointing_double_angle_quotation_markleft
+    (u'%',      u'\u00bb'), # right_pointing_double_angle_quotation_mark
+    (u"'",      u'\u0301'), #combining_acute_accent
 
-'0'		<>	digit_zero
-'1'		<>	digit_one
-'2'		<>	digit_two
-'3'		<>	digit_three
-'4'		<>	digit_four
-'5'		<>	digit_five
-'6'		<>	digit_six
-'7'		<>	digit_seven
-'8'		<>	digit_eight
-'9'		<>	digit_nine
-':'		<>	colon
-';'		< 	greek_ano_teleia				; greek semicolon
-';'		<>	middle_dot						; canonical decomposition of greek semicolon
-'<'		<>	less_than_sign
-'='		<>	equals_sign
-'>'		<>	greater_than_sign
-'?'		<	greek_question_mark
-'?'		<>	semicolon						; canonical decomposition of greek question mark
+    (u';',      u'\u0387'), #greek_ano_teleia				; greek semicolon
+    (u'?',      u';'), #semicolon						; canonical decomposition of greek question mark
 
-'@'		<>	right_single_quotation_mark
-'@'		<	modifier_letter_apostrophe		; mapping of '@' in earlier draft of this file
-'A'		<>	greek_capital_letter_alpha
-'B'		<>	greek_capital_letter_beta
-'C'		<>	greek_capital_letter_chi
-'D'		<>	greek_capital_letter_delta
-'E'		<>	greek_capital_letter_epsilon
-'F'		<>	greek_capital_letter_phi
-'G'		<>	greek_capital_letter_gamma
-'H'		<>	combining_comma_above
-'I'		<>	greek_capital_letter_iota
-'J'		<>	greek_capital_letter_eta
-'K'		<>	greek_capital_letter_kappa
-'L'		<>	greek_capital_letter_lamda
-'M'		<>	greek_capital_letter_mu
-'N'		<>	greek_capital_letter_nu
-'O'		<>	greek_capital_letter_omicron
+    (u'@',      u'\u2019'), #right_single_quotation_mark
 
-'P'		<>	greek_capital_letter_pi
-'Q'		<>	greek_capital_letter_theta
-'R'		<>	greek_capital_letter_rho
-'S'		<>	greek_capital_letter_sigma
-'T'		<>	greek_capital_letter_tau
-'U'		<>	greek_capital_letter_upsilon
-'W'		<>	greek_capital_letter_omega
-'X'		<>	greek_capital_letter_xi
-'Y'		<>	greek_capital_letter_psi
-'Z'		<>	greek_capital_letter_zeta
-'['		<>	left_square_bracket
-'\'		<>	reverse_solidus
-']'		<>	right_square_bracket
-'^'		<>	combining_greek_perispomeni		; circumflex
-'_'		<>	combining_greek_ypogegrammeni	; iota subscript
+    (u'A',      u'\u0391'), #greek_capital_letter_alpha
+    (u'B',      u'\u0392'), #greek_capital_letter_beta
+    (u'C',      u'\u03a7'), #greek_capital_letter_chi
+    (u'D',      u'\u0394'), #greek_capital_letter_delta
+    (u'E',      u'\u0395'), #greek_capital_letter_epsilon
+    (u'F',      u'\u03a6'), #greek_capital_letter_phi
+    (u'G',      u'\u0393'), #greek_capital_letter_gamma
+    (u'H',      u'\u0313'), #combining_comma_above
+    (u'I',      u'\u0399'), #greek_capital_letter_iota
+    (u'J',      u'\u0397'), #greek_capital_letter_eta
+    (u'K',      u'\u039a'), #greek_capital_letter_kappa
+    (u'L',      u'\u039b'), #greek_capital_letter_lamda
+    (u'M',      u'\u039c'), #greek_capital_letter_mu
+    (u'N',      u'\u039d'), #greek_capital_letter_nu
+    (u'O',      u'\u039f'), #greek_capital_letter_omicron
+    (u'P',      u'\u03a0'), #greek_capital_letter_pi
+    (u'Q',      u'\u0398'), #greek_capital_letter_theta
+    (u'R',      u'\u03a1'), #greek_capital_letter_rho
+    (u'S',      u'\u03a3'), #greek_capital_letter_sigma
+    (u'T',      u'\u03a4'), #greek_capital_letter_tau
+    (u'U',      u'\u03a5'), #greek_capital_letter_upsilon
+    (u'W',      u'\u03a9'), #greek_capital_letter_omega
+    (u'X',      u'\u039e'), #greek_capital_letter_xi
+    (u'Y',      u'\u03a8'), #greek_capital_letter_psi
+    (u'Z',      u'\u0396'), #greek_capital_letter_zeta
 
-'`'		<>	combining_grave_accent
-'a'		<>	greek_small_letter_alpha
-'b'		<>	greek_small_letter_beta
-'c'		<>	greek_small_letter_chi
-'d'		<>	greek_small_letter_delta
-'e'		<>	greek_small_letter_epsilon
-'f'		<>	greek_small_letter_phi
-'g'		<>	greek_small_letter_gamma
-'h'		<>	combining_reversed_comma_above
-'i'		<>	greek_small_letter_iota
-'j'		<>	greek_small_letter_eta
-'k'		<>	greek_small_letter_kappa
-'l'		<>	greek_small_letter_lamda
-'m'		<>	greek_small_letter_mu
-'n'		<>	greek_small_letter_nu
-'o'		<>	greek_small_letter_omicron
+    (u'^',      u'\u0342'), #combining_greek_perispomeni		; circumflex
+    (u'_',      u'\u0345'), #combining_greek_ypogegrammeni	; iota subscript
+    (u'`',      u'\u0300'), #combining_grave_accent
 
-'p'		<>	greek_small_letter_pi
-'q'		<>	greek_small_letter_theta
-'r'		<>	greek_small_letter_rho
-'s'		<>	greek_small_letter_sigma
-'t'		<>	greek_small_letter_tau
-'u'		<>	greek_small_letter_upsilon
-'v'		<>	greek_small_letter_final_sigma
-'w'		<>	greek_small_letter_omega
-'x'		<>	greek_small_letter_xi
-'y'		<>	greek_small_letter_psi
-'z'		<>	greek_small_letter_zeta
-'{'		<>	left_curly_bracket
-
-'|'		<>	vertical_line
-'|b'	<>	greek_beta_symbol				; curly beta
-'|f'	<>	greek_small_letter_digamma		; digamma
-'|G'	<>	greek_letter_digamma			; Digamma
-'|g'	 >	greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
-'|w'	<>	greek_pi_symbol					; omega pi
-'|q'	<>	greek_small_letter_koppa		; qoppa
-'|Q'	<>	greek_letter_koppa				; Qoppa
-'|R'	 >	greek_letter_koppa				; Qoppa
-'|k'	 >	greek_small_letter_koppa		; qoppa
-'|K'	 >	greek_letter_koppa				; Qoppa
-'|p'	<>	greek_small_letter_sampi		; sampi
-'|P'	<>	greek_letter_sampi				; Sampi
-'|m'	 >	greek_small_letter_sampi		; sampi
-'|M'	 >	greek_letter_sampi				; Sampi
-'|s'	<>	greek_lunate_sigma_symbol		; lunate sigma
-'|S'	 >	greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
-'|t'	<>	greek_small_letter_stigma		; stigma
-'|T'	<>	greek_letter_stigma				; Stigma
-'|i'	<>	turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
-'|U'	<>	greek_upsilon_with_hook_symbol	; Upsilon hook
-'|h'	<>	greek_numeral_sign				; upper numeral sign
-'|H'	<>	greek_lower_numeral_sign		; lower numeral sign
-'|n'	<>	zero_width_joiner
-'|#'	<>	zero_width_non_joiner
-
-'}'		<>	right_curly_bracket
-'~'		<>	em_dash
+    (u'a',      u'\u03b1'), #greek_small_letter_alpha
+    (u'b',      u'\u03b2'), #greek_small_letter_beta
+    (u'c',      u'\u03c7'), #greek_small_letter_chi
+    (u'd',      u'\u03b4'), #greek_small_letter_delta
+    (u'e',      u'\u03b5'), #greek_small_letter_epsilon
+    (u'f',      u'\u03c6'), #greek_small_letter_phi
+    (u'g',      u'\u03b3'), #greek_small_letter_gamma
+    (u'h',      u'\u0314'), #combining_reversed_comma_above
+    >>>>>>>
+    (u'i',      u'\u'), #greek_small_letter_iota
+    (u'j',      u'\u'), #greek_small_letter_eta
+    (u'k',      u'\u'), #greek_small_letter_kappa
+    (u'l',      u'\u'), #greek_small_letter_lamda
+    (u'm',      u'\u'), #greek_small_letter_mu
+    (u'n',      u'\u'), #greek_small_letter_nu
+    (u'o',      u'\u'), #greek_small_letter_omicron
+    (u'p',      u'\u'), #greek_small_letter_pi
+    (u'q',      u'\u'), #greek_small_letter_theta
+    (u'r',      u'\u'), #greek_small_letter_rho
+    (u's',      u'\u'), #greek_small_letter_sigma
+    (u't',      u'\u'), #greek_small_letter_tau
+    (u'u',      u'\u'), #greek_small_letter_upsilon
+    (u'v',      u'\u'), #greek_small_letter_final_sigma
+    (u'w',      u'\u'), #greek_small_letter_omega
+    (u'x',      u'\u'), #greek_small_letter_xi
+    (u'y',      u'\u'), #greek_small_letter_psi
+    (u'z',      u'\u'), #greek_small_letter_zeta
+    (u'{',      u'\u'), #left_curly_bracket
+    (u
+    (u'|',      u'\u'), #vertical_line
+    (u'|b',      u'\u'), #greek_beta_symbol				; curly beta
+    (u'|f',      u'\u'), #greek_small_letter_digamma		; digamma
+    (u'|G',      u'\u'), #greek_letter_digamma			; Digamma
+    (u'|g',      u'\u'), #greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
+    (u'|w',      u'\u'), #greek_pi_symbol					; omega pi
+    (u'|q',      u'\u'), #greek_small_letter_koppa		; qoppa
+    (u'|Q',      u'\u'), #greek_letter_koppa				; Qoppa
+    (u'|R',      u'\u'), #greek_letter_koppa				; Qoppa
+    (u'|k',      u'\u'), #greek_small_letter_koppa		; qoppa
+    (u'|K',      u'\u'), #greek_letter_koppa				; Qoppa
+    (u'|p',      u'\u'), #greek_small_letter_sampi		; sampi
+    (u'|P',      u'\u'), #greek_letter_sampi				; Sampi
+    (u'|m',      u'\u'), #greek_small_letter_sampi		; sampi
+    (u'|M',      u'\u'), #greek_letter_sampi				; Sampi
+    (u'|s',      u'\u'), #greek_lunate_sigma_symbol		; lunate sigma
+    (u'|S',      u'\u'), #greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
+    (u'|t',      u'\u'), #greek_small_letter_stigma		; stigma
+    (u'|T',      u'\u'), #greek_letter_stigma				; Stigma
+    (u'|i',      u'\u'), #turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
+    (u'|U',      u'\u'), #greek_upsilon_with_hook_symbol	; Upsilon hook
+    (u'|h',      u'\u'), #greek_numeral_sign				; upper numeral sign
+    (u'|H',      u'\u'), #greek_lower_numeral_sign		; lower numeral sign
+    (u'|n',      u'\u'), #zero_width_joiner
+    (u'|#',      u'\u'), #zero_width_non_joiner
+    (u
+    (u'}',      u'\u'), #right_curly_bracket
+    (u'~',      u'\u'), #em_dash
 
 150		<>	en_dash
 151		 >	em_dash
