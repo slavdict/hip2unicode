@@ -1,12 +1,13 @@
 # -*- coding: UTF-8 -*-
 
-NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-\u00ab\u00ad-\u00b5\u00b8-\u00ff]'
+#NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-\u00ab\u00ad-\u00b5\u00b8-\u00ff]'
 
 
 conversion = (
 
     # make sigma into final form if not followed by a letter
-    (u's' + NOTLTR, u'v'),
+    #(u's' + NOTLTR, u'v'),
+    (u's($|(?=[\s.,;\]\)\?\!:]))', u'v'),
 
     (u'\u00CF'            ,  u'Hr'),
     (u'\u00BF'            ,  u'hr'),
@@ -490,7 +491,7 @@ conversion = (
 
     (u'"',      u'\u0308'), # combining_diaeresis
     (u'#',      u'\u00a0'), # no_break_space
-    (u'$',      u'\u00ab'), # left_pointing_double_angle_quotation_markleft
+    (ur'\$',      u'\u00ab'), # left_pointing_double_angle_quotation_markleft
     (u'%',      u'\u00bb'), # right_pointing_double_angle_quotation_mark
     (u"'",      u'\u0301'), #combining_acute_accent
 
@@ -556,30 +557,30 @@ conversion = (
     (u'y',      u'\u03c8'), #greek_small_letter_psi
     (u'z',      u'\u03b6'), #greek_small_letter_zeta
 
-    (u'|b',      u'\u03d0'), #greek_beta_symbol				; curly beta
-    (u'|f',      u'\u03dd'), #greek_small_letter_digamma		; digamma
-    (u'|G',      u'\u03dc'), #greek_letter_digamma			; Digamma
-    (u'|g',      u'\u03dd'), #greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
-    (u'|w',      u'\u03d6'), #greek_pi_symbol					; omega pi
-    (u'|q',      u'\u03df'), #greek_small_letter_koppa		; qoppa
-    (u'|Q',      u'\u03de'), #greek_letter_koppa				; Qoppa
-    (u'|R',      u'\u03de'), #greek_letter_koppa				; Qoppa
-    (u'|k',      u'\u03df'), #greek_small_letter_koppa		; qoppa
-    (u'|K',      u'\u03de'), #greek_letter_koppa				; Qoppa
-    (u'|p',      u'\u03e1'), #greek_small_letter_sampi		; sampi
-    (u'|P',      u'\u03e0'), #greek_letter_sampi				; Sampi
-    (u'|m',      u'\u03e1'), #greek_small_letter_sampi		; sampi
-    (u'|M',      u'\u03e0'), #greek_letter_sampi				; Sampi
-    (u'|s',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma
-    (u'|S',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
-    (u'|t',      u'\u03db'), #greek_small_letter_stigma		; stigma
-    (u'|T',      u'\u03da'), #greek_letter_stigma				; Stigma
-    (u'|i',      u'\u2129\u0330'), #turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
-    (u'|U',      u'\u03d2'), #greek_upsilon_with_hook_symbol	; Upsilon hook
-    (u'|h',      u'\u0374'), #greek_numeral_sign				; upper numeral sign
-    (u'|H',      u'\u0375'), #greek_lower_numeral_sign		; lower numeral sign
-    (u'|n',      u'\u200d'), #zero_width_joiner
-    (u'|#',      u'\u200c'), #zero_width_non_joiner
+    (ur'\|b',      u'\u03d0'), #greek_beta_symbol				; curly beta
+    (ur'\|f',      u'\u03dd'), #greek_small_letter_digamma		; digamma
+    (ur'\|G',      u'\u03dc'), #greek_letter_digamma			; Digamma
+    (ur'\|g',      u'\u03dd'), #greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
+    (ur'\|w',      u'\u03d6'), #greek_pi_symbol					; omega pi
+    (ur'\|q',      u'\u03df'), #greek_small_letter_koppa		; qoppa
+    (ur'\|Q',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (ur'\|R',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (ur'\|k',      u'\u03df'), #greek_small_letter_koppa		; qoppa
+    (ur'\|K',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (ur'\|p',      u'\u03e1'), #greek_small_letter_sampi		; sampi
+    (ur'\|P',      u'\u03e0'), #greek_letter_sampi				; Sampi
+    (ur'\|m',      u'\u03e1'), #greek_small_letter_sampi		; sampi
+    (ur'\|M',      u'\u03e0'), #greek_letter_sampi				; Sampi
+    (ur'\|s',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma
+    (ur'\|S',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
+    (ur'\|t',      u'\u03db'), #greek_small_letter_stigma		; stigma
+    (ur'\|T',      u'\u03da'), #greek_letter_stigma				; Stigma
+    (ur'\|i',      u'\u2129\u0330'), #turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
+    (ur'\|U',      u'\u03d2'), #greek_upsilon_with_hook_symbol	; Upsilon hook
+    (ur'\|h',      u'\u0374'), #greek_numeral_sign				; upper numeral sign
+    (ur'\|H',      u'\u0375'), #greek_lower_numeral_sign		; lower numeral sign
+    (ur'\|n',      u'\u200d'), #zero_width_joiner
+    (ur'\|#',      u'\u200c'), #zero_width_non_joiner
 
     (u'~',      u'\u2014'), #em_dash
     (u'\u0096', u'\u2013'), # en_dash
