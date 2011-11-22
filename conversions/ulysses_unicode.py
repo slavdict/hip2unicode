@@ -1,12 +1,12 @@
 # -*- coding: UTF-8 -*-
 
-conversion = ()
-
 NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-\u00ab\u00ad-\u00b5\u00b8-\u00ff]'
+
+
+conversion = ()
 
     # make sigma into final form if not followed by a letter
     (u's' + NOTLTR, u'v'),
-
 
     (u'\u00CF'            ,  u'Hr'),
     (u'\u00BF'            ,  u'hr'),
@@ -537,85 +537,75 @@ NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-
     (u'f',      u'\u03c6'), #greek_small_letter_phi
     (u'g',      u'\u03b3'), #greek_small_letter_gamma
     (u'h',      u'\u0314'), #combining_reversed_comma_above
-    >>>>>>>
-    (u'i',      u'\u'), #greek_small_letter_iota
-    (u'j',      u'\u'), #greek_small_letter_eta
-    (u'k',      u'\u'), #greek_small_letter_kappa
-    (u'l',      u'\u'), #greek_small_letter_lamda
-    (u'm',      u'\u'), #greek_small_letter_mu
-    (u'n',      u'\u'), #greek_small_letter_nu
-    (u'o',      u'\u'), #greek_small_letter_omicron
-    (u'p',      u'\u'), #greek_small_letter_pi
-    (u'q',      u'\u'), #greek_small_letter_theta
-    (u'r',      u'\u'), #greek_small_letter_rho
-    (u's',      u'\u'), #greek_small_letter_sigma
-    (u't',      u'\u'), #greek_small_letter_tau
-    (u'u',      u'\u'), #greek_small_letter_upsilon
-    (u'v',      u'\u'), #greek_small_letter_final_sigma
-    (u'w',      u'\u'), #greek_small_letter_omega
-    (u'x',      u'\u'), #greek_small_letter_xi
-    (u'y',      u'\u'), #greek_small_letter_psi
-    (u'z',      u'\u'), #greek_small_letter_zeta
-    (u'{',      u'\u'), #left_curly_bracket
+    (u'i',      u'\u03b9'), #greek_small_letter_iota
+    (u'j',      u'\u03b7'), #greek_small_letter_eta
+    (u'k',      u'\u03ba'), #greek_small_letter_kappa
+    (u'l',      u'\u03bb'), #greek_small_letter_lamda
+    (u'm',      u'\u03bc'), #greek_small_letter_mu
+    (u'n',      u'\u03bd'), #greek_small_letter_nu
+    (u'o',      u'\u03bf'), #greek_small_letter_omicron
+    (u'p',      u'\u03c0'), #greek_small_letter_pi
+    (u'q',      u'\u03b8'), #greek_small_letter_theta
+    (u'r',      u'\u03c1'), #greek_small_letter_rho
+    (u's',      u'\u03c3'), #greek_small_letter_sigma
+    (u't',      u'\u03c4'), #greek_small_letter_tau
+    (u'u',      u'\u03c5'), #greek_small_letter_upsilon
+    (u'v',      u'\u03c2'), #greek_small_letter_final_sigma
+    (u'w',      u'\u03c9'), #greek_small_letter_omega
+    (u'x',      u'\u03be'), #greek_small_letter_xi
+    (u'y',      u'\u03c8'), #greek_small_letter_psi
+    (u'z',      u'\u03b6'), #greek_small_letter_zeta
+
+    (u'|b',      u'\u03d0'), #greek_beta_symbol				; curly beta
+    (u'|f',      u'\u03dd'), #greek_small_letter_digamma		; digamma
+    (u'|G',      u'\u03dc'), #greek_letter_digamma			; Digamma
+    (u'|g',      u'\u03dd'), #greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
+    (u'|w',      u'\u03d6'), #greek_pi_symbol					; omega pi
+    (u'|q',      u'\u03df'), #greek_small_letter_koppa		; qoppa
+    (u'|Q',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (u'|R',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (u'|k',      u'\u03df'), #greek_small_letter_koppa		; qoppa
+    (u'|K',      u'\u03de'), #greek_letter_koppa				; Qoppa
+    (u'|p',      u'\u03e1'), #greek_small_letter_sampi		; sampi
+    (u'|P',      u'\u03e0'), #greek_letter_sampi				; Sampi
+    (u'|m',      u'\u03e1'), #greek_small_letter_sampi		; sampi
+    (u'|M',      u'\u03e0'), #greek_letter_sampi				; Sampi
+    (u'|s',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma
+    (u'|S',      u'\u03f2'), #greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
+    (u'|t',      u'\u03db'), #greek_small_letter_stigma		; stigma
+    (u'|T',      u'\u03da'), #greek_letter_stigma				; Stigma
+    (u'|i',      u'\u2129\u0330'), #turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
+    (u'|U',      u'\u03d2'), #greek_upsilon_with_hook_symbol	; Upsilon hook
+    (u'|h',      u'\u0374'), #greek_numeral_sign				; upper numeral sign
+    (u'|H',      u'\u0375'), #greek_lower_numeral_sign		; lower numeral sign
+    (u'|n',      u'\u200d'), #zero_width_joiner
+    (u'|#',      u'\u200c'), #zero_width_non_joiner
     (u
-    (u'|',      u'\u'), #vertical_line
-    (u'|b',      u'\u'), #greek_beta_symbol				; curly beta
-    (u'|f',      u'\u'), #greek_small_letter_digamma		; digamma
-    (u'|G',      u'\u'), #greek_letter_digamma			; Digamma
-    (u'|g',      u'\u'), #greek_small_letter_digamma		; digamma (which SIL forms should have priority?)
-    (u'|w',      u'\u'), #greek_pi_symbol					; omega pi
-    (u'|q',      u'\u'), #greek_small_letter_koppa		; qoppa
-    (u'|Q',      u'\u'), #greek_letter_koppa				; Qoppa
-    (u'|R',      u'\u'), #greek_letter_koppa				; Qoppa
-    (u'|k',      u'\u'), #greek_small_letter_koppa		; qoppa
-    (u'|K',      u'\u'), #greek_letter_koppa				; Qoppa
-    (u'|p',      u'\u'), #greek_small_letter_sampi		; sampi
-    (u'|P',      u'\u'), #greek_letter_sampi				; Sampi
-    (u'|m',      u'\u'), #greek_small_letter_sampi		; sampi
-    (u'|M',      u'\u'), #greek_letter_sampi				; Sampi
-    (u'|s',      u'\u'), #greek_lunate_sigma_symbol		; lunate sigma
-    (u'|S',      u'\u'), #greek_lunate_sigma_symbol		; lunate sigma uppercase not available in Unicode
-    (u'|t',      u'\u'), #greek_small_letter_stigma		; stigma
-    (u'|T',      u'\u'), #greek_letter_stigma				; Stigma
-    (u'|i',      u'\u'), #turned_greek_small_letter_iota combining_tilde_below	; turned iota tilde below
-    (u'|U',      u'\u'), #greek_upsilon_with_hook_symbol	; Upsilon hook
-    (u'|h',      u'\u'), #greek_numeral_sign				; upper numeral sign
-    (u'|H',      u'\u'), #greek_lower_numeral_sign		; lower numeral sign
-    (u'|n',      u'\u'), #zero_width_joiner
-    (u'|#',      u'\u'), #zero_width_non_joiner
-    (u
-    (u'}',      u'\u'), #right_curly_bracket
-    (u'~',      u'\u'), #em_dash
+    (u'~',      u'\u2014'), #em_dash
 
-150		<>	en_dash
-151		 >	em_dash
-160		<>	no_break_space
-164		<>	currency_sign
-172		<>	not_sign
-182		<>	pilcrow_sign
-183		<>	bullet
+    (u'\u0096', u'\u2013'), # en_dash
+    (u'\u0097', u'\u2014'), # em_dash
+    (u'\u00b7', u'\u2022'), # bullet
+)
 
-; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# In Unicode space, reorder breathing/vowel sequences from SIL Basic to Unicode order
 
-Pass(Unicode)
+BR = u'([\u0313\u0314])'
+aeo = u'([\u0391\u0395\u039f\u03b1\u03b5\u03bf])'
+iu = u'([\u0399\u03a5\u03b9\u03c5])'
+j = u'([\u0397\u03b7])'
+u = u'([\u03a5\u03c5])'
+i = u'([\u0399\u03b9])'
+vowelrho = u'([\u0391\u0395\u0399\u039f\u03a5\u0397\u03a9\u03a1\u03b1\u03b5\u03b9\u03bf\u03c5\u03b7\u03c9\u03c1])'
 
-; In Unicode space, reorder breathing/vowel sequences from SIL Basic to Unicode order
+conversion += (
 
-Class	[BR]		=	( combining_comma_above combining_reversed_comma_above )
-Class	[aeo]		=	( U+0391 U+0395 U+039f U+03b1 U+03b5 U+03bf ) ; Unicode names are so verbose!
-Class	[iu]		=	( U+0399 U+03a5 U+03b9 U+03c5 )
-Class	[j]			=	( U+0397 U+03b7 )
-Class	[u]			=	( U+03a5 U+03c5 )
-Class	[i]			=	( U+0399 U+03b9 )
-Class	[vowelrho]	=	( U+0391 U+0395 U+0399 U+039f U+03a5 U+0397 U+03a9 U+03a1 \
-						  U+03b1 U+03b5 U+03b9 U+03bf U+03c5 U+03b7 U+03c9 U+03c1 )
+    (BR + aeo + iu + u'(?=\u0308)',     ur'\2\1\3'),
+    (BR + aeo + iu,                     ur'\2\3\1'),
+    (BR + j + u + u'(?=\u0308)',        ur'\2\1\3'),
+    (BR + j + u,                        ur'\2\3\1'),
+    (BR + u + i + u'(?=\u0308)',        ur'\2\1\3'),
+    (BR + u + i,                        ur'\2\3\1'),
+    (BR + vowelrho,                     ur'\2\1'),
 
-[BR]=b [aeo]=v1 [iu]=v2 / _ combining_diaeresis	<>	@v1 @b @v2 / _ combining_diaeresis
-[BR]=b [aeo]=v1 [iu]=v2							<>	@v1 @v2 @b
-[BR]=b [j]=v1 [u]=v2 / _ combining_diaeresis	<>	@v1 @b @v2 / _ combining_diaeresis
-[BR]=b [j]=v1 [u]=v2							<>	@v1 @v2 @b
-[BR]=b [u]=v1 [i]=v2 / _ combining_diaeresis	<>	@v1 @b @v2 / _ combining_diaeresis
-[BR]=b [u]=v1 [i]=v2							<>	@v1 @v2 @b
-[BR]=b [vowelrho]=v								<>	@v @b
-
-
+)
