@@ -3,7 +3,7 @@
 NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-\u00ab\u00ad-\u00b5\u00b8-\u00ff]'
 
 
-conversion = ()
+conversion = (
 
     # make sigma into final form if not followed by a letter
     (u's' + NOTLTR, u'v'),
@@ -409,9 +409,9 @@ conversion = ()
     (u'hA\u00CD'       ,  u'hAu"`'),
     (u'a\u00CB'        ,  u'au"'),
     (u'\u0087\u00CB'   ,  u'Hau"'),
-    (u''a\u00CC'       ,  u"au\"'"),
+    (u'a\u00CC'        ,  u"au\"'"),
     (u'\u0087\u00CC'   ,  u"Hau\"'"),
-    (u''a\u00CD'       ,  u'au"`'),
+    (u'a\u00CD'        ,  u'au"`'),
     (u'\u0087\u00CD'       ,  u'Hau"`'),
     (u'\u0083\u00CB'       ,  u'hau"'),
     (u'\u0083\u00CC'       ,  u"hau\"'"),
@@ -580,9 +580,8 @@ conversion = ()
     (u'|H',      u'\u0375'), #greek_lower_numeral_sign		; lower numeral sign
     (u'|n',      u'\u200d'), #zero_width_joiner
     (u'|#',      u'\u200c'), #zero_width_non_joiner
-    (u
-    (u'~',      u'\u2014'), #em_dash
 
+    (u'~',      u'\u2014'), #em_dash
     (u'\u0096', u'\u2013'), # en_dash
     (u'\u0097', u'\u2014'), # em_dash
     (u'\u00b7', u'\u2022'), # bullet
