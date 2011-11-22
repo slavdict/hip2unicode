@@ -174,7 +174,7 @@ NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-
     (u'\u00BD'            ,  u'i"`'),
 
     (u'\u00CB'            ,  u'u"'),
-    (u'\u00CC'            ,  u"u"'"),
+    (u'\u00CC'            ,  u"u\"'"),
     (u'\u00CD'            ,  u'u"`'),
 
     (u'A\u00B8'        ,  u'HAi'),
@@ -369,102 +369,101 @@ NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-
     (u'\u009B\u00BC'       ,  u"hei\"'"),
     (u'\u009B\u00BD'       ,  u'hei"`'),
 
->>>>>>>
-    (u''HO' \u00BB'       ,  u'HOi"'),
-    (u''HO' \u00BC'       ,  u"HOi"'"),
-    (u''HO' \u00BD'       ,  u'HOi"`'),
-    (u''hO' \u00BB'       ,  u'hOi"'),
-    (u''hO' \u00BC'       ,  u"hOi"'"),
-    (u''hO' \u00BD'       ,  u'hOi"`'),
-    (u''o' \u00BB'        ,  u'oi"'),
-    (u'\u00EC \u00BB'       ,  u'Hoi"'),
-    (u''o' \u00BC'        ,  u"oi"'"),
-    (u'\u00EC \u00BC'       ,  u"Hoi"'"),
-    (u''o' \u00BD'        ,  u'oi"`'),
-    (u'\u00EC \u00BD'       ,  u'Hoi"`'),
-    (u'\u00E9 \u00BB'       ,  u'hoi"'),
-    (u'\u00E9 \u00BC'       ,  u"hoi"'"),
-    (u'\u00E9 \u00BD'       ,  u'hoi"`'),
+    (u'HO\u00BB'       ,  u'HOi"'),
+    (u'HO\u00BC'       ,  u"HOi\"'"),
+    (u'HO\u00BD'       ,  u'HOi"`'),
+    (u'hO\u00BB'       ,  u'hOi"'),
+    (u'hO\u00BC'       ,  u"hOi\"'"),
+    (u'hO\u00BD'       ,  u'hOi"`'),
+    (u'o\u00BB'        ,  u'oi"'),
+    (u'\u00EC\u00BB'   ,  u'Hoi"'),
+    (u'o\u00BC'        ,  u"oi\"'"),
+    (u'\u00EC\u00BC'   ,  u"Hoi\"'"),
+    (u'o\u00BD'        ,  u'oi"`'),
+    (u'\u00EC\u00BD'       ,  u'Hoi"`'),
+    (u'\u00E9\u00BB'       ,  u'hoi"'),
+    (u'\u00E9\u00BC'       ,  u"hoi\"'"),
+    (u'\u00E9\u00BD'       ,  u'hoi"`'),
 
-    (u''HU' \u00BB'       ,  u'HUi"'),
-    (u''HU' \u00BC'       ,  u"HUi"'"),
-    (u''HU' \u00BD'       ,  u'HUi"`'),
-    (u''hU' \u00BB'       ,  u'hUi"'),
-    (u''hU' \u00BC'       ,  u"hUi"'"),
-    (u''hU' \u00BD'       ,  u'hUi"`'),
-    (u''u' \u00BB'        ,  u'ui"'),
-    (u'\u00C7 \u00BB'       ,  u'Hui"'),
-    (u''u' \u00BC'        ,  u"ui"'"),
-    (u'\u00C7 \u00BC'       ,  u"Hui"'"),
-    (u''u' \u00BD'        ,  u'ui"`'),
-    (u'\u00C7 \u00BD'       ,  u'Hui"`'),
-    (u'\u00C3 \u00BB'       ,  u'hui"'),
-    (u'\u00C3 \u00BC'       ,  u"hui"'"),
-    (u'\u00C3 \u00BD'       ,  u'hui"`'),
+    (u'HU\u00BB'       ,  u'HUi"'),
+    (u'HU\u00BC'       ,  u"HUi\"'"),
+    (u'HU\u00BD'       ,  u'HUi"`'),
+    (u'hU\u00BB'       ,  u'hUi"'),
+    (u'hU\u00BC'       ,  u"hUi\"'"),
+    (u'hU\u00BD'       ,  u'hUi"`'),
+    (u'u\u00BB'        ,  u'ui"'),
+    (u'\u00C7\u00BB'   ,  u'Hui"'),
+    (u'u\u00BC'        ,  u"ui\"'"),
+    (u'\u00C7\u00BC'   ,  u"Hui\"'"),
+    (u'u\u00BD'        ,  u'ui"`'),
+    (u'\u00C7\u00BD'       ,  u'Hui"`'),
+    (u'\u00C3\u00BB'       ,  u'hui"'),
+    (u'\u00C3\u00BC'       ,  u"hui\"'"),
+    (u'\u00C3\u00BD'       ,  u'hui"`'),
 
-    (u''HA' \u00CB'       ,  u'HAu"'),
-    (u''HA' \u00CC'       ,  u"HAu"'"),
-    (u''HA' \u00CD'       ,  u'HAu"`'),
-    (u''hA' \u00CB'       ,  u'hAu"'),
-    (u''hA' \u00CC'       ,  u"hAu"'"),
-    (u''hA' \u00CD'       ,  u'hAu"`'),
-    (u''a' \u00CB'        ,  u'au"'),
-    (u'\u0087 \u00CB'       ,  u'Hau"'),
-    (u''a' \u00CC'        ,  u"au"'"),
-    (u'\u0087 \u00CC'       ,  u"Hau"'"),
-    (u''a' \u00CD'        ,  u'au"`'),
-    (u'\u0087 \u00CD'       ,  u'Hau"`'),
-    (u'\u0083 \u00CB'       ,  u'hau"'),
-    (u'\u0083 \u00CC'       ,  u"hau"'"),
-    (u'\u0083 \u00CD'       ,  u'hau"`'),
+    (u'HA\u00CB'       ,  u'HAu"'),
+    (u'HA\u00CC'       ,  u"HAu\"'"),
+    (u'HA\u00CD'       ,  u'HAu"`'),
+    (u'hA\u00CB'       ,  u'hAu"'),
+    (u'hA\u00CC'       ,  u"hAu\"'"),
+    (u'hA\u00CD'       ,  u'hAu"`'),
+    (u'a\u00CB'        ,  u'au"'),
+    (u'\u0087\u00CB'   ,  u'Hau"'),
+    (u''a\u00CC'       ,  u"au\"'"),
+    (u'\u0087\u00CC'   ,  u"Hau\"'"),
+    (u''a\u00CD'       ,  u'au"`'),
+    (u'\u0087\u00CD'       ,  u'Hau"`'),
+    (u'\u0083\u00CB'       ,  u'hau"'),
+    (u'\u0083\u00CC'       ,  u"hau\"'"),
+    (u'\u0083\u00CD'       ,  u'hau"`'),
 
-    (u''HE' \u00CB'       ,  u'HEu"'),
-    (u''HE' \u00CC'       ,  u"HEu"'"),
-    (u''HE' \u00CD'       ,  u'HEu"`'),
-    (u''hE' \u00CB'       ,  u'hEu"'),
-    (u''hE' \u00CC'       ,  u"hEu"'"),
-    (u''hE' \u00CD'       ,  u'hEu"`'),
-    (u''e' \u00CB'        ,  u'eu"'),
-    (u'\u009D \u00CB'       ,  u'Heu"'),
-    (u''e' \u00CC'        ,  u"eu"'"),
-    (u'\u009D \u00CC'       ,  u"Heu"'"),
-    (u''e' \u00CD'        ,  u'eu"`'),
-    (u'\u009D \u00CD'       ,  u'Heu"`'),
-    (u'\u009B \u00CB'       ,  u'heu"'),
-    (u'\u009B \u00CC'       ,  u"heu"'"),
-    (u'\u009B \u00CD'       ,  u'heu"`'),
+    (u'HE\u00CB'       ,  u'HEu"'),
+    (u'HE\u00CC'       ,  u"HEu\"'"),
+    (u'HE\u00CD'       ,  u'HEu"`'),
+    (u'hE\u00CB'       ,  u'hEu"'),
+    (u'hE\u00CC'       ,  u"hEu\"'"),
+    (u'hE\u00CD'       ,  u'hEu"`'),
+    (u'e\u00CB'        ,  u'eu"'),
+    (u'\u009D\u00CB'   ,  u'Heu"'),
+    (u'e\u00CC'        ,  u"eu\"'"),
+    (u'\u009D\u00CC'   ,  u"Heu\"'"),
+    (u'e\u00CD'        ,  u'eu"`'),
+    (u'\u009D\u00CD'       ,  u'Heu"`'),
+    (u'\u009B\u00CB'       ,  u'heu"'),
+    (u'\u009B\u00CC'       ,  u"heu\"'"),
+    (u'\u009B\u00CD'       ,  u'heu"`'),
 
-    (u''HJ' \u00CB'       ,  u'HJu"'),
-    (u''HJ' \u00CC'       ,  u"HJu"'"),
-    (u''HJ' \u00CD'       ,  u'HJu"`'),
-    (u''hJ' \u00CB'       ,  u'hJu"'),
-    (u''hJ' \u00CC'       ,  u"hJu"'"),
-    (u''hJ' \u00CD'       ,  u'hJu"`'),
-    (u''j' \u00CB'        ,  u'ju"'),
-    (u'\u00D7 \u00CB'       ,  u'Hju"'),
-    (u''j' \u00CC'        ,  u"ju"'"),
-    (u'\u00D7 \u00CC'       ,  u"Hju"'"),
-    (u''j' \u00CD'        ,  u'ju"`'),
-    (u'\u00D7 \u00CD'       ,  u'Hju"`'),
-    (u'\u00D3 \u00CB'       ,  u'hju"'),
-    (u'\u00D3 \u00CC'       ,  u"hju"'"),
-    (u'\u00D3 \u00CD'       ,  u'hju"`'),
+    (u'HJ\u00CB'       ,  u'HJu"'),
+    (u'HJ\u00CC'       ,  u"HJu\"'"),
+    (u'HJ\u00CD'       ,  u'HJu"`'),
+    (u'hJ\u00CB'       ,  u'hJu"'),
+    (u'hJ\u00CC'       ,  u"hJu\"'"),
+    (u'hJ\u00CD'       ,  u'hJu"`'),
+    (u'j\u00CB'        ,  u'ju"'),
+    (u'\u00D7\u00CB'   ,  u'Hju"'),
+    (u'j\u00CC'        ,  u"ju\"'"),
+    (u'\u00D7\u00CC'   ,  u"Hju\"'"),
+    (u'j\u00CD'        ,  u'ju"`'),
+    (u'\u00D7\u00CD'       ,  u'Hju"`'),
+    (u'\u00D3\u00CB'       ,  u'hju"'),
+    (u'\u00D3\u00CC'       ,  u"hju\"'"),
+    (u'\u00D3\u00CD'       ,  u'hju"`'),
 
-    (u''HO' \u00CB'       ,  u'HOu"'),
-    (u''HO' \u00CC'       ,  u"HOu"'"),
-    (u''HO' \u00CD'       ,  u'HOu"`'),
-    (u''hO' \u00CB'       ,  u'hOu"'),
-    (u''hO' \u00CC'       ,  u"hOu"'"),
-    (u''hO' \u00CD'       ,  u'hOu"`'),
-    (u''o' \u00CB'        ,  u'ou"'),
-    (u'\u00EC \u00CB'       ,  u'Hou"'),
-    (u''o' \u00CC'        ,  u"ou"'"),
-    (u'\u00EC \u00CC'       ,  u"Hou"'"),
-    (u''o' \u00CD'        ,  u'ou"`'),
-    (u'\u00EC \u00CD'       ,  u'Hou"`'),
-    (u'\u00E9 \u00CB'       ,  u'hou"'),
-    (u'\u00E9 \u00CC'       ,  u"hou"'"),
-    (u'\u00E9 \u00CD'       ,  u'hou"`'),
+    (u'HO\u00CB'       ,  u'HOu"'),
+    (u'HO\u00CC'       ,  u"HOu\"'"),
+    (u'HO\u00CD'       ,  u'HOu"`'),
+    (u'hO\u00CB'       ,  u'hOu"'),
+    (u'hO\u00CC'       ,  u"hOu\"'"),
+    (u'hO\u00CD'       ,  u'hOu"`'),
+    (u'o\u00CB'        ,  u'ou"'),
+    (u'\u00EC\u00CB'   ,  u'Hou"'),
+    (u'o\u00CC'        ,  u"ou\"'"),
+    (u'\u00EC\u00CC'   ,  u"Hou\"'"),
+    (u'o\u00CD'        ,  u'ou"`'),
+    (u'\u00EC\u00CD'       ,  u'Hou"`'),
+    (u'\u00E9\u00CB'       ,  u'hou"'),
+    (u'\u00E9\u00CC'       ,  u"hou\"'"),
+    (u'\u00E9\u00CD'       ,  u'hou"`'),
 
     (u'\u00AD'            ,  u"H'"),
     (u'\u00AE'            ,  u'H`'),
@@ -476,34 +475,18 @@ NOTLTR = u'[^a-uw-zA-UW-Z`\\^_@"\'\u0080-\u0095\u0098-\u009f\u00a1-\u00a3\u00a5-
     (u'\u00EE'            ,  u"\"'"),
     (u'\u00EF'            ,  u'"`'),
 
-; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-Pass(Byte)
-; shuffle marks, as Unicode canonical order does not correspond to Galatia order
+# shuffle marks, as Unicode canonical order does not correspond to Galatia order
 
-Class[dia] = ('`' "'" '^' '"')
+    (u'(.)([`\'\\^"]+)'   ,  ur"\2\1"),
 
-'_' ([dia]+)=dias	<>	@dias '_'
+# Now make the jump from byte to Unicode space.
+# Here, we deal only with the decomposed forms, not precomposed.
 
-; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-Pass(Byte_Unicode)
-
-; Now make the jump from byte to Unicode space.
-; Here, we deal only with the decomposed forms, not precomposed.
-
-ByteDefault			183			; 183 is "bullet" in the SIL Greek Display encoding
-								; (note that this is actually a valid character code,
-								; though probably not often used in legacy Greek text)
-UniDefault			replacement_character
-
-; there are separate namespaces for Byte and Unicode classes,
-; allowing us to use the same name for classes with corresponding content
-
-ByteClass	[CTL] = (   0x00 .. 0x1f     0x7f )
-UniClass	[CTL] =	( U+0000 .. U+001f U+007f )
-
-[CTL]	<>	[CTL]
+#ByteDefault			183			; 183 is "bullet" in the SIL Greek Display encoding
+#								; (note that this is actually a valid character code,
+#								; though probably not often used in legacy Greek text)
+#UniDefault			replacement_character
 
 ' '		<>	space
 '!'		<>	exclamation_mark
@@ -565,7 +548,6 @@ UniClass	[CTL] =	( U+0000 .. U+001f U+007f )
 'S'		<>	greek_capital_letter_sigma
 'T'		<>	greek_capital_letter_tau
 'U'		<>	greek_capital_letter_upsilon
-; 'V'			; <unused>
 'W'		<>	greek_capital_letter_omega
 'X'		<>	greek_capital_letter_xi
 'Y'		<>	greek_capital_letter_psi
@@ -667,5 +649,3 @@ Class	[vowelrho]	=	( U+0391 U+0395 U+0399 U+039f U+03a5 U+0397 U+03a9 U+03a1 \
 [BR]=b [vowelrho]=v								<>	@v @b
 
 
-; * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-; (end of file)
