@@ -495,7 +495,7 @@ conversion = (
     (u"'",      u'\u0301'), #combining_acute_accent
 
     (u';',      u'\u0387'), #greek_ano_teleia				; greek semicolon
-    (u'?',      u';'), #semicolon						; canonical decomposition of greek question mark
+    (ur'\?',      u';'), #semicolon						; canonical decomposition of greek question mark
 
     (u'@',      u'\u2019'), #right_single_quotation_mark
 
@@ -525,7 +525,7 @@ conversion = (
     (u'Y',      u'\u03a8'), #greek_capital_letter_psi
     (u'Z',      u'\u0396'), #greek_capital_letter_zeta
 
-    (u'^',      u'\u0342'), #combining_greek_perispomeni		; circumflex
+    (ur'\^',     u'\u0342'), #combining_greek_perispomeni		; circumflex
     (u'_',      u'\u0345'), #combining_greek_ypogegrammeni	; iota subscript
     (u'`',      u'\u0300'), #combining_grave_accent
 
