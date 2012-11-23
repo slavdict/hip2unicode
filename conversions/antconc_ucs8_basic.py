@@ -53,8 +53,8 @@ conversion = (
     (lc_SMALL_LETTERS + SLOVO_TITLO,    u'c'),
     (lc_SMALL_LETTERS + DOBRO_TITLO,    u'd'),
     (lc_SMALL_LETTERS + GLAGOLJ_TITLO,  u'g'),
-    (lc_SMALL_LETTERS + ZEMLJA_TITLO,   u'\u0088'),
-    (lc_SMALL_LETTERS + ZHIVETE_TITLO,  u'\u0095'),
+    (lc_SMALL_LETTERS + ZEMLJA_TITLO,   u'\u20ac'),
+    (lc_SMALL_LETTERS + ZHIVETE_TITLO,  u'\u2022'),
 
     (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
