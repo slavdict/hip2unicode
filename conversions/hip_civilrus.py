@@ -170,7 +170,10 @@ conversion = (
         (Ja, u'Я'),
         (ja, u'я'),
 
-        (equal_sign, ur''), # ur'’', # U+2019 RIGHT SINGLE QUOTATION MARK : single comma quotation mark
+        (equal_sign, ur''),  # ur'’',
+                             # U+2019 RIGHT SINGLE QUOTATION MARK :
+                             # single comma quotation mark
+
 #    (single_quote, antconc.acute),
 #    (back_single_quote, antconc.gravis),
 #    (caret, antconc.circumflex),
@@ -191,8 +194,11 @@ conversion = (
         (ur'\\[рР]', ur'\Р'),
         (ur'\\[сС]', ur'\С'),
         (ur'\\[тТ]', ur'\Т'),
-        (ur'\\[%s%s]' % (antconc.SMALL_FITA, antconc.CAPITAL_FITA), ur'\Ф'),
-        # ^ нельзя писать ur'\\[fF]', т.к. они уже ранее были заменены на антконковские фиты.
+        (ur'\\[{0}{1}]'.format(antconc.SMALL_FITA, antconc.CAPITAL_FITA),
+                     ur'\Ф'),
+        # ^ нельзя писать ur'\\[fF]', т.к. они уже ранее были заменены на
+        # антконковские фиты.
+
         (ur'\\[хХ]', ur'\Х'),
         (ur'\\[цЦ]', ur'\Ц'),
         (ur'\\[чЧ]', ur'\Ч'),
@@ -215,11 +221,7 @@ conversion = (
         (ur'#', u'\u0482'), # знак тысячи
 
         (ur'\ {2,}',    u' '), # два и более пробелов заменяем на один
-    
-    
-    
-    
-    
+
     (ur"['`\^]",          u''),
 
     (ur'([Аа])[Пп]\\С[Лл]', ur'\g<1>постол'),
@@ -332,10 +334,13 @@ conversion = (
 
     (ur'а' + antconc.SMALL_IZHICA,   u'ав'),
     (ur'е' + antconc.SMALL_IZHICA,   u'ев'),
-    (antconc.SMALL_IZHICA,      u'и'),
+    (antconc.SMALL_IZHICA,           u'и'),
 
     (ur'\\Ъ',        u'ъ'),
-    (ur'(ъ$)|(ъ(?=[\sБбВбГгДдЖжЗзКкЛлМмНнПпРрСсТтФфХхЦцЧчШшЩщ,\.;:\?\!]))', u''),
+
+    (ur'(ъ$)|(ъ(?=[\sБбВбГгДдЖжЗзКкЛлМмНнПпРрСсТтФфХхЦцЧчШшЩщ,\.;:\?\!]))',
+                     u''),
+
     (ur'ъа',         u'а'),
     (ur'ъо',         u'о'),
     (ur'ъу',         u'у'),
