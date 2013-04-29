@@ -13,6 +13,20 @@ from hip2unicode.representations import antconc
 
 ACCENT = u'\u0301'
 
+# Для удаления ударений в односложных словх
+SINGLE_SYLLABLE_WITHOUT_ACCENT = (
+    ur'(' +
+          ur'(?:^|[^аАбБвВгГдДеЕжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ{0}])'.format(ACCENT) +
+          ur'[бБвВгГдДжЖзЗйЙкКлЛмМнНпПрРсСтТфФхХцЦчЧшШщЩъЪьЬ]*?' +
+          ur'[аяеоуюиыАЯЕОУЮИЫ]' +
+    ur')' +
+    ACCENT +
+    ur'(' +
+          ur'[бБвВгГдДжЖзЗйЙкКлЛмМнНпПрРсСтТфФхХцЦчЧшШщЩъЪьЬ]*?' +
+          ur'(?:[\,\.\!\?\;\s]|$|[^аАбБвВгГдДеЕжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪыЫьЬэЭюЮяЯ{0}])'.format(ACCENT) +
+    ur')',
+                                       ur'\g<1>\g<2>')
+
 conversion = (
     (ur'<\(\(>', u'«'),      # замена кавычек <((>
     (ur'<\)\)>', u'»'),      # <))>
@@ -370,4 +384,22 @@ conversion = (
     (ur'жя', u'жа'),
     (ur'шя', u'ша'),
     (ur'щя', u'ща'),
+
+    # Удаляем ударения у слов с единственным слогом.
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+
+    # намеренно повторная конвертация, так как за один проход почему-то
+    # конвертируется не всегда всё.
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
+    SINGLE_SYLLABLE_WITHOUT_ACCENT,
 )
