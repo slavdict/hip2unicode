@@ -31,14 +31,14 @@ conversion = (
     (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'),
     (THOUSAND_SIGN,                     u'\u00A4'), # знак тысячи
 
-    (ic_VOWELS_WITHOUT_ASP + '(?P<symb>.)',  ur'\g<symb>' + ASPIRATION_TIP),
+    (ic_VOWELS_WITHOUT_ASP + u'(?P<symb>.)', ASPIRATION_TIP + ur'\g<symb>'),
     (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
     (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
     (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
     (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
     (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
-    ('[=](?P<symb>.)' + ASPIRATION_TIP, ur'\g<symb>'),
+    (ur'[=](?P<symb>.)' + ASPIRATION_TIP, ur'\g<symb>'),
     (ASPIRATION_TIP, u''),
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
