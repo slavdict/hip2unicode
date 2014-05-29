@@ -15,28 +15,37 @@ from hip2unicode.representations.antconc import *
 from hip2unicode.representations.ucs8 import LETTERS as ucs8_LETTERS
 
 REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS, ucs8_LETTERS )
+ASPIRATION_TIP = u'\u4444'
 
 lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
 ic_SMALL_VOWELS     = initial_context( token( SMALL_VOWELS ) )
 ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
-nrc_ACCENTS         = neg_right_context( token( ACCENTS ) )
+ic_VOWELS_WITHOUT_ASP = initial_context('[=]' + token(SMALL_VOWELS + CAPITAL_VOWELS))
+nrc_ACCENTS         = neg_right_context( token( ASPIRATION_TIP + ACCENTS ) )
 
 conversion = (
-    # титло над строчными от, ферт и пси 
+    # титло над строчными от, ферт и пси
     # преобразуется в обратный слеш
     # (экранированная запись для RegExp)
-    (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'), 
+    (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'),
     (THOUSAND_SIGN,                     u'\u00A4'), # знак тысячи
 
+    (ic_VOWELS_WITHOUT_ASP + '(?P<symb>.)',  ur'\g<symb>' + ASPIRATION_TIP),
     (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
     (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
     (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
+    (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
+    (ic_CAPITAL_VOWELS + AKUT,          u'$'),
+    (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
+    ('[=](?P<symb>.)' + ASPIRATION_TIP, ur'\g<symb>'),
+    (ASPIRATION_TIP, u''),
+
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
     (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
-    (lc_SMALL_LETTERS + CIRKUMFLEKS,    u'6'), # циркумфлекс 
-    # Правило для устранения придыхания 
-    # над теми гласными, которые стоят 
+    (lc_SMALL_LETTERS + CIRKUMFLEKS,    u'6'), # циркумфлекс
+    # Правило для устранения придыхания
+    # над теми гласными, которые стоят
     # первыми в слове, но над которыми
     # должны стоять обычные титла
     # (= случай с цифрами):
@@ -56,9 +65,6 @@ conversion = (
     (lc_SMALL_LETTERS + ZEMLJA_TITLO,   u'\u20ac'),
     (lc_SMALL_LETTERS + ZHIVETE_TITLO,  u'\u2022'),
 
-    (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
-    (ic_CAPITAL_VOWELS + AKUT,          u'$'),
-    (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
     (lc_CAPITAL_LETTERS + GRAVIS,       u'@'),
     (lc_CAPITAL_LETTERS + TITLO,        u'&'),
     # след. преобразование обязательно должно идти
