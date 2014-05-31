@@ -123,7 +123,7 @@ CAPITAL_FITA    = u'F'
 SMALL_FITA      = u'f'
 
 CAPITAL_IZHICA  = u'V' # LATIN "V"
-SMALL_IZHICA    = u'v' # LATIN "v"  
+SMALL_IZHICA    = u'v' # LATIN "v"
 CAPITAL_IZHICA_DOUBLE_GRAVIS    = u'M' # LATIN
 SMALL_IZHICA_DOUBLE_GRAVIS      = u'm'
 
@@ -151,7 +151,7 @@ SMALL_CIRKUMFLEKS   = u'6'
 CAPITAL_ASPIRATION  = u'#'
 SMALL_ASPIRATION    = u'3'
 
-CAPITAL_ASPIRATION_AKUT = u'$'
+CAPITAL_ASPIRATION_AKUT = u'\$'  # RegExp escaped DOLAR symbol
 SMALL_ASPIRATION_AKUT   = u'4'
 
 CAPITAL_ASPIRATION_CIRKUMFLEX   = u'%'
@@ -200,7 +200,7 @@ SMALL_CONSONANTS    = u'бвгджзйклмнпрстфхцчшщъь' + u'fpx'
 
 # VOWEL_DIACRITICS -- диакритика над гласными,
 # CONSONANT_DIACRITICS -- диакритика над согласными буквами.
-CAPITAL_VOWEL_DIACRITICS  = u'#$%&' + u'@' + u'\^' + u'~'
+CAPITAL_VOWEL_DIACRITICS  = u'#\$%&' + u'@' + u'\^' + u'~'
 SMALL_VOWEL_DIACRITICS    = u'1234567'
 
 CAPITAL_CONSONANT_DIACRITICS    = CAPITAL_SLOVO_TITLO
