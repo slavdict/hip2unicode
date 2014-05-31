@@ -31,7 +31,7 @@ conversion = (
     (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'),
     (THOUSAND_SIGN,                     u'\u00A4'), # знак тысячи
 
-    (ic_VOWELS_WITHOUT_ASP + u'(?P<symb>.)', ASPIRATION_TIP + ur'\g<symb>'),
+    (ic_VOWELS_WITHOUT_ASP + u'(?P<symb>.|$)', ASPIRATION_TIP + ur'\g<symb>'),
     (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
     (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
     (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
