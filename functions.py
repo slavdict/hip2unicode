@@ -163,7 +163,7 @@ def convert(text, conversion):
     if conversion=='delete':
         text = u''
     elif conversion:
-        for src, dst in enumerate(conversion):
+        for src, dst in conversion:
             text = src.sub(dst, text)
 
     return text
