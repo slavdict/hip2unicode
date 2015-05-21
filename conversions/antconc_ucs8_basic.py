@@ -21,8 +21,9 @@ lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
 ic_SMALL_VOWELS     = initial_context( token( SMALL_VOWELS ) )
 ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
-ic_VOWELS_WITHOUT_ASP = initial_context('[=]' + token(SMALL_VOWELS + CAPITAL_VOWELS))
 nrc_ACCENTS         = neg_right_context( token( ASPIRATION_TIP + ACCENTS ) )
+VOWELS_WITHOUT_ASP  = initial_context() + '[=]' + \
+                      right_context( token(SMALL_VOWELS + CAPITAL_VOWELS) )
 
 conversion = (
     # титло над строчными от, ферт и пси
@@ -31,14 +32,14 @@ conversion = (
     (left_context( token( SMALL_OT, SMALL_FERT, SMALL_PSI ) ) + TITLO,  ur'\\'),
     (THOUSAND_SIGN,                     u'\u00A4'), # знак тысячи
 
-    (ic_VOWELS_WITHOUT_ASP + u'(?P<symb>.|$)', ASPIRATION_TIP + ur'\g<symb>'),
+    (VOWELS_WITHOUT_ASP,                ASPIRATION_TIP),
     (ic_SMALL_VOWELS + nrc_ACCENTS,     u'3'), # придыхание
     (ic_SMALL_VOWELS + AKUT,            u'4'), # придыхание и акут
     (ic_SMALL_VOWELS + GRAVIS,          u'5'), # придыхание и гравис
     (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
     (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
-    (ur'[=](?P<symb>.)' + ASPIRATION_TIP, ur'\g<symb>'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)[345]',  ur'\g<symb>'),
     (ASPIRATION_TIP, u''),
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
