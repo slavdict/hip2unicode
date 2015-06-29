@@ -39,7 +39,7 @@ conversion = (
     (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
     (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
-    (ASPIRATION_TIP + ur'(?P<symb>.)[345]',  ur'\g<symb>'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)[345\#\$\%]',  ur'\g<symb>'),
     (ASPIRATION_TIP, u''),
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
