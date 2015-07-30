@@ -9,10 +9,9 @@ setup(
     author='Andrej Hitrov',
     author_email='andrej@hitrov.ru',
     url='https://github.com/while0pass/hip2unicode',
-    license='Unlicensed',
-    package_dir = {'': 'hip2unicode'},
-    packages = [ 'hip2unicode',
-       'hip2unicode.conversions',
-       'hip2unicode.representations',
-       'hip2unicode.tools' ],
+    packages=[
+        'hip2unicode', 'hip2unicode.conversions', 'hip2unicode.representations',
+        'hip2unicode.tools'
+    ],
+    zip_safe=False,
 )
