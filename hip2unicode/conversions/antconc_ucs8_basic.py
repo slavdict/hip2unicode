@@ -39,8 +39,6 @@ conversion = (
     (ic_CAPITAL_VOWELS + nrc_ACCENTS,   u'#'),
     (ic_CAPITAL_VOWELS + AKUT,          u'$'),
     (ic_CAPITAL_VOWELS + GRAVIS,        u'%'),
-    (ASPIRATION_TIP + ur'(?P<symb>.)[345\#\$\%]',  ur'\g<symb>'),
-    (ASPIRATION_TIP, u''),
 
     (lc_SMALL_LETTERS + AKUT,           u'1'), # акут
     (lc_SMALL_LETTERS + GRAVIS,         u'2'), # гравис
@@ -76,6 +74,13 @@ conversion = (
     (lc_CAPITAL_LETTERS + PAEROK,       u'_'),
 
     (lc_CAPITAL_LETTERS + SLOVO_TITLO,  u'C'),
+
+    (ASPIRATION_TIP + ur'(?P<symb>.)[3\#]',  ur'\g<symb>'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)4',  ur'\g<symb>1'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)5',  ur'\g<symb>2'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)\$',  ur'\g<symb>~'),
+    (ASPIRATION_TIP + ur'(?P<symb>.)\%',  ur'\g<symb>@'),
+    (ASPIRATION_TIP, u''),
 
 
     (CAPITAL_FITA,          u'F'),
