@@ -16,7 +16,9 @@ from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
 conversion = (
+    (u'апСтл',  u'апостол'),
     (u'апСл',   u'апостол'),
+    (u'апС',    u'апос'),  # апостол...
     (u'бг~',    u'бог'),
     (u'бж~тв',  u'божеств'),
     (u'бж~',    u'бож'),
