@@ -18,6 +18,7 @@ from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
 conversion = (
+    (u'=',          u''),
     (AKUT,          u''),
     (GRAVIS,        u''),
     (CIRKUMFLEKS,   u''),
