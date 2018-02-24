@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
+from __future__ import absolute_import
 import sys
 
-from hip2unicode.conversions import hip_civilrus
+import corpus_converter
+from hip2unicode.conversions import hip_civilrus_accented
 from hip2unicode.functions import all_hip_conversions
 from hip2unicode.functions import compile_conversion
-from hip2unicode.tools import corpus_converter
 
 conversions = {
-    'slav': compile_conversion(hip_civilrus.conversion),
+    'slav': compile_conversion(hip_civilrus_accented.conversion),
     'rus': 'delete',
     'lat': 'delete',
     'grec': 'delete',
