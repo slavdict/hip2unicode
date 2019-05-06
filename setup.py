@@ -5,7 +5,7 @@ from setuptools import setup
 
 setup(
     name='HIP2Unicode',
-    version='2.0.0',
+    version='2.0.1',
     description='Converter from HIP to Unicode',
     author='Nurono',
     author_email='while0pass@yandex.ru',
