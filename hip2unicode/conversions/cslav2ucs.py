@@ -1,83 +1,79 @@
-# -*- coding: UTF-8 -*-
-
 from hip2unicode.representations import cslav
 
 cslav2ucs = (
 {
-    
     # Regular expressions for character replacement
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
 
-    cslav.Izhica_double_gravis: u'm',
-    cslav.izhica_double_gravis: u'M' ,
+    cslav.Izhica_double_gravis: 'm',
+    cslav.izhica_double_gravis: 'M' ,
 },
 {
-    cslav.Wide_E: u'Е' ,
-    cslav.wide_e: u'є' ,
+    cslav.Wide_E: 'Е' ,
+    cslav.wide_e: 'є' ,
 
-    cslav.Yat: u'Э' ,
-    cslav.yat: u'э' ,
+    cslav.Yat: 'Э' ,
+    cslav.yat: 'э' ,
 
-    cslav.Ksi: u'X' ,
-    cslav.ksi: u'x' ,
+    cslav.Ksi: 'X' ,
+    cslav.ksi: 'x' ,
 
-    cslav.Wide_O : u'O',
-    cslav.wide_o: u'o' ,
+    cslav.Wide_O : 'O',
+    cslav.wide_o: 'o' ,
 
-    cslav.Omega: u'W' ,
-    cslav.omega: u'w' ,
+    cslav.Omega: 'W' ,
+    cslav.omega: 'w' ,
 
-    cslav.Ole: u'Q' ,
-    cslav.ole: u'q',
+    cslav.Ole: 'Q' ,
+    cslav.ole: 'q',
 
-    cslav.Ot: u'T' ,
-    cslav.ot: u't' ,
+    cslav.Ot: 'T' ,
+    cslav.ot: 't' ,
 
-    cslav.Psi: u'P' ,
-    cslav.psi: u'p' ,
+    cslav.Psi: 'P' ,
+    cslav.psi: 'p' ,
 
-    cslav.Fita: u'F',
-    cslav.fita: u'f',
+    cslav.Fita: 'F',
+    cslav.fita: 'f',
 
-    cslav.Ja: u'Я' ,
-    cslav.ja: u'я',
+    cslav.Ja: 'Я' ,
+    cslav.ja: 'я',
 
-    cslav.Small_Yus: u'Z' ,
-    cslav.small_yus: u'z' ,
+    cslav.Small_Yus: 'Z' ,
+    cslav.small_yus: 'z' ,
 },
 {
-    cslav.aspiration + cslav.acute: u'4' ,
-    cslav.acute + cslav.aspiration: u'4' ,
-    cslav.aspiration + cslav.gravis: u'5' ,
-    cslav.gravis + cslav.aspiration: u'5' ,
+    cslav.aspiration + cslav.acute: '4' ,
+    cslav.acute + cslav.aspiration: '4' ,
+    cslav.aspiration + cslav.gravis: '5' ,
+    cslav.gravis + cslav.aspiration: '5' ,
 },
 {
-    cslav.aspiration: u'3' ,
-    cslav.acute: u'1' ,
-    cslav.gravis: u'2' ,
-    cslav.circumflex: u'6' ,
-    cslav.titlo: u'7' ,
+    cslav.aspiration: '3' ,
+    cslav.acute: '1' ,
+    cslav.gravis: '2' ,
+    cslav.circumflex: '6' ,
+    cslav.titlo: '7' ,
 
-    cslav.paerok: u'8' ,
-    cslav.glagol_titlo: u'g' ,
-    cslav.dobro_titlo: u'd' ,
-    cslav.on_titlo: u'b' ,
-    cslav.rcy_titlo: u'>' ,
-    cslav.slovo_titlo : u'c',
-    cslav.kher_titlo: u'<' ,
-    cslav.cherv_titlo: u'?' ,
-    
+    cslav.paerok: '8' ,
+    cslav.glagol_titlo: 'g' ,
+    cslav.dobro_titlo: 'd' ,
+    cslav.on_titlo: 'b' ,
+    cslav.rcy_titlo: '>' ,
+    cslav.slovo_titlo : 'c',
+    cslav.kher_titlo: '<' ,
+    cslav.cherv_titlo: '?' ,
 },
 {
-    cslav.Oy: u'U' ,
-    cslav.oy: u'u' ,
+    cslav.Oy: 'U' ,
+    cslav.oy: 'u' ,
 },
-{   
-    cslav.Uk: u'У' ,
-    cslav.uk: u'у' ,
+{
+    cslav.Uk: 'У' ,
+    cslav.uk: 'у' ,
 
-    ur'\u0131': u'i', # U+0131 LATIN SMALL LETTER DOTLESS I
+    '\u0131': 'i', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
 )

@@ -1,30 +1,33 @@
-# coding: utf-8
-from __future__ import absolute_import
 import os
 
 import binary_converter
 
-def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder='converted_corpus', conversions=None):
+
+def corpus_converter(
+        path=None, corpus_folder='corpus',
+        converted_corpus_folder='converted_corpus', conversions=None):
 
     if not path:
         path = os.path.abspath(os.getcwd())
 
-    print '\nCurrent folder is "%s".' % path
+    print('\nCurrent folder is "%s".' % path)
 
     corpus_path = os.path.join(path, corpus_folder)
     converted_corpus_path = os.path.join(path, converted_corpus_folder)
 
     # проверяем наличие папки corpus в текущем каталоге
     if not os.path.exists(corpus_path):
-        print 'Corpus folder with the name "%s" does not exist.' % corpus_folder
-        raw_input('Press ENTER to exit program.')
+        print('Corpus folder with the name "%s" does not exist.'
+              % corpus_folder)
+        input('Press ENTER to exit program.')
         quit()
 
     def all_files(path):
         result = []
         for dirpath, subdirs, filenames in os.walk(path):
             if filenames:
-                result.extend([os.path.join(dirpath, filename) for filename in filenames])
+                result.extend([os.path.join(dirpath, filename)
+                               for filename in filenames])
         return result
 
     def make_all_folders(path):
@@ -35,8 +38,8 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
 
     file_list = all_files(corpus_path)
     if not file_list:
-        print 'There is no file to convert in the corpus folder.'
-        raw_input('Press ENTER to exit program.')
+        print('There is no file to convert in the corpus folder.')
+        input('Press ENTER to exit program.')
         quit()
 
     # проверяем, существует ли папка converted_corpus
@@ -51,8 +54,8 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
     else:
         os.mkdir(converted_corpus_path)
 
-    enc_list = ['cp1251', 'koi8-r', 'utf-8',]
-    print 'Converting files ',
+    # enc_list = ['cp1251', 'koi8-r', 'utf-8']
+    print('Converting files ', end=' ')
     for file_path in file_list:
 
         new_path = file_path.replace(corpus_path, converted_corpus_path)
@@ -67,6 +70,5 @@ def corpus_converter(path=None, corpus_folder='corpus', converted_corpus_folder=
         make_all_folders(new_path)
         binary_converter.binary_converter(file_path, new_path)
 
-corpus_converter(
-    converted_corpus_folder='corpus-utf-8',
-    )
+
+corpus_converter(converted_corpus_folder='corpus-utf-8')

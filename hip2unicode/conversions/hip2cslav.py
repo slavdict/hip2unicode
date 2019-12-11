@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-
 from hip2unicode.representations import hip
 from hip2unicode.representations import cslav
 
@@ -8,36 +6,35 @@ hip2cslav = (
 # ...
 # удаление ненужной разметки
 {   # киноварь
-    ur'%<':   u'',
-    ur'%>':   u'',
+    r'%<':   '',
+    r'%>':   '',
 
-    ur'%\(':  u'',
-    ur'%\)':  u'',
+    r'%\(':  '',
+    r'%\)':  '',
 
-    ur'%\[':  u'',
-    ur'%\]':  u'',
+    r'%\[':  '',
+    r'%\]':  '',
 },
 {
-    ur'\([cсCС]\.\ *\d+\)':  u'', 
+    r'\([cсCС]\.\ *\d+\)':  '',
 },
 {   # сноски
     # <сноска 1> ::= *{  <текст сноски> *  <текст сноски> }
-    ur' \*{ .*? \* .*? } ': u'', 
-    # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> } 
-    ur''' \*\*{ .*?  \*\* .*?} ''' : u''
+    r' \*{ .*? \* .*? } ': '',
+    # <сноска 2> ::= **{ <текст сноски> ** <текст сноски> }
+    r''' \*\*{ .*?  \*\* .*?} ''' : ''
 },
 {   # звездочки для поющих на клиросе
-    ur'\*': u'',
+    r'\*': '',
 },
 {
-    
     # Regular expressions for character replacement
     # in text marked as being typed in Church Slavonic script
     # (script tag <::слав> or without any script tag
     # if no script tag is in the document)
     hip.A : cslav.Az ,
     hip.a : cslav.az ,
- 
+
     hip.B : cslav.Vedi ,
     hip.b : cslav.vedi ,
 
@@ -52,7 +49,7 @@ hip2cslav = (
 
     hip.H : cslav.Nash ,
     hip.h : cslav.nash ,
-    
+
     hip.O : cslav.On ,
     hip.o : cslav.on ,
 
@@ -123,16 +120,15 @@ hip2cslav = (
     hip.slovo_titlo : cslav.slovo_titlo ,
     hip.kher_titlo : cslav.kher_titlo ,
     hip.cherv_titlo : cslav.cherv_titlo ,
-    
 },
 {
     hip.Oy : cslav.Oy ,
     hip.oy : cslav.oy ,
 },
-{   
+{
     hip.Y : cslav.Uk ,
     hip.y : cslav.uk ,
 
-    hip.i_without_dot : ur'\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
+    hip.i_without_dot : '\u0131', # U+0131 LATIN SMALL LETTER DOTLESS I
 },
 )

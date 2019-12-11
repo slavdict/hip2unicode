@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 import sys
 
@@ -11,16 +10,16 @@ def corpus_converter(path=None, corpus_folder='corpus',
     if not path:
         path = os.path.abspath(os.getcwd())
 
-    print '\nCurrent folder is {0}'.format(path)
+    print('\nCurrent folder is {0}'.format(path))
 
     corpus_path = os.path.join(path, corpus_folder)
     converted_corpus_path = os.path.join(path, converted_corpus_folder)
 
     # проверяем наличие папки corpus в текущем каталоге
     if not os.path.exists(corpus_path):
-        print ('Corpus folder with the name "{0}" '
-               'does not exist.').format(corpus_folder)
-        raw_input('Press ENTER to exit program.')
+        print(('Corpus folder with the name "{0}" '
+               'does not exist.').format(corpus_folder))
+        input('Press ENTER to exit program.')
         sys.exit(-1)
 
     def all_files(path):
@@ -40,8 +39,8 @@ def corpus_converter(path=None, corpus_folder='corpus',
 
     file_list = all_files(corpus_path)
     if not file_list:
-        print 'There is no file to convert in the corpus folder.'
-        raw_input('Press ENTER to exit program.')
+        print('There is no file to convert in the corpus folder.')
+        input('Press ENTER to exit program.')
         sys.exit(-1)
 
     # Проверяем, существует ли папка converted_corpus
@@ -54,9 +53,9 @@ def corpus_converter(path=None, corpus_folder='corpus',
         make_all_folders(converted_corpus_path)
 
     enc_list = ('utf-8', 'cp1251', 'koi8-r')
-    print '\nConverting files '
+    print('\nConverting files ')
     for file_path in file_list:
-        with open(file_path) as f:
+        with open(file_path, 'rb') as f:
             contents = f.read()
             for enc in enc_list:
                 try:
@@ -64,13 +63,13 @@ def corpus_converter(path=None, corpus_folder='corpus',
                 except UnicodeDecodeError:
                     continue
                 else:
-                    print '{0}\t{1}'.format(enc,
-                                  os.path.relpath(file_path, corpus_path))
+                    print('{0}\t{1}'.format(enc,
+                                  os.path.relpath(file_path, corpus_path)))
                     break
             else:
-                print 'File "%s" is encoded with unknown encoding.' % file_path
-                print 'Known encodings are', enc_list
-                raw_input('Press ENTER to exit program.')
+                print('File "%s" is encoded with unknown encoding.' % file_path)
+                print('Known encodings are', enc_list)
+                input('Press ENTER to exit program.')
                 sys.exit(-1)
 
         converted_text = hip2unicode(text, conversions).encode('utf-8')
@@ -78,5 +77,5 @@ def corpus_converter(path=None, corpus_folder='corpus',
         new_path = os.path.splitext(new_path)[0] + '.txt'
         new_path = os.path.join(converted_corpus_path, new_path)
         make_all_folders(new_path)
-        with open(new_path, 'w') as fu:
+        with open(new_path, 'wb') as fu:
             fu.write(converted_text)
