@@ -1,182 +1,180 @@
-# -*- coding: UTF-8 -*-
+EMPTY_STRING = ''
 
-EMPTY_STRING = u''
+CAPITAL_AZ  = 'А'
+SMALL_AZ    = 'а'
 
-CAPITAL_AZ  = u'А'
-SMALL_AZ    = u'а'
+CAPITAL_BUKI    = 'Б'
+SMALL_BUKI      = 'б'
 
-CAPITAL_BUKI    = u'Б'
-SMALL_BUKI      = u'б'
+CAPITAL_VEDI    = 'В'
+SMALL_VEDI      = 'в'
 
-CAPITAL_VEDI    = u'В'
-SMALL_VEDI      = u'в'
+CAPITAL_GLAGOLJ = 'Г'
+SMALL_GLAGOLJ   = 'г'
 
-CAPITAL_GLAGOLJ = u'Г'
-SMALL_GLAGOLJ   = u'г'
+CAPITAL_DOBRO   = 'Д'
+SMALL_DOBRO     = 'д'
 
-CAPITAL_DOBRO   = u'Д'
-SMALL_DOBRO     = u'д'
+CAPITAL_ESTJ    = 'Е'
+SMALL_ESTJ      = 'е'
+SMALL_WIDE_ESTJ = '\u0454'
 
-CAPITAL_ESTJ    = u'Е'
-SMALL_ESTJ      = u'е'
-SMALL_WIDE_ESTJ = u'\u0454'
+CAPITAL_ZHIVETE = 'Ж'
+SMALL_ZHIVETE   = 'ж'
 
-CAPITAL_ZHIVETE = u'Ж'
-SMALL_ZHIVETE   = u'ж'
+CAPITAL_ZELO    = '\u0405'
+SMALL_ZELO      = '\u0455'
 
-CAPITAL_ZELO    = u'\u0405'
-SMALL_ZELO      = u'\u0455'
+CAPITAL_ZEMLJA  = 'З'
+SMALL_ZEMLJA    = 'з'
 
-CAPITAL_ZEMLJA  = u'З'
-SMALL_ZEMLJA    = u'з'
+CAPITAL_IZHE    = 'И'
+SMALL_IZHE      = 'и'
 
-CAPITAL_IZHE    = u'И'
-SMALL_IZHE      = u'и'
+CAPITAL_I       = 'I' # LATIN "I"
+SMALL_I         = 'i' # LATIN "i"
 
-CAPITAL_I       = u'I' # LATIN "I"
-SMALL_I         = u'i' # LATIN "i"
+CAPITAL_KAKO    = 'К'
+SMALL_KAKO      = 'к'
 
-CAPITAL_KAKO    = u'К'
-SMALL_KAKO      = u'к'
+CAPITAL_LJUDI   = 'Л'
+SMALL_LJUDI     = 'л'
 
-CAPITAL_LJUDI   = u'Л'
-SMALL_LJUDI     = u'л'
+CAPITAL_MYSLETE = 'М'
+SMALL_MYSLETE   = 'м'
 
-CAPITAL_MYSLETE = u'М'
-SMALL_MYSLETE   = u'м'
+CAPITAL_NASH    = 'Н'
+SMALL_NASH      = 'н'
 
-CAPITAL_NASH    = u'Н'
-SMALL_NASH      = u'н'
+CAPITAL_ON      = 'О' # CYRILLIC
+SMALL_ON        = 'о' # CYRILLIC
 
-CAPITAL_ON      = u'О' # CYRILLIC
-SMALL_ON        = u'о' # CYRILLIC
+CAPITAL_POKOJ   = 'П'
+SMALL_POKOJ     = 'п'
 
-CAPITAL_POKOJ   = u'П'
-SMALL_POKOJ     = u'п'
+CAPITAL_RCY     = 'Р'
+SMALL_RCY       = 'р'
 
-CAPITAL_RCY     = u'Р'
-SMALL_RCY       = u'р'
+CAPITAL_SLOVO   = 'С'
+SMALL_SLOVO     = 'с'
 
-CAPITAL_SLOVO   = u'С'
-SMALL_SLOVO     = u'с'
+CAPITAL_TVERDO  = 'Т'
+SMALL_TVERDO    = 'т'
 
-CAPITAL_TVERDO  = u'Т'
-SMALL_TVERDO    = u'т'
+CAPITAL_MONOGRAPH_UK    = 'У'
+SMALL_MONOGRAPH_UK      = 'у'
 
-CAPITAL_MONOGRAPH_UK    = u'У'
-SMALL_MONOGRAPH_UK      = u'у'
+CAPITAL_DIGRAPH_UK      = 'U'
+SMALL_DIGRAPH_UK        = 'u'
 
-CAPITAL_DIGRAPH_UK      = u'U'
-SMALL_DIGRAPH_UK        = u'u'
+SMALL_UK        = '\u00B5'
 
-SMALL_UK        = u'\u00B5'
+CAPITAL_FERT    = 'Ф'
+SMALL_FERT      = 'ф'
 
-CAPITAL_FERT    = u'Ф'
-SMALL_FERT      = u'ф'
+CAPITAL_XER     = 'Х'
+SMALL_XER       = 'х'
 
-CAPITAL_XER     = u'Х'
-SMALL_XER       = u'х'
+CAPITAL_OMEGA   = 'W' # LATIN
+SMALL_OMEGA     = 'w' # LATIN
 
-CAPITAL_OMEGA   = u'W' # LATIN 
-SMALL_OMEGA     = u'w' # LATIN
+CAPITAL_CY      = 'Ц'
+SMALL_CY        = 'ц'
 
-CAPITAL_CY      = u'Ц'
-SMALL_CY        = u'ц'
+CAPITAL_CHERVJ  = 'Ч'
+SMALL_CHERVJ    = 'ч'
 
-CAPITAL_CHERVJ  = u'Ч'
-SMALL_CHERVJ    = u'ч'
+CAPITAL_SHA     = 'Ш'
+SMALL_SHA       = 'ш'
 
-CAPITAL_SHA     = u'Ш'
-SMALL_SHA       = u'ш'
+CAPITAL_SHCHA   = 'Щ'
+SMALL_SHCHA     = 'щ'
 
-CAPITAL_SHCHA   = u'Щ'
-SMALL_SHCHA     = u'щ'
+CAPITAL_ER      = 'Ъ'
+SMALL_ER        = 'ъ'
 
-CAPITAL_ER      = u'Ъ'
-SMALL_ER        = u'ъ'
+CAPITAL_ERY     = 'Ы'
+SMALL_ERY       = 'ы'
 
-CAPITAL_ERY     = u'Ы'
-SMALL_ERY       = u'ы'
+CAPITAL_ERJ     = 'Ь'
+SMALL_ERJ       = 'ь'
 
-CAPITAL_ERJ     = u'Ь'
-SMALL_ERJ       = u'ь'
+CAPITAL_JATJ    = 'Э'
+SMALL_JATJ      = 'э'
 
-CAPITAL_JATJ    = u'Э'
-SMALL_JATJ      = u'э'
+CAPITAL_JU      = 'Ю'
+SMALL_JU        = 'ю'
 
-CAPITAL_JU      = u'Ю'
-SMALL_JU        = u'ю'
+CAPITAL_I_AZ    = 'Я'
+SMALL_I_AZ      = 'я'
 
-CAPITAL_I_AZ    = u'Я'
-SMALL_I_AZ      = u'я'
+CAPITAL_JUS_MALYJ   = 'Z'
+SMALL_JUS_MALYJ     = 'z'
 
-CAPITAL_JUS_MALYJ   = u'Z'
-SMALL_JUS_MALYJ     = u'z'
+CAPITAL_KSI     = 'X' # LATIN
+SMALL_KSI       = 'x' # LATIN
 
-CAPITAL_KSI     = u'X' # LATIN
-SMALL_KSI       = u'x' # LATIN
+CAPITAL_PSI     = 'P' # LATIN
+SMALL_PSI       = 'p' # LATIN
 
-CAPITAL_PSI     = u'P' # LATIN
-SMALL_PSI       = u'p' # LATIN
+CAPITAL_FITA    = 'F'
+SMALL_FITA      = 'f'
 
-CAPITAL_FITA    = u'F'
-SMALL_FITA      = u'f'
+CAPITAL_IZHICA  = 'V' # LATIN "V"
+SMALL_IZHICA    = 'v' # LATIN "v"
+CAPITAL_IZHICA_DOUBLE_GRAVIS    = 'M' # LATIN
+SMALL_IZHICA_DOUBLE_GRAVIS      = 'm'
 
-CAPITAL_IZHICA  = u'V' # LATIN "V"
-SMALL_IZHICA    = u'v' # LATIN "v"
-CAPITAL_IZHICA_DOUBLE_GRAVIS    = u'M' # LATIN
-SMALL_IZHICA_DOUBLE_GRAVIS      = u'm'
+CAPITAL_WIDE_ON = 'O' # LATIN
+SMALL_WIDE_ON   = 'o' # LATIN
 
-CAPITAL_WIDE_ON = u'O' # LATIN
-SMALL_WIDE_ON   = u'o' # LATIN
+CAPITAL_OLE     = 'Q'
+SMALL_OLE       = 'q'
 
-CAPITAL_OLE     = u'Q'
-SMALL_OLE       = u'q'
-
-CAPITAL_OT      = u'T' # LATIN
-SMALL_OT        = u't' # LATIN
+CAPITAL_OT      = 'T' # LATIN
+SMALL_OT        = 't' # LATIN
 
 
 # Diacritics
 
-CAPITAL_AKUT    = u'~'
-SMALL_AKUT      = u'1'
+CAPITAL_AKUT    = '~'
+SMALL_AKUT      = '1'
 
-CAPITAL_GRAVIS  = u'@'
-SMALL_GRAVIS    = u'2'
+CAPITAL_GRAVIS  = '@'
+SMALL_GRAVIS    = '2'
 
-CAPITAL_CIRKUMFLEKS = ur'\^' # RegExp escaped CARET symbol
-SMALL_CIRKUMFLEKS   = u'6'
+CAPITAL_CIRKUMFLEKS = r'\^' # RegExp escaped CARET symbol
+SMALL_CIRKUMFLEKS   = '6'
 
-CAPITAL_ASPIRATION  = u'#'
-SMALL_ASPIRATION    = u'3'
+CAPITAL_ASPIRATION  = '#'
+SMALL_ASPIRATION    = '3'
 
-CAPITAL_ASPIRATION_AKUT = u'\$'  # RegExp escaped DOLAR symbol
-SMALL_ASPIRATION_AKUT   = u'4'
+CAPITAL_ASPIRATION_AKUT = '\$'  # RegExp escaped DOLAR symbol
+SMALL_ASPIRATION_AKUT   = '4'
 
-CAPITAL_ASPIRATION_CIRKUMFLEX   = u'%'
-SMALL_ASPIRATION_CIRKUMFLEX     = u'5'
+CAPITAL_ASPIRATION_CIRKUMFLEX   = '%'
+SMALL_ASPIRATION_CIRKUMFLEX     = '5'
 
-CAPITAL_TITLO   = u'&'
-SMALL_TITLO     = u'7'
-MIDDLE_TITLO    = ur'\\' # RegExp escaped BACK SLASH symbol
+CAPITAL_TITLO   = '&'
+SMALL_TITLO     = '7'
+MIDDLE_TITLO    = r'\\' # RegExp escaped BACK SLASH symbol
 
-CAPITAL_PAEROK  = u'_'
-SMALL_PAEROK    = u'8'
+CAPITAL_PAEROK  = '_'
+SMALL_PAEROK    = '8'
 
-VEDI_TITLO      = ur'\+' # RegExp escaped plus sign
-GLAGOLJ_TITLO   = u'g'
-DOBRO_TITLO     = u'd'
-ZHIVETE_TITLO   = u'\u2022'
-ZEMLJA_TITLO    = u'\u20AC'
-NASH_TITLO      = u'='
-ON_TITLO        = u'b'
-RCY_TITLO       = u'>'
-SLOVO_TITLO     = u'c' # LATIN c
-XER_TITLO       = u'<'
-CHERVJ_TITLO    = ur'\?' # RegExp escaped question mark
+VEDI_TITLO      = r'\+' # RegExp escaped plus sign
+GLAGOLJ_TITLO   = 'g'
+DOBRO_TITLO     = 'd'
+ZHIVETE_TITLO   = '\u2022'
+ZEMLJA_TITLO    = '\u20AC'
+NASH_TITLO      = '='
+ON_TITLO        = 'b'
+RCY_TITLO       = '>'
+SLOVO_TITLO     = 'c' # LATIN c
+XER_TITLO       = '<'
+CHERVJ_TITLO    = r'\?' # RegExp escaped question mark
 
-CAPITAL_SLOVO_TITLO = u'C' # LATIN C
+CAPITAL_SLOVO_TITLO = 'C' # LATIN C
 
 LETTERS = EMPTY_STRING.join(
     [ eval(i) for i in dir() \
@@ -195,13 +193,13 @@ AE = EMPTY_STRING.join(
     )
 )
 
-CAPITAL_CONSONANTS  = u'БВГДЖЗЙКЛМНПРСТФХЦЧШЩЪЬ' + u'FPX' + u'\u0405'
-SMALL_CONSONANTS    = u'бвгджзйклмнпрстфхцчшщъь' + u'fpx' + u'\u0455'
+CAPITAL_CONSONANTS  = 'БВГДЖЗЙКЛМНПРСТФХЦЧШЩЪЬ' + 'FPX' + '\u0405'
+SMALL_CONSONANTS    = 'бвгджзйклмнпрстфхцчшщъь' + 'fpx' + '\u0455'
 
 # VOWEL_DIACRITICS -- диакритика над гласными,
 # CONSONANT_DIACRITICS -- диакритика над согласными буквами.
-CAPITAL_VOWEL_DIACRITICS  = u'#\$%&' + u'@' + u'\^' + u'~'
-SMALL_VOWEL_DIACRITICS    = u'1234567'
+CAPITAL_VOWEL_DIACRITICS  = '#\$%&' + '@' + '\^' + '~'
+SMALL_VOWEL_DIACRITICS    = '1234567'
 
 CAPITAL_CONSONANT_DIACRITICS    = CAPITAL_SLOVO_TITLO
 SMALL_CONSONANT_DIACRITICS      = EMPTY_STRING.join(
@@ -223,7 +221,7 @@ SMALL_CONSONANT_DIACRITICS      = EMPTY_STRING.join(
 CAPITAL_DIACRITICS  = CAPITAL_VOWEL_DIACRITICS + CAPITAL_CONSONANT_DIACRITICS
 SMALL_DIACRITICS    = SMALL_VOWEL_DIACRITICS + SMALL_CONSONANT_DIACRITICS
 
-VOWEL_DIACRITICS        = CAPITAL_VOWEL_DIACRITICS + SMALL_VOWEL_DIACRITICS
-CONSONANT_DIACRITICS    = CAPITAL_CONSONANT_DIACRITICS + SMALL_CONSONANT_DIACRITICS
+VOWEL_DIACRITICS     = CAPITAL_VOWEL_DIACRITICS + SMALL_VOWEL_DIACRITICS
+CONSONANT_DIACRITICS = CAPITAL_CONSONANT_DIACRITICS + SMALL_CONSONANT_DIACRITICS
 
 DIACRITICS = CAPITAL_DIACRITICS + SMALL_DIACRITICS

@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-
 from hip2unicode.representations.RE import *
 from hip2unicode.representations.antconc import *
 
@@ -14,9 +12,9 @@ conversion = (
     #(u'\}',  u'))'),
 
     # Знаки кавычек:
-    (u'@',  u'\u00B0'),
+    ('@',  '\u00B0'),
 
     # Многоточие необходимо заменять, поскольку
     # этот символ используется в UCS8.
-    (u'…', u'...')
+    ('…', '...')
 )

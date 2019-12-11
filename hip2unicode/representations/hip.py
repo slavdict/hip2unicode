@@ -1,103 +1,101 @@
 #!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-
 """ Variable (attributes) names are all in Latin """
 
-A = ur'[AА]' # \u0041 + \u0410 (latin A + cyrillic A)
-a = ur'[aа]' # \u0061 + \u0430
+A = r'[AА]'  # \u0041 + \u0410 (latin A + cyrillic A)
+a = r'[aа]'  # \u0061 + \u0430
 
-B = ur'[BВ]' # \u0042 + \u0412 (latin B + cyrillic VE)
-b = ur'[bв]'
+B = r'[BВ]'  # \u0042 + \u0412 (latin B + cyrillic VE)
+b = r'[bв]'
 
-E = ur'[EЕ]'
-e = ur'[eе]'
+E = r'[EЕ]'
+e = r'[eе]'
 
-F = u'F'
-f = u'f'
+F = 'F'
+f = 'f'
 
-Wide_E = ur'(?:_%(E)s|<%(E)s>)' % {'E': E}
-wide_e = ur'(?:_%(e)s|<%(e)s>)' % {'e': e}
+Wide_E = r'(?:_%(E)s|<%(E)s>)' % {'E': E}
+wide_e = r'(?:_%(e)s|<%(e)s>)' % {'e': e}
 
-i_without_dot = ur'_i'
+i_without_dot = r'_i'
 
-K = ur'[KК]'
-k = ur'[kк]'
+K = r'[KК]'
+k = r'[kк]'
 
-M = ur'[MМ]'
-m = ur'[mм]'
+M = r'[MМ]'
+m = r'[mм]'
 
-H = ur'[HН]'
-h = ur'[hн]'
+H = r'[HН]'
+h = r'[hн]'
 
-O = ur'[OО]'
-o = ur'[oо]'
+O = r'[OО]'
+o = r'[oо]'
 
-Wide_O = ur'(?:_%(O)s|<%(O)s>)' % {'O': O } # ur'(?: _О | <О> )'
-wide_o = ur'(?:_%(o)s|<%(o)s>)' % {'o': o } # ur'(?: _о | <о> )'
+Wide_O = r'(?:_%(O)s|<%(O)s>)' % {'O': O } # ur'(?: _О | <О> )'
+wide_o = r'(?:_%(o)s|<%(o)s>)' % {'o': o } # ur'(?: _о | <о> )'
 
-P = ur'[PР]'
-p = ur'[pр]'
+P = r'[PР]'
+p = r'[pр]'
 
-C = ur'[CС]'
-c = ur'[cс]'
+C = r'[CС]'
+c = r'[cс]'
 
-T = ur'[TТ]'
-t = ur'[tт]'
+T = r'[TТ]'
+t = r'[tт]'
 
-V = ur'V'
-v = ur'v'
+V = r'V'
+v = r'v'
 
-V_double_gravis = ur'V"'
-v_double_gravis = ur'v"'
+V_double_gravis = r'V"'
+v_double_gravis = r'v"'
 
-W = ur'W'
-w = ur'w'
+W = r'W'
+w = r'w'
 
-Y = ur'[YУ]'
-y = ur'[yу]'
+Y = r'[YУ]'
+y = r'[yу]'
 
-X = ur'[XХ]'
-x = ur'[xх]'
+X = r'[XХ]'
+x = r'[xх]'
 
-Yat = ur'(?:JЬ|Jь)'
-yat = ur'jь'
+Yat = r'(?:JЬ|Jь)'
+yat = r'jь'
 
-Ksi = ur'(?:_%(KC)s|_%(Kc)s|<%(KC)s>|<%(Kc)s>)' % { 'KC': K + C, 'Kc': K + c } # Ksi = ur'(?:_КС|_Кс|<КС>|<Кс>)'
-ksi = ur'(?:_%(kc)s|<%(kc)s>)' % { 'kc': k + c } # ur'(?:_кс|<кс>)'
+Ksi = r'(?:_%(KC)s|_%(Kc)s|<%(KC)s>|<%(Kc)s>)' % { 'KC': K + C, 'Kc': K + c } # Ksi = ur'(?:_КС|_Кс|<КС>|<Кс>)'
+ksi = r'(?:_%(kc)s|<%(kc)s>)' % { 'kc': k + c } # ur'(?:_кс|<кс>)'
 
-Ole = ur'(?:_W|<W>)'
-ole = ur'(?:_w|<w>)'
+Ole = r'(?:_W|<W>)'
+ole = r'(?:_w|<w>)'
 
-Ot = ur'W\\[тТ]'
-ot = ur'w\\[тТ]'
+Ot = r'W\\[тТ]'
+ot = r'w\\[тТ]'
 
-Psi = ur'(?:_П%(C)s|_П%(c)s|<П%(C)s>|<П%(c)s>)' % { 'C': C, 'c': c } # Ksi = ur'(?:_ПС|_Пс|<ПС>|<Пс>)'
-psi = ur'(?:_п%(c)s|<п%(c)s>)' % { 'c': c } # ur'(?: _пс | <пс> )'
+Psi = r'(?:_П%(C)s|_П%(c)s|<П%(C)s>|<П%(c)s>)' % { 'C': C, 'c': c }
+# Psi = ur'(?:_ПС|_Пс|<ПС>|<Пс>)'
+psi = r'(?:_п%(c)s|<п%(c)s>)' % { 'c': c }
+# ur'(?: _пс | <пс> )'
 
-Oy = ur'(?:{O}_{Y}|{O}_{y}|<{O}_{Y}>|<{O}_{y}>|{O}<{Y}>|{O}<{y}>)' \
+Oy = r'(?:{O}_{Y}|{O}_{y}|<{O}_{Y}>|<{O}_{y}>|{O}<{Y}>|{O}<{y}>)' \
         .format(O=O, Y=Y, y=y)
-oy = ur'(?:{o}_{y}|<{o}_{y}>|{o}<{y}>)'.format(o=o, y=y)
+oy = r'(?:{o}_{y}|<{o}_{y}>|{o}<{y}>)'.format(o=o, y=y)
 
-J_a = ur'(?:J%(A)s|J%(a)s)' % { 'A': A, 'a': a }
-j_a = ur'(?:j%(a)s)' % { 'a': a }
+J_a = r'(?:J%(A)s|J%(a)s)' % { 'A': A, 'a': a }
+j_a = r'(?:j%(a)s)' % { 'a': a }
 
-Ja = u'Я'
-ja = u'я'
+Ja = 'Я'
+ja = 'я'
 
-single_quote = u"'"
-back_single_quote = u'`'
-equal_sign = u'='
-caret = ur'\^' # ^
-tilde = u'~'
+single_quote = "'"
+back_single_quote = '`'
+equal_sign = '='
+caret = r'\^'  # ^
+tilde = '~'
 
-paerok = ur'\\ъ'
-vedi_titlo = ur'\\в'
-glagol_titlo = ur'\\г'
-dobro_titlo = ur'\\д'
-on_titlo = ur'\\о'
-rcy_titlo = ur'\\р'
-slovo_titlo = ur'\\с'
-kher_titlo = ur'\\х'
-cherv_titlo = ur'\\ч'
-
-
+paerok = r'\\ъ'
+vedi_titlo = r'\\в'
+glagol_titlo = r'\\г'
+dobro_titlo = r'\\д'
+on_titlo = r'\\о'
+rcy_titlo = r'\\р'
+slovo_titlo = r'\\с'
+kher_titlo = r'\\х'
+cherv_titlo = r'\\ч'

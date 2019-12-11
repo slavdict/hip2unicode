@@ -1,8 +1,6 @@
-# -*- coding: UTF-8 -*-
-
 """
-Данное промежуточное преобразование ориентировано 
-на церковно-славянскую орфографию с чётким противопоставлением 
+Данное промежуточное преобразование ориентировано
+на церковно-славянскую орфографию с чётким противопоставлением
 "согласной" и "гласной" ижиц, а также с последовательной
 простановкой двойного грависа над "i" без диакритики.
 
@@ -23,14 +21,14 @@ rc_VOWEL_DIACRITICS     = right_context( token( VOWEL_DIACRITICS ) )
 lc_AE                   = left_context( token( AE ) )
 lc_AE_DIA               = left_context( token( AE ), token( VOWEL_DIACRITICS ) )
 
-temp_CAPITAL_IZHICA = u'\u7770'
-temp_SMALL_IZHICA   = u'\u7771'
+temp_CAPITAL_IZHICA = '\u7770'
+temp_SMALL_IZHICA   = '\u7771'
 
 conversion = (
-    
+
     # Ижица с двойным грависом
 
-    # Помечаем все заглавные ижицы, 
+    # Помечаем все заглавные ижицы,
     # над которыми не надо ставить двойной гравис:
     (CAPITAL_IZHICA + rc_VOWEL_DIACRITICS,  temp_CAPITAL_IZHICA),
     (lc_AE + CAPITAL_IZHICA,                temp_CAPITAL_IZHICA),
@@ -51,11 +49,11 @@ conversion = (
 
 
     # Десятиричное И с двойным грависом
-    (CAPITAL_I + nrc_DIACRITICS,            u'\u0406'), 
-    (SMALL_I + nrc_DIACRITICS,              u'\u0456'),
-    # Десятичное И без диакритики, 
+    (CAPITAL_I + nrc_DIACRITICS,            '\u0406'),
+    (SMALL_I + nrc_DIACRITICS,              '\u0456'),
+    # Десятичное И без диакритики,
     # а также без ударений но с титлом:
-    (antconc_SMALL_DOTLESS_I + SMALL_TITLO, u'\u2039'),
+    (antconc_SMALL_DOTLESS_I + SMALL_TITLO, '\u2039'),
     (antconc_SMALL_DOTLESS_I,               SMALL_I),
 
 )

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
 import sys
 
 import corpus_converter
@@ -8,12 +6,12 @@ from hip2unicode.functions import compile_conversion as cc
 from hip2unicode.conversions import hip2antconc
 
 if len(sys.argv) != 3:
-    print '''
+    print('''
 
     Insufficient argument list. Please, specify paths
     for a corpus folder and for an output folder.
 
-    '''
+    ''')
     sys.exit(1)
 
 conversions = ahc(slav=cc(hip2antconc.conversion),

@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-
 """
 AntConc to UCS8 conversion
 without creating aspiration marks
