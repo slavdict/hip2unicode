@@ -115,6 +115,7 @@ def fragments(text):
         '<::лат>',
         '<::глаг>',
     )
+    address_tag = re.compile(r'%{!Адрес:([^{}]*?)}')
 
     # В соответствии со стандартом HIP, по умолчанию предполагаем,
     # что передаваемая строка представляет собой
@@ -126,7 +127,7 @@ def fragments(text):
         _marked_text_fragments = marked_text_fragments[:]
         delta = 0 # накопительное смещение фрагмента
 
-        for fragment_number, (fragment_tag, fragment) in enumerate(_marked_text_fragments):
+        for fi, (fragment_tag, fragment) in enumerate(_marked_text_fragments):
 
             new_fragments = fragment.split(tag)
             new_marked_fragments = [(fragment_tag, new_fragments[0]),]
@@ -134,11 +135,28 @@ def fragments(text):
                 [ (tag, f) for f in new_fragments[1:] ]
             )
             marked_text_fragments[
-                fragment_number + delta:
-                fragment_number + delta + 1
+                fi + delta:
+                fi + delta + 1
             ] = new_marked_fragments
 
             delta += len(new_marked_fragments) - 1
+
+    _marked_text_fragments = marked_text_fragments[:]
+    delta = 0
+
+    for fi, (fragment_tag, fragment) in enumerate(_marked_text_fragments):
+
+        new_fragments = address_tag.split(fragment)
+        new_marked_fragments = [
+            (fragment_tag if i % 2 == 0 else '<::ADDR::>',
+             frag if i % 2 == 0 else '<%s>' % frag)
+            for i, frag in enumerate(new_fragments)]
+        marked_text_fragments[
+            fi + delta:
+            fi + delta + 1
+        ] = new_marked_fragments
+
+        delta += len(new_marked_fragments) - 1
 
     return marked_text_fragments
 
@@ -150,7 +168,9 @@ def non_empty_fragments(text):
     все картежи с пустыми fragment. """
 
     marked_text_fragments = fragments(text)
-    return [ (tag, fragment) for tag, fragment in marked_text_fragments if fragment.strip() ]
+    return [ (tag, fragment)
+             for tag, fragment in marked_text_fragments
+             if fragment.strip() ]
 
 
 def convert(text, conversion):
@@ -174,6 +194,7 @@ def all_hip_conversions(slav=None, grec=None, rus=None, lat=None, glag=None):
         '<::рус>':     rus,
         '<::лат>':     lat,
         '<::глаг>':    glag,
+        '<::ADDR::>':  None,
     }
     return conversion_refs
 
