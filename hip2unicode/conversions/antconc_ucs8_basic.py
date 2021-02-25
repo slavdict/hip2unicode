@@ -14,14 +14,17 @@ from hip2unicode.representations.ucs8 import LETTERS as ucs8_LETTERS
 
 REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS, ucs8_LETTERS )
 ASPIRATION_TIP = '\u4444'
+CAPITAL_IZHICA_TIP = '\u4445'
+SMALL_IZHICA_TIP = '\u4446'
+CAPITAL_I_TIP = '\u4447'
+SMALL_I_TIP = '\u4448'
 
 lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
 ic_SMALL_VOWELS     = initial_context( token( SMALL_VOWELS ) )
 ic_CAPITAL_VOWELS   = initial_context( token( CAPITAL_VOWELS ) )
 nrc_ACCENTS         = neg_right_context( token( ASPIRATION_TIP + ACCENTS ) )
-VOWELS_WITHOUT_ASP  = initial_context() + '[=]' + \
-                      right_context( token(SMALL_VOWELS + CAPITAL_VOWELS) )
+VOWELS_WITHOUT_ASP  = '[=]' + right_context( token(SMALL_VOWELS + CAPITAL_VOWELS) )
 
 conversion = (
     # титло над строчными от, ферт и пси
@@ -73,6 +76,10 @@ conversion = (
 
     (lc_CAPITAL_LETTERS + SLOVO_TITLO,  'C'),
 
+    (ASPIRATION_TIP + CAPITAL_IZHICA + '[3\#]?', CAPITAL_IZHICA_TIP),
+    (ASPIRATION_TIP + SMALL_IZHICA + '[3\#]?', SMALL_IZHICA_TIP),
+    (ASPIRATION_TIP + CAPITAL_I + '[3\#]?', CAPITAL_I_TIP),
+    (ASPIRATION_TIP + SMALL_I + '[3\#]?', SMALL_I_TIP),
     (ASPIRATION_TIP + r'(?P<symb>.)[3\#]',  r'\g<symb>'),
     (ASPIRATION_TIP + r'(?P<symb>.)4',  r'\g<symb>1'),
     (ASPIRATION_TIP + r'(?P<symb>.)5',  r'\g<symb>2'),

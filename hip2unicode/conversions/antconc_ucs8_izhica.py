@@ -14,6 +14,11 @@ from hip2unicode.representations.ucs8 import *
 from hip2unicode.representations.antconc import SMALL_DOTLESS_I \
     as antconc_SMALL_DOTLESS_I
 
+from hip2unicode.conversions.antconc_ucs8_basic import CAPITAL_I_TIP
+from hip2unicode.conversions.antconc_ucs8_basic import CAPITAL_IZHICA_TIP
+from hip2unicode.conversions.antconc_ucs8_basic import SMALL_I_TIP
+from hip2unicode.conversions.antconc_ucs8_basic import SMALL_IZHICA_TIP
+
 # REPR_ENVIRON.NON_LETTERS = neg_token( LETTERS )
 
 nrc_DIACRITICS          = neg_right_context( token( DIACRITICS ) )
@@ -33,6 +38,7 @@ conversion = (
     (CAPITAL_IZHICA + rc_VOWEL_DIACRITICS,  temp_CAPITAL_IZHICA),
     (lc_AE + CAPITAL_IZHICA,                temp_CAPITAL_IZHICA),
     (lc_AE_DIA + CAPITAL_IZHICA,            temp_CAPITAL_IZHICA),
+    (CAPITAL_IZHICA_TIP,                    temp_CAPITAL_IZHICA),
     # Над оставшимися заглавными ижицами
     # ставим двойной гравис:
     (CAPITAL_IZHICA,                        CAPITAL_IZHICA_DOUBLE_GRAVIS),
@@ -44,6 +50,7 @@ conversion = (
     (SMALL_IZHICA + rc_VOWEL_DIACRITICS,    temp_SMALL_IZHICA),
     (lc_AE + SMALL_IZHICA,                  temp_SMALL_IZHICA),
     (lc_AE_DIA + SMALL_IZHICA,              temp_SMALL_IZHICA),
+    (SMALL_IZHICA_TIP,                      temp_SMALL_IZHICA),
     (SMALL_IZHICA,                          SMALL_IZHICA_DOUBLE_GRAVIS),
     (temp_SMALL_IZHICA,                     SMALL_IZHICA),
 
@@ -55,5 +62,6 @@ conversion = (
     # а также без ударений но с титлом:
     (antconc_SMALL_DOTLESS_I + SMALL_TITLO, '\u2039'),
     (antconc_SMALL_DOTLESS_I,               SMALL_I),
-
+    (SMALL_I_TIP,                           SMALL_I),
+    (CAPITAL_I_TIP,                         CAPITAL_I),
 )
