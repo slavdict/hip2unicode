@@ -27,6 +27,8 @@ nrc_ACCENTS         = neg_right_context( token( ASPIRATION_TIP + ACCENTS ) )
 VOWELS_WITHOUT_ASP  = '[=]' + right_context( token(SMALL_VOWELS + CAPITAL_VOWELS) )
 
 conversion = (
+    (CAPITAL_WIDE_ESTJ,                 CAPITAL_ESTJ),
+
     # титло над строчными от, ферт и пси
     # преобразуется в обратный слеш
     # (экранированная запись для RegExp)

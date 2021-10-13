@@ -18,6 +18,8 @@ lc_SMALL_LETTERS    = left_context( token( SMALL_LETTERS ) )
 lc_CAPITAL_LETTERS  = left_context( token( CAPITAL_LETTERS ) )
 
 conversion = (
+    (CAPITAL_WIDE_ESTJ,                 CAPITAL_ESTJ),
+
     # титло над строчными от, ферт и пси
     # преобразуется в обратный слеш
     # (экранированная запись для RegExp)

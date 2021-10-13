@@ -21,10 +21,10 @@ SMALL_DOBRO     = 'д'
 CAPITAL_ESTJ    = 'Е'
 SMALL_ESTJ      = 'е'
 
-# NB: \u0415 is used instead \u0404,
+# NB: \u0415 can be used instead of \u0404,
 # because there is no difference
 # between normal and wide capital E
-CAPITAL_WIDE_ESTJ   = CAPITAL_ESTJ
+CAPITAL_WIDE_ESTJ   = '\u0404'   # CYRILLIC "Є"
 SMALL_WIDE_ESTJ     = '\u0454'   # CYRILLIC "є"
 
 CAPITAL_ZHIVETE = 'Ж'
@@ -190,7 +190,7 @@ CAPITAL_VOWELS  = EMPTY_STRING.join(
     (
         CAPITAL_AZ,
         CAPITAL_ESTJ,
-    #   CAPITAL_WIDE_ESTJ,
+        CAPITAL_WIDE_ESTJ,
         CAPITAL_IZHE,
         CAPITAL_I,
         CAPITAL_ON,
